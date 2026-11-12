@@ -1,0 +1,10 @@
+{
+  "id": "c06-equal-separator-can-cross-lines-pos",
+  "kind": "parse",
+  "src": "A\n=\n one\nB=two",
+  "expected": {
+    "A": "",
+    "B": "two"
+  }
+}
+

@@ -1,0 +1,90 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "frontend-request",
+  "input": {
+    "assistantId": "msg_1730000003000_assistant_ef45gh6",
+    "context": {
+      "agentId": " agent ",
+      "agentName": " Demo ",
+      "topicId": " default ",
+      "isGroupMessage": false
+    },
+    "modelConfig": {
+      "model": "fixture-model",
+      "temperature": 0,
+      "top_p": "",
+      "top_k": null,
+      "max_tokens": 60000,
+      "stream": true
+    },
+    "messages": [
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "前"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/png;base64,QUJD"
+            }
+          }
+        ],
+        "tool_calls": [
+          {
+            "id": "tool1"
+          }
+        ],
+        "tool_call_id": "tool1",
+        "attachments": [
+          1
+        ],
+        "private": "drop"
+      }
+    ]
+  },
+  "expected": {
+    "messages": [
+      {
+        "role": "assistant",
+        "content": [
+          {
+            "type": "text",
+            "text": "前"
+          },
+          {
+            "type": "image_url",
+            "image_url": {
+              "url": "data:image/png;base64,QUJD"
+            }
+          }
+        ],
+        "tool_calls": [
+          {
+            "id": "tool1"
+          }
+        ],
+        "tool_call_id": "tool1"
+      }
+    ],
+    "model": "fixture-model",
+    "temperature": 0,
+    "max_tokens": 60000,
+    "stream": true,
+    "requestId": "msg_1730000003000_assistant_ef45gh6",
+    "vcpchatExtensions": {
+      "schemaVersion": 1,
+      "messageMetadataMode": "hash_only",
+      "requestContext": {
+        "requestId": "msg_1730000003000_assistant_ef45gh6",
+        "agentId": "agent",
+        "agentName": "Demo",
+        "topicId": "default",
+        "ownerType": "agent",
+        "isGroupMessage": false
+      }
+    }
+  }
+}

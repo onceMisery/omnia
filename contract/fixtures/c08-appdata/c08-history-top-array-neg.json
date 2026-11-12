@@ -1,0 +1,19 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "history-file",
+  "input": {
+    "operation": "read",
+    "initial": {
+      "messages": []
+    }
+  },
+  "expected": {
+    "result": {
+      "error": "Error",
+      "message": "历史记录不是数组: <APPDATA>/agent/topics/default/history.json"
+    },
+    "observations": [],
+    "finalBytes": "{\n  \"messages\": []\n}\n",
+    "temporaryFiles": []
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "batch",
+  "input": {
+    "operation": "project",
+    "body": {
+      "messages": [
+        {
+          "role": "user",
+          "content": "\n<<<[VCP_TOOL_BATCH_START:2024-10-27T11:33:20.000+08:00]>>>\n甲\n<<<[VCP_TOOL_BATCH_END:2024-10-27T11:33:20.000+08:00]>>>\n"
+        }
+      ]
+    }
+  },
+  "expected": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "\n【工具返回批次开始｜时间：2024-10-27T11:33:20.000+08:00】\n甲\n【工具返回批次结束｜时间：2024-10-27T11:33:20.000+08:00】\n"
+      }
+    ]
+  }
+}

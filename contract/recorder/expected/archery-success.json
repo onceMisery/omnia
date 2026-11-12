@@ -1,0 +1,38 @@
+{
+  "request": {
+    "model": "archery-success",
+    "stream": false,
+    "requestId": "fixture-archery-success",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Synthetic M0 contract recording."
+      }
+    ]
+  },
+  "status": 200,
+  "headers": {
+    "access-control-allow-origin": "*",
+    "connection": "keep-alive",
+    "content-length": "<BODY_BYTES>",
+    "content-type": "application/json",
+    "date": "<HTTP_DATE>",
+    "etag": "<BODY_ETAG>",
+    "keep-alive": "timeout=5",
+    "x-powered-by": "Express"
+  },
+  "wire": "{\"id\":\"synthetic-archery-success\",\"object\":\"chat.completion\",\"created\":1,\"model\":\"archery-success\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"<<<[TOOL_REQUEST]>>>\\ntool_name:「始」FixtureEcho「末」\\nmode:「始」text「末」\\narchery:「始」true「末」\\n<<<[END_TOOL_REQUEST]>>>\"},\"finish_reason\":\"stop\"}]}",
+  "upstream": [
+    {
+      "model": "archery-success",
+      "stream": false,
+      "requestId": "fixture-archery-success",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Synthetic M0 contract recording."
+        }
+      ]
+    }
+  ]
+}

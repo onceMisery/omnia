@@ -1,0 +1,6 @@
+{
+  "id": "c12-meta-multiple-pos",
+  "kind": "reasoning",
+  "src": "[--- VCP元思考链 ---]\na\n[--- 元思考链结束 ---]\nb\n[--- VCP元思考链 ---]\nc\n[--- 元思考链结束 ---]\nd",
+  "expected": "b\nd"
+}

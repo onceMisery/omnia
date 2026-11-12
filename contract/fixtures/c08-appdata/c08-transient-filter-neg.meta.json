@@ -1,0 +1,25 @@
+{
+  "schema": "omnia-source-fixture-meta-v1",
+  "origin": "frozen-source-execution",
+  "rules": [
+    "C08.transient-filter"
+  ],
+  "sources": [
+    {
+      "repository": "VCPChat",
+      "commit": "c3e4855efa2b24c0578d76e17fd6c5f21857a539",
+      "path": "modules/chat/chatHistoryPersistence.js",
+      "startLine": 1,
+      "endLine": 147,
+      "sha256": "8121a7592b801ff4bf577b1178a8ff6eb81ef54aa67c572b1fc42eded9821495"
+    }
+  ],
+  "normalization": [
+    "Synthetic inputs only.",
+    "Date.now is fixed to 1730000000000 when used.",
+    "Temporary history root is rendered as <APPDATA>; path separators are normalized in error text."
+  ],
+  "limitations": [
+    "Frozen original functions or statement ranges run in a Node VM. Declared IO seams are supplied by the runner; this is not a full server or Electron end-to-end run."
+  ]
+}

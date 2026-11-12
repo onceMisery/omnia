@@ -1,0 +1,21 @@
+{
+  "request": {
+    "path": "/AdminPanel/",
+    "method": "GET",
+    "accept": "application/json",
+    "credential": "none"
+  },
+  "status": 401,
+  "headers": {
+    "access-control-allow-origin": "*",
+    "connection": "keep-alive",
+    "content-length": "<BODY_BYTES>",
+    "content-type": "application/json; charset=utf-8",
+    "date": "<HTTP_DATE>",
+    "etag": "<BODY_ETAG>",
+    "keep-alive": "timeout=5",
+    "x-powered-by": "Express"
+  },
+  "wire": "{\"error\":\"Unauthorized\"}",
+  "upstream": []
+}

@@ -1,0 +1,19 @@
+{
+  "id": "c12-escape-block-pos",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>tool_name:「始」Echo「末」code:「始ESCAPE」<<<[TOOL_REQUEST]>>>tool_name:「始」Literal「末」x:「始」value「末」<<<[END_TOOL_REQUEST]>>>「末ESCAPE」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "Echo",
+      "args": {
+        "code": "<<<[TOOL_REQUEST]>>>tool_name:「始」Literal「末」x:「始」value「末」<<<[END_TOOL_REQUEST]>>>"
+      },
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

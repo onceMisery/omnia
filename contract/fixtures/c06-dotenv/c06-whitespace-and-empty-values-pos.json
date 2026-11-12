@@ -1,0 +1,14 @@
+{
+  "id": "c06-whitespace-and-empty-values-pos",
+  "kind": "parse",
+  "src": " A =  one  \nB=\nC=''\nD=\"\"\nE=``\nF=   #comment",
+  "expected": {
+    "A": "one",
+    "B": "",
+    "C": "",
+    "D": "",
+    "E": "",
+    "F": ""
+  }
+}
+

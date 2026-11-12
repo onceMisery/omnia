@@ -1,0 +1,19 @@
+{
+  "id": "c12-prototype-setter-neg",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>tool_name:「始」Echo「末」__proto__:「始」ignored「末」constructor:「始」kept「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "Echo",
+      "args": {
+        "constructor": "kept"
+      },
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

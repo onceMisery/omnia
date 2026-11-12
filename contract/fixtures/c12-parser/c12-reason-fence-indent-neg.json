@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-fence-indent-neg",
+  "kind": "reasoning",
+  "src": "    ~~~\n<think>remove</think>\n    ~~~",
+  "expected": "    ~~~\n\n    ~~~"
+}

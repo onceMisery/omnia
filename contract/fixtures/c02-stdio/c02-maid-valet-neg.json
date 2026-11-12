@@ -1,0 +1,13 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "parsed-args",
+  "input": {
+    "text": "<<<[TOOL_REQUEST]>>>tool_name:「始」Tool「末」 valet:「始」Alice「末」 maid:「始」Bob「末」<<<[END_TOOL_REQUEST]>>>"
+  },
+  "expected": [
+    {
+      "valet": "Alice",
+      "maid": "Bob"
+    }
+  ]
+}

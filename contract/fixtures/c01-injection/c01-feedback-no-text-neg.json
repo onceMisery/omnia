@@ -1,0 +1,27 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "format-result",
+  "input": {
+    "value": {
+      "content": [
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": "data:image/png;base64,QUJD"
+          }
+        }
+      ]
+    }
+  },
+  "expected": {
+    "text": "[Rich Content]",
+    "content": [
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "data:image/png;base64,QUJD"
+        }
+      }
+    ]
+  }
+}

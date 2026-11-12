@@ -1,0 +1,12 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "approval-rejection",
+  "input": {
+    "reason": ""
+  },
+  "expected": {
+    "plugin_error": "Manual approval was REJECTED by user.",
+    "error_type": "approval_rejected",
+    "rejected_by_user": true
+  }
+}

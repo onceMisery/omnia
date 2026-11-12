@@ -1,0 +1,38 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "format-error",
+  "input": {
+    "name": "Tool",
+    "message": "{\"plugin_error\":\"包含备注\",\"user_feedback\":\"备注\"}"
+  },
+  "expected": {
+    "output": {
+      "success": false,
+      "error": "{\"plugin_error\":\"包含备注\",\"user_feedback\":\"备注\"}",
+      "content": [
+        {
+          "type": "text",
+          "text": "[错误] 包含备注"
+        }
+      ],
+      "raw": {
+        "plugin_error": "包含备注",
+        "user_feedback": "备注"
+      }
+    },
+    "broadcasts": [
+      [
+        {
+          "type": "vcp_log",
+          "data": {
+            "tool_name": "Tool",
+            "status": "error",
+            "content": "{\"plugin_error\":\"包含备注\",\"user_feedback\":\"备注\"}"
+          }
+        },
+        "VCPLog"
+      ]
+    ],
+    "lifecycle": []
+  }
+}

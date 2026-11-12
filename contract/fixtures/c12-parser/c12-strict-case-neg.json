@@ -1,0 +1,7 @@
+{
+  "id": "c12-strict-case-neg",
+  "kind": "parse",
+  "src": "<<<[tool_request]>>>tool_name:「始」echo「末」<<<[end_tool_request]>>>",
+  "fuzzy_markers": false,
+  "expected": []
+}

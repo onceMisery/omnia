@@ -1,0 +1,60 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "frontend-request",
+  "input": {
+    "assistantId": "msg_1730000003000_assistant_ef45gh6",
+    "context": {
+      "agentId": " agent ",
+      "agentName": " Demo ",
+      "topicId": " default ",
+      "isGroupMessage": false
+    },
+    "modelConfig": {
+      "model": "fixture-model",
+      "temperature": 0,
+      "top_p": "",
+      "top_k": null,
+      "max_tokens": 60000,
+      "stream": true
+    },
+    "messages": [
+      null,
+      {
+        "role": "user",
+        "content": {
+          "text": "object text"
+        },
+        "private": "drop"
+      }
+    ]
+  },
+  "expected": {
+    "messages": [
+      {
+        "role": "system",
+        "content": "[Invalid message]"
+      },
+      {
+        "role": "user",
+        "content": "object text"
+      }
+    ],
+    "model": "fixture-model",
+    "temperature": 0,
+    "max_tokens": 60000,
+    "stream": true,
+    "requestId": "msg_1730000003000_assistant_ef45gh6",
+    "vcpchatExtensions": {
+      "schemaVersion": 1,
+      "messageMetadataMode": "hash_only",
+      "requestContext": {
+        "requestId": "msg_1730000003000_assistant_ef45gh6",
+        "agentId": "agent",
+        "agentName": "Demo",
+        "topicId": "default",
+        "ownerType": "agent",
+        "isGroupMessage": false
+      }
+    }
+  }
+}

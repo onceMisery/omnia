@@ -1,0 +1,40 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "frontend-interrupt",
+  "input": {
+    "settings": {
+      "vcpServerUrl": "https://example.test:6005/v1/chatvcp/completions",
+      "vcpApiKey": "synthetic"
+    },
+    "assistantId": "assistant-id",
+    "fail": true
+  },
+  "expected": {
+    "result": {
+      "success": false,
+      "error": "Injected HTTP timeout"
+    },
+    "fetches": [
+      {
+        "url": "https://example.test:6005/v1/interrupt",
+        "options": {
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer synthetic"
+          },
+          "body": "{\"requestId\":\"assistant-id\"}",
+          "signal": {
+            "timeoutMs": 5000
+          }
+        }
+      }
+    ],
+    "cancellations": [
+      {
+        "id": "assistant-id",
+        "reason": "interrupt-local-fallback"
+      }
+    ]
+  }
+}

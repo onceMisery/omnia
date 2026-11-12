@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-fence-backtick-info-neg",
+  "kind": "reasoning",
+  "src": "```a`b\n<think>remove</think>",
+  "expected": "```a`b\n"
+}

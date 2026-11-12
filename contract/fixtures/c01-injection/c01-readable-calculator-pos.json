@@ -1,0 +1,16 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "visible",
+  "input": {
+    "calls": [
+      {
+        "name": "FixtureTool",
+        "status": "success",
+        "result": {
+          "original_plugin_output": "###计算结果：42###"
+        }
+      }
+    ]
+  },
+  "expected": "\n[[VCP调用结果信息汇总:\n- 工具名称: FixtureTool\n- 执行状态: ✅ SUCCESS\n- 返回内容: ###计算结果：42###\nVCP调用结果结束]]\n"
+}

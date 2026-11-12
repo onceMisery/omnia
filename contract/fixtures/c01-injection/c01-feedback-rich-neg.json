@@ -1,0 +1,43 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "format-result",
+  "input": {
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "first"
+        },
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": "data:image/png;base64,QUJD"
+          }
+        },
+        {
+          "type": "text",
+          "text": "last"
+        }
+      ]
+    }
+  },
+  "expected": {
+    "text": "first",
+    "content": [
+      {
+        "type": "text",
+        "text": "first"
+      },
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "data:image/png;base64,QUJD"
+        }
+      },
+      {
+        "type": "text",
+        "text": "last"
+      }
+    ]
+  }
+}

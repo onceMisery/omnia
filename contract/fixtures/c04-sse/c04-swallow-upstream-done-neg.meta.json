@@ -1,0 +1,25 @@
+{
+  "schema": "omnia-source-fixture-meta-v1",
+  "origin": "frozen-source-execution",
+  "rules": [
+    "C04.swallow-upstream-done"
+  ],
+  "sources": [
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/handlers/streamHandler.js",
+      "startLine": 376,
+      "endLine": 410,
+      "sha256": "bf602071cf6085b7074cb22bfdcb5fa4d607eff4152a0f8b65cea37a3ec3409e"
+    }
+  ],
+  "normalization": [
+    "Synthetic inputs only.",
+    "Date.now is fixed to 1730000000000 when used.",
+    "Temporary history root is rendered as <APPDATA>; path separators are normalized in error text."
+  ],
+  "limitations": [
+    "Frozen original functions or statement ranges run in a Node VM. Declared IO seams are supplied by the runner; this is not a full server or Electron end-to-end run."
+  ]
+}

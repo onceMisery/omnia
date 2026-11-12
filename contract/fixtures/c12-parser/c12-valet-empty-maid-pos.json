@@ -1,0 +1,20 @@
+{
+  "id": "c12-valet-empty-maid-pos",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>tool_name:「始」Echo「末」maid:「始」「末」valet:「始」Nova「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "Echo",
+      "args": {
+        "maid": "Nova",
+        "valet": "Nova"
+      },
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

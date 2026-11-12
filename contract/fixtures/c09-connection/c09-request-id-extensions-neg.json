@@ -1,0 +1,29 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "frontend-request",
+  "input": {
+    "assistantId": "assistant-other",
+    "messages": [
+      {
+        "role": "user",
+        "content": "hi"
+      }
+    ],
+    "modelConfig": {
+      "stream": "true",
+      "top_p": 0
+    },
+    "context": {}
+  },
+  "expected": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "hi"
+      }
+    ],
+    "stream": false,
+    "top_p": 0,
+    "requestId": "assistant-other"
+  }
+}

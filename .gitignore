@@ -1,0 +1,6 @@
+/target/
+**/config.env
+/AppData/
+/contract/recordings/
+*.log
+.DS_Store

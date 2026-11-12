@@ -1,0 +1,11 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "stdout",
+  "input": {
+    "code": 0,
+    "stdout": "not JSON"
+  },
+  "expected": {
+    "rejected": "Plugin \"FixtureTool\" exited successfully but did not provide a valid initial JSON response. Stdout: not JSON"
+  }
+}

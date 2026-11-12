@@ -1,0 +1,9 @@
+{
+  "id": "c12-separate-empty-neg",
+  "kind": "separate",
+  "calls": [],
+  "expected": {
+    "normal": [],
+    "archery": []
+  }
+}

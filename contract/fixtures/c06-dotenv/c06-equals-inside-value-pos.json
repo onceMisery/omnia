@@ -1,0 +1,10 @@
+{
+  "id": "c06-equals-inside-value-pos",
+  "kind": "parse",
+  "src": "A=a=b=c\nB: x=y:z",
+  "expected": {
+    "A": "a=b=c",
+    "B": "x=y:z"
+  }
+}
+

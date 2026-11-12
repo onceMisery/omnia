@@ -1,0 +1,11 @@
+{
+  "id": "c06-triple-quote-is-not-a-separate-syntax-neg",
+  "kind": "parse",
+  "src": "A=\"\"\"hello\"\"\"\nB='''hello'''\nC=```hello```",
+  "expected": {
+    "A": "\"\"hello\"\"",
+    "B": "''hello''",
+    "C": "``hello``"
+  }
+}
+

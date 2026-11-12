@@ -1,0 +1,68 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "static-order",
+  "input": {
+    "anchors": [
+      {
+        "id": "admin",
+        "path": "server.js",
+        "startLine": 841,
+        "endLine": 841,
+        "text": "app.use(adminAuth)"
+      },
+      {
+        "id": "redirect",
+        "path": "server.js",
+        "startLine": 846,
+        "endLine": 852,
+        "text": "app.use('/AdminPanel'"
+      },
+      {
+        "id": "bearer",
+        "path": "server.js",
+        "startLine": 859,
+        "endLine": 883,
+        "text": "authHeader !=="
+      },
+      {
+        "id": "special-model",
+        "path": "server.js",
+        "startLine": 886,
+        "endLine": 886,
+        "text": "app.use(specialModelRouter)"
+      }
+    ],
+    "order": [
+      "admin",
+      "redirect",
+      "special-model",
+      "bearer"
+    ]
+  },
+  "expected": {
+    "locations": [
+      {
+        "id": "admin",
+        "found": true,
+        "line": 841
+      },
+      {
+        "id": "redirect",
+        "found": true,
+        "line": 846
+      },
+      {
+        "id": "bearer",
+        "found": true,
+        "line": 879
+      },
+      {
+        "id": "special-model",
+        "found": true,
+        "line": 886
+      }
+    ],
+    "complete": true,
+    "ordered": false
+  }
+}

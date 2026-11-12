@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-fence-pos",
+  "kind": "reasoning",
+  "src": "```rust\n<think>keep</think>\n```\n<think>remove</think>end",
+  "expected": "```rust\n<think>keep</think>\n```\nend"
+}

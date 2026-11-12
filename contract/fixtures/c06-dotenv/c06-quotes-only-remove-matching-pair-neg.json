@@ -1,0 +1,10 @@
+{
+  "id": "c06-quotes-only-remove-matching-pair-neg",
+  "kind": "parse",
+  "src": "A='mismatch\"\nB=\"mismatch'\nC=`mismatch\"",
+  "expected": {
+    "A": "mismatch\"\nB=\"mismatch",
+    "C": "`mismatch\""
+  }
+}
+

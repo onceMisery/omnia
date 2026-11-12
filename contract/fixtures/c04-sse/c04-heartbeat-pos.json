@@ -1,0 +1,25 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "sse-timers",
+  "input": {
+    "fire": "heartbeat"
+  },
+  "expected": {
+    "scheduled": [
+      {
+        "type": "interval",
+        "delay": 5000
+      },
+      {
+        "type": "timeout",
+        "delay": 90000
+      }
+    ],
+    "chunks": [
+      ": vcp-keepalive\n\n"
+    ],
+    "destroyed": false,
+    "settled": false,
+    "cleared": []
+  }
+}

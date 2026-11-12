@@ -1,0 +1,20 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "visible",
+  "input": {
+    "calls": [
+      {
+        "name": "A",
+        "status": "success",
+        "result": "甲",
+        "aborted": true
+      },
+      {
+        "name": "B",
+        "status": "error",
+        "result": "乙"
+      }
+    ]
+  },
+  "expected": "\n[[VCP调用结果信息汇总:\n- 工具名称: B\n- 执行状态: ❌ ERROR\n- 返回内容: 乙\nVCP调用结果结束]]\n"
+}

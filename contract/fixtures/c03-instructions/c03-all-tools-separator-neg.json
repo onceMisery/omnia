@@ -1,0 +1,13 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "placeholders",
+  "input": {
+    "descriptions": [],
+    "messages": [
+      "{{VCPAllTools}}"
+    ]
+  },
+  "expected": [
+    "没有可用的VCP工具描述信息"
+  ]
+}

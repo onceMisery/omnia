@@ -1,0 +1,14 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "sse-length",
+  "input": {
+    "depth": 5
+  },
+  "expected": {
+    "chunks": [
+      "data: {\"id\":\"chatcmpl-VCP-final-length-1730000000000\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"length\"}]}\n\n",
+      "data: [DONE]\n\n"
+    ],
+    "ended": true
+  }
+}

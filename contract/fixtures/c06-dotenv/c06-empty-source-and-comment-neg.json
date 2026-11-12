@@ -1,0 +1,7 @@
+{
+  "id": "c06-empty-source-and-comment-neg",
+  "kind": "parse",
+  "src": "\r\n# nothing\n",
+  "expected": {}
+}
+

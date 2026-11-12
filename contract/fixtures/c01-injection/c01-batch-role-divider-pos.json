@@ -1,0 +1,16 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "batch",
+  "input": {
+    "batches": [
+      [
+        "甲",
+        "乙"
+      ]
+    ],
+    "roleDivider": true
+  },
+  "expected": [
+    "\n<<<[ROLE_DIVIDE_USER]>>>\n\n<<<[VCP_TOOL_BATCH_START:2024-10-27T11:33:20.000+08:00]>>>\n甲乙\n<<<[VCP_TOOL_BATCH_END:2024-10-27T11:33:20.000+08:00]>>>\n\n<<<[END_ROLE_DIVIDE_USER]>>>\n"
+  ]
+}

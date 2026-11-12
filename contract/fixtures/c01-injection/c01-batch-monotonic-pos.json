@@ -1,0 +1,19 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "batch",
+  "input": {
+    "batches": [
+      [
+        "一"
+      ],
+      [
+        "二"
+      ]
+    ],
+    "roleDivider": false
+  },
+  "expected": [
+    "\n<<<[VCP_TOOL_BATCH_START:2024-10-27T11:33:20.000+08:00]>>>\n一\n<<<[VCP_TOOL_BATCH_END:2024-10-27T11:33:20.000+08:00]>>>\n",
+    "\n<<<[VCP_TOOL_BATCH_START:2024-10-27T11:33:20.001+08:00]>>>\n二\n<<<[VCP_TOOL_BATCH_END:2024-10-27T11:33:20.001+08:00]>>>\n"
+  ]
+}

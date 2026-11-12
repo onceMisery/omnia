@@ -1,0 +1,19 @@
+{
+  "id": "c12-commas-and-junk-pos",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>?ignored tool_name : 「始」Echo「末」 ,,, x:bad !!! ok:「始」yes「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "Echo",
+      "args": {
+        "ok": "yes"
+      },
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

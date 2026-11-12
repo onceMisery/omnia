@@ -1,0 +1,6 @@
+{
+  "id": "c12-meta-complete-pos",
+  "kind": "reasoning",
+  "src": "before\n[--- VCP元思考链: \"plan\" ---]\nhidden\n[--- 元思考链结束 ---]\nafter",
+  "expected": "before\nafter"
+}

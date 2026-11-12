@@ -1,0 +1,21 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "sse-forward",
+  "input": {
+    "lines": [
+      "data: [DONE] extra",
+      "data:[DONE]",
+      ": comment"
+    ]
+  },
+  "expected": {
+    "chunks": [
+      "data: [DONE] extra\n",
+      ": comment\n"
+    ],
+    "observed": [],
+    "sawDone": true,
+    "invalidPayload": true,
+    "streamAborted": false
+  }
+}

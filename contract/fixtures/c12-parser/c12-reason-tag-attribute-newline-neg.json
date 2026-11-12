@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-tag-attribute-newline-neg",
+  "kind": "reasoning",
+  "src": "<think x='\ny'>visible",
+  "expected": "<think x='\ny'>visible"
+}

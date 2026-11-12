@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-inline-self-reference-neg",
+  "kind": "reasoning",
+  "src": "write <think> literally without closing",
+  "expected": "write <think> literally without closing"
+}

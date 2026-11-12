@@ -1,0 +1,17 @@
+{
+  "id": "c12-last-name-wins-pos",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>tool_name:「始」First「末」tool_name:「始」Last「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "Last",
+      "args": {},
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

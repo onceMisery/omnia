@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-fence-tilde-pos",
+  "kind": "reasoning",
+  "src": "\t ~~~ text\n<think>keep</think>\n ~~~~\nend",
+  "expected": "\t ~~~ text\n<think>keep</think>\n ~~~~\nend"
+}

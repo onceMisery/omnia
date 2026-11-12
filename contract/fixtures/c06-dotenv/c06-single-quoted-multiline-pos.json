@@ -1,0 +1,10 @@
+{
+  "id": "c06-single-quoted-multiline-pos",
+  "kind": "parse",
+  "src": "S='one\n two # three'\nN=next",
+  "expected": {
+    "S": "one\n two # three",
+    "N": "next"
+  }
+}
+

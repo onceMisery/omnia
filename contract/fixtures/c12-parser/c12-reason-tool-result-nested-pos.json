@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-tool-result-nested-pos",
+  "kind": "reasoning",
+  "src": "[[VCP调用结果信息汇总:[[VCP调用结果信息汇总:xVCP调用结果结束]]<think>keep</think>VCP调用结果结束]]end",
+  "expected": "[[VCP调用结果信息汇总:[[VCP调用结果信息汇总:xVCP调用结果结束]]<think>keep</think>VCP调用结果结束]]end"
+}

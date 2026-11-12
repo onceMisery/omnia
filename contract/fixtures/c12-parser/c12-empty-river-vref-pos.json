@@ -1,0 +1,17 @@
+{
+  "id": "c12-empty-river-vref-pos",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>tool_name:「始」Echo「末」river:「始」 \t「末」vref:「始」「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "Echo",
+      "args": {},
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": "",
+      "vref": ""
+    }
+  ]
+}

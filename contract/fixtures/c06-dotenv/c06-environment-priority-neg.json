@@ -1,0 +1,18 @@
+{
+  "id": "c06-environment-priority-neg",
+  "kind": "global",
+  "src": "Key=file\nPORT=7000",
+  "environment": {
+    "Key": "",
+    "PORT": ""
+  },
+  "expected": {
+    "Key": "",
+    "PORT": ""
+  },
+  "expected_sources": {
+    "Key": "environment",
+    "PORT": "environment"
+  }
+}
+

@@ -1,0 +1,44 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "interrupt",
+  "input": {
+    "aborted": true,
+    "handoff": true,
+    "requests": [
+      {
+        "requestId": "assistant-id",
+        "action": "prepare_handoff",
+        "handoffId": "h",
+        "revision": 1
+      }
+    ]
+  },
+  "expected": {
+    "response": {
+      "statusCode": 200,
+      "headers": {},
+      "chunks": [],
+      "writableEnded": false,
+      "destroyed": false,
+      "headersSent": false
+    },
+    "receipts": [
+      {
+        "statusCode": 409,
+        "headers": {},
+        "chunks": [],
+        "writableEnded": true,
+        "destroyed": false,
+        "headersSent": false,
+        "body": {
+          "success": false,
+          "code": "REQUEST_STOPPED"
+        }
+      }
+    ],
+    "aborted": true,
+    "signalAborted": false,
+    "scheduled": [],
+    "remainingRequests": 1
+  }
+}

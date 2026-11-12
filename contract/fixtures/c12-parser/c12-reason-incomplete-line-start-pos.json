@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-incomplete-line-start-pos",
+  "kind": "reasoning",
+  "src": "visible\n  <think>hidden tail",
+  "expected": "visible\n  "
+}

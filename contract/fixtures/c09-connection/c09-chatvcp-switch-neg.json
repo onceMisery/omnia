@@ -1,0 +1,9 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "frontend-url",
+  "input": {
+    "url": "https://example.test/custom",
+    "enabled": "true"
+  },
+  "expected": "https://example.test/v1/chat/completions"
+}

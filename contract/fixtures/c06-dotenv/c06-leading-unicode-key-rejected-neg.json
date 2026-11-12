@@ -1,0 +1,9 @@
+{
+  "id": "c06-leading-unicode-key-rejected-neg",
+  "kind": "parse",
+  "src": "é=one\nK=two\nſ=three\nA=ascii",
+  "expected": {
+    "A": "ascii"
+  }
+}
+

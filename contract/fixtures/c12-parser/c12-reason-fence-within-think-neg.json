@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-fence-within-think-neg",
+  "kind": "reasoning",
+  "src": "<think>\n```\n<<<[TOOL_REQUEST]>>>tool_name:「始」Fake「末」<<<[END_TOOL_REQUEST]>>>\n```\n</think>end",
+  "expected": "end"
+}

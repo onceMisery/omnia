@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-tag-variants-pos",
+  "kind": "reasoning",
+  "src": "< ThInKiNg note='x'>a< / thought >visible",
+  "expected": "visible"
+}

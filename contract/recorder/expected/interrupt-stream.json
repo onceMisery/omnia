@@ -1,0 +1,42 @@
+{
+  "request": {
+    "model": "interrupt-stream",
+    "stream": true,
+    "requestId": "fixture-interrupt-stream",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Synthetic M0 contract recording."
+      }
+    ]
+  },
+  "status": 200,
+  "headers": {
+    "access-control-allow-origin": "*",
+    "cache-control": "no-cache",
+    "connection": "keep-alive",
+    "content-type": "text/event-stream",
+    "date": "<HTTP_DATE>",
+    "transfer-encoding": "chunked",
+    "x-powered-by": "Express",
+    "x-vcp-tool-loop-handoff": "1"
+  },
+  "wire": "data: {\"id\":\"chatcmpl-interrupt-<TIME>\",\"object\":\"chat.completion.chunk\",\"created\":\"<EPOCH_SECONDS>\",\"model\":\"interrupt-stream\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"请求已被用户中止\"},\"finish_reason\":\"stop\"}]}\n\ndata: [DONE]\n\n",
+  "upstream": [
+    {
+      "model": "interrupt-stream",
+      "stream": true,
+      "requestId": "fixture-interrupt-stream",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Synthetic M0 contract recording."
+        }
+      ]
+    }
+  ],
+  "interrupt": {
+    "status": 200,
+    "body": "{\"status\":\"success\",\"message\":\"Interrupt signal sent for request fixture-interrupt-stream.\"}"
+  }
+}

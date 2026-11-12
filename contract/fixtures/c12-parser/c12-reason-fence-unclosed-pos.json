@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-fence-unclosed-pos",
+  "kind": "reasoning",
+  "src": "```\n<think>keep",
+  "expected": "```\n<think>keep"
+}

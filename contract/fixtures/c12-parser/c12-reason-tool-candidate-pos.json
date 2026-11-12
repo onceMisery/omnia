@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-tool-candidate-pos",
+  "kind": "reasoning",
+  "src": "<<<[TOOL_REQUEST]>>>tool_name:「始」Echo「末」code:「始」<think>keep</think>「末」<<<[END_TOOL_REQUEST]>>><think>remove</think>",
+  "expected": "<<<[TOOL_REQUEST]>>>tool_name:「始」Echo「末」code:「始」<think>keep</think>「末」<<<[END_TOOL_REQUEST]>>>"
+}

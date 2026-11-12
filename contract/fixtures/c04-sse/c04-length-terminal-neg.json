@@ -1,0 +1,11 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "sse-length",
+  "input": {
+    "depth": 4
+  },
+  "expected": {
+    "chunks": [],
+    "ended": false
+  }
+}

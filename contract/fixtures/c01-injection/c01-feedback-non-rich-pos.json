@@ -1,0 +1,19 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "format-result",
+  "input": {
+    "value": {
+      "result": "业务结果",
+      "__vcpApprovalFeedback": "  同意并备注  "
+    }
+  },
+  "expected": {
+    "text": "{\n  \"result\": \"业务结果\"\n}\n\n【用户审核留言：已允许本次工具调用】\n同意并备注",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"result\": \"业务结果\"\n}\n\n【用户审核留言：已允许本次工具调用】\n同意并备注"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "visible",
+  "input": {
+    "calls": [
+      {
+        "name": "Image",
+        "status": "success",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "data:image/png;base64,QUJD"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "expected": "\n[[VCP调用结果信息汇总:\n- 工具名称: Image\n- 执行状态: ✅ SUCCESS\n- 返回内容: data:image/png;base64,QUJD\nVCP调用结果结束]]\n"
+}

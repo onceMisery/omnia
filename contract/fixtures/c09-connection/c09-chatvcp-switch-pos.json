@@ -1,0 +1,9 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "frontend-url",
+  "input": {
+    "url": "localhost:6005/old?x=1",
+    "enabled": true
+  },
+  "expected": "http://localhost:6005/v1/chatvcp/completions?x=1"
+}

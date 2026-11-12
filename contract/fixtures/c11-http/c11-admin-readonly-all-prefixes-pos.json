@@ -1,0 +1,100 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "admin-auth",
+  "input": {
+    "requests": [
+      {
+        "path": "/admin_api/system-monitor",
+        "credentials": {
+          "name": "admin",
+          "pass": "wrong"
+        }
+      },
+      {
+        "path": "/admin_api/newapi-monitor",
+        "credentials": {
+          "name": "admin",
+          "pass": "wrong"
+        }
+      },
+      {
+        "path": "/admin_api/server-log",
+        "credentials": {
+          "name": "admin",
+          "pass": "wrong"
+        }
+      },
+      {
+        "path": "/admin_api/user-auth-code",
+        "credentials": {
+          "name": "admin",
+          "pass": "wrong"
+        }
+      },
+      {
+        "path": "/admin_api/weather",
+        "credentials": {
+          "name": "admin",
+          "pass": "wrong"
+        }
+      }
+    ]
+  },
+  "expected": [
+    {
+      "status": 401,
+      "headers": {},
+      "body": {
+        "error": "Unauthorized"
+      },
+      "next": false,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    },
+    {
+      "status": 401,
+      "headers": {},
+      "body": {
+        "error": "Unauthorized"
+      },
+      "next": false,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    },
+    {
+      "status": 401,
+      "headers": {},
+      "body": {
+        "error": "Unauthorized"
+      },
+      "next": false,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    },
+    {
+      "status": 401,
+      "headers": {},
+      "body": {
+        "error": "Unauthorized"
+      },
+      "next": false,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    },
+    {
+      "status": 401,
+      "headers": {},
+      "body": {
+        "error": "Unauthorized"
+      },
+      "next": false,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    }
+  ]
+}

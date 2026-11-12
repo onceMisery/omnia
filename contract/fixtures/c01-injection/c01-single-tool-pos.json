@@ -1,0 +1,31 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "visible",
+  "input": {
+    "calls": [
+      {
+        "name": "目录",
+        "status": "success",
+        "result": {
+          "content": [
+            {
+              "type": "text",
+              "text": "第一行"
+            },
+            {
+              "type": "image_url",
+              "image_url": {
+                "url": "data:image/png;base64,QUJD"
+              }
+            },
+            {
+              "type": "text",
+              "text": "第二行"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "expected": "\n[[VCP调用结果信息汇总:\n- 工具名称: 目录\n- 执行状态: ✅ SUCCESS\n- 返回内容: 第一行\n第二行\nVCP调用结果结束]]\n"
+}

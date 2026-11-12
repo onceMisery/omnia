@@ -1,0 +1,25 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "stdio-bridge",
+  "input": {
+    "args": {},
+    "pluginOutput": {
+      "status": "error",
+      "result": {
+        "partial": true
+      },
+      "error": "blocked"
+    }
+  },
+  "expected": {
+    "calls": [
+      [
+        "FixtureTool",
+        null,
+        "192.0.2.1",
+        {}
+      ]
+    ],
+    "error": "{\"result\":{\"partial\":true},\"plugin_error\":\"blocked\"}"
+  }
+}

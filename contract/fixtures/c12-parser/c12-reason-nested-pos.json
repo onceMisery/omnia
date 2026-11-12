@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-nested-pos",
+  "kind": "reasoning",
+  "src": "before<think>a<thought>b</thinking>c</antthinking>after",
+  "expected": "beforeafter"
+}

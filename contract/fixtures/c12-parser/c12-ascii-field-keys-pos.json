@@ -1,0 +1,20 @@
+{
+  "id": "c12-ascii-field-keys-pos",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>tool_name:「始」Echo「末」_09:「始」v「末」éname:「始」u「末」名name:「始」c「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "Echo",
+      "args": {
+        "_09": "v",
+        "name": "c"
+      },
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

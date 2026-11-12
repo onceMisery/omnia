@@ -1,0 +1,9 @@
+{
+  "id": "c06-hash-may-start-an-assignment-key-pos",
+  "kind": "parse",
+  "src": "#KEY=value\n#not an assignment",
+  "expected": {
+    "#KEY": "value"
+  }
+}
+

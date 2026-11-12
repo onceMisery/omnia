@@ -1,0 +1,26 @@
+{
+  "schema": "omnia-source-fixture-meta-v1",
+  "origin": "source-derived-static",
+  "rules": [
+    "C05.nonstream-no-gate"
+  ],
+  "sources": [
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/handlers/nonStreamHandler.js",
+      "startLine": 1,
+      "endLine": 572,
+      "sha256": "e92645c7c67b5fa2604115ba2880e22f49d326ff7fec738ef902b641fb0aeb25"
+    }
+  ],
+  "normalization": [
+    "Synthetic inputs only.",
+    "Date.now is fixed to 1730000000000 when used.",
+    "Temporary history root is rendered as <APPDATA>; path separators are normalized in error text."
+  ],
+  "limitations": [
+    "Source or approved design evidence only; not a runtime trace.",
+    "Static source occurrence evidence; full streaming and nonstreaming recordings are separate."
+  ]
+}

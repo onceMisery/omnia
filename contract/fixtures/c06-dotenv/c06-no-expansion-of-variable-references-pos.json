@@ -1,0 +1,11 @@
+{
+  "id": "c06-no-expansion-of-variable-references-pos",
+  "kind": "parse",
+  "src": "A=hello\nB=${A}\nC=$A",
+  "expected": {
+    "A": "hello",
+    "B": "${A}",
+    "C": "$A"
+  }
+}
+

@@ -1,0 +1,43 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "archery-round",
+  "input": {
+    "show": false,
+    "calls": [
+      {
+        "name": "FixtureTool"
+      }
+    ],
+    "results": [
+      {
+        "success": true,
+        "raw": {
+          "status": "success",
+          "result": "完成"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "完成"
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "visibleToolResults": [],
+    "messages": [],
+    "response": {
+      "statusCode": 200,
+      "headers": {},
+      "chunks": [
+        "data: {\"id\":\"chatcmpl-VCP-final-stop-1730000000000\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\"}]}\n\n",
+        "data: [DONE]\n\n"
+      ],
+      "writableEnded": true,
+      "destroyed": false,
+      "headersSent": false
+    },
+    "completed": true
+  }
+}

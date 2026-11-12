@@ -1,0 +1,57 @@
+{
+  "request": {
+    "model": "json-result-string",
+    "stream": false,
+    "requestId": "fixture-json-result-string",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Synthetic M0 contract recording."
+      }
+    ]
+  },
+  "status": 200,
+  "headers": {
+    "access-control-allow-origin": "*",
+    "connection": "keep-alive",
+    "content-length": "<BODY_BYTES>",
+    "content-type": "application/json",
+    "date": "<HTTP_DATE>",
+    "etag": "<BODY_ETAG>",
+    "keep-alive": "timeout=5",
+    "x-powered-by": "Express"
+  },
+  "wire": "{\"id\":\"synthetic-json-result-string\",\"object\":\"chat.completion\",\"created\":1,\"model\":\"json-result-string\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"<<<[TOOL_REQUEST]>>>\\ntool_name:「始」FixtureEcho「末」\\nmode:「始」json-string「末」\\n\\n<<<[END_TOOL_REQUEST]>>>\\n<<<[VCP_TOOL_BATCH_START:<BATCH_TIME>]>>>\\n\\n[本轮工具调用摘要:]\\nFixtureEcho 调用成功。\\n[本轮工具调用摘要结束]\\n\\n<<<[VCP_TOOL_BATCH_END:<BATCH_TIME>]>>>\\n\\nfixture-complete:json-result-string\"},\"finish_reason\":\"stop\"}]}",
+  "upstream": [
+    {
+      "model": "json-result-string",
+      "stream": false,
+      "requestId": "fixture-json-result-string",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Synthetic M0 contract recording."
+        }
+      ]
+    },
+    {
+      "model": "json-result-string",
+      "stream": false,
+      "requestId": "fixture-json-result-string",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Synthetic M0 contract recording."
+        },
+        {
+          "role": "assistant",
+          "content": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」FixtureEcho「末」\nmode:「始」json-string「末」\n\n<<<[END_TOOL_REQUEST]>>>"
+        },
+        {
+          "role": "user",
+          "content": "<!-- VCP_TOOL_PAYLOAD -->\n[{\"type\":\"text\",\"text\":\"{\\n  \\\"message\\\": \\\"synthetic-json-string\\\",\\n  \\\"timestamp\\\": \\\"<PLUGIN_TIME>\\\"\\n}\"}]"
+        }
+      ]
+    }
+  ]
+}

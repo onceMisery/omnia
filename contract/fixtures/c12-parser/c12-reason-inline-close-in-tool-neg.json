@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-inline-close-in-tool-neg",
+  "kind": "reasoning",
+  "src": "write <think> literal <<<[TOOL_REQUEST]>>>tool_name:「始」Echo「末」code:「始」</think>「末」<<<[END_TOOL_REQUEST]>>>",
+  "expected": "write <think> literal <<<[TOOL_REQUEST]>>>tool_name:「始」Echo「末」code:「始」</think>「末」<<<[END_TOOL_REQUEST]>>>"
+}

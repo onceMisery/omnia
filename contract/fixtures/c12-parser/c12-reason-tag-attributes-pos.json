@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-tag-attributes-pos",
+  "kind": "reasoning",
+  "src": "<think x='y'>hidden</think>visible",
+  "expected": "visible"
+}

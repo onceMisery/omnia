@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-inline-code-pos",
+  "kind": "reasoning",
+  "src": "prefix `<think>keep</think>` suffix<think>remove</think>",
+  "expected": "prefix `<think>keep</think>` suffix"
+}

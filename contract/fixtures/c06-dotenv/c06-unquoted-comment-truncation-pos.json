@@ -1,0 +1,11 @@
+{
+  "id": "c06-unquoted-comment-truncation-pos",
+  "kind": "parse",
+  "src": "A=one#comment\nB=two #comment\nC=#empty\n# ordinary comment",
+  "expected": {
+    "A": "one",
+    "B": "two",
+    "C": ""
+  }
+}
+

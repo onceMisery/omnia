@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-headless-line-end-pos",
+  "kind": "reasoning",
+  "src": "draft </thought>  \r\nvisible",
+  "expected": "  \r\nvisible"
+}

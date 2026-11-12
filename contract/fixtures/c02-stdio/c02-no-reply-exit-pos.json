@@ -1,0 +1,22 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "stdout",
+  "input": {
+    "code": 0,
+    "stdout": "",
+    "noReply": true
+  },
+  "expected": {
+    "resolved": {
+      "status": "success",
+      "__vcpArcheryNoReplySilent": true,
+      "result": {
+        "status": "success",
+        "noReply": true,
+        "__vcpArcheryNoReplySilent": true,
+        "toolName": "FixtureTool",
+        "message": "Async no-reply tool \"FixtureTool\" exited successfully before initial JSON."
+      }
+    }
+  }
+}

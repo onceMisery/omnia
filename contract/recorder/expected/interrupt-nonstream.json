@@ -1,0 +1,42 @@
+{
+  "request": {
+    "model": "interrupt-nonstream",
+    "stream": false,
+    "requestId": "fixture-interrupt-nonstream",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Synthetic M0 contract recording."
+      }
+    ]
+  },
+  "status": 200,
+  "headers": {
+    "access-control-allow-origin": "*",
+    "connection": "keep-alive",
+    "content-length": "<BODY_BYTES>",
+    "content-type": "application/json; charset=utf-8",
+    "date": "<HTTP_DATE>",
+    "etag": "<BODY_ETAG>",
+    "keep-alive": "timeout=5",
+    "x-powered-by": "Express"
+  },
+  "wire": "{\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"请求已被用户中止\"},\"finish_reason\":\"stop\"}]}",
+  "upstream": [
+    {
+      "model": "interrupt-nonstream",
+      "stream": false,
+      "requestId": "fixture-interrupt-nonstream",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Synthetic M0 contract recording."
+        }
+      ]
+    }
+  ],
+  "interrupt": {
+    "status": 200,
+    "body": "{\"status\":\"success\",\"message\":\"Interrupt signal sent for request fixture-interrupt-nonstream.\"}"
+  }
+}

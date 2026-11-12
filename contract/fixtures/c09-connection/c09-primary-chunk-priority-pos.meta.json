@@ -1,0 +1,25 @@
+{
+  "schema": "omnia-source-fixture-meta-v1",
+  "origin": "frozen-source-execution",
+  "rules": [
+    "C09.primary-extract-priority"
+  ],
+  "sources": [
+    {
+      "repository": "VCPChat",
+      "commit": "c3e4855efa2b24c0578d76e17fd6c5f21857a539",
+      "path": "modules/chat/contentRuntime.js",
+      "startLine": 3,
+      "endLine": 11,
+      "sha256": "2c0d6147e6a5a896b7bba52166c257119c3ad2fc4c6421273bb7b576f1b314c6"
+    }
+  ],
+  "normalization": [
+    "Synthetic inputs only.",
+    "Date.now is fixed to 1730000000000 when used.",
+    "Temporary history root is rendered as <APPDATA>; path separators are normalized in error text."
+  ],
+  "limitations": [
+    "Frozen original functions or statement ranges run in a Node VM. Declared IO seams are supplied by the runner; this is not a full server or Electron end-to-end run."
+  ]
+}

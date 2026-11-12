@@ -1,0 +1,20 @@
+{
+  "id": "c06-missing-key-defaults-pos",
+  "kind": "global",
+  "src": "",
+  "environment": {},
+  "expected": {
+    "PORT": "6005",
+    "ApiRetries": "3",
+    "ApiRetryDelay": "1000",
+    "MaxVCPLoopStream": "5",
+    "MaxVCPLoopNonStream": "5",
+    "DEFAULT_TIMEZONE": "Asia/Shanghai",
+    "Key": null
+  },
+  "expected_sources": {
+    "PORT": "default",
+    "Key": null
+  }
+}
+

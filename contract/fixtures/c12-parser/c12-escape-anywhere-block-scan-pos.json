@@ -1,0 +1,17 @@
+{
+  "id": "c12-escape-anywhere-block-scan-pos",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>junk「始ESCAPE」<<<[END_TOOL_REQUEST]>>>「末ESCAPE」tool_name:「始」Echo「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "Echo",
+      "args": {},
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

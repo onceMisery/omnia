@@ -1,0 +1,17 @@
+{
+  "id": "c06-plugin-config-filename-pos",
+  "kind": "plugin",
+  "files": {
+    "config.env": "Key=plugin\nKey=last",
+    ".env": "Key=wrong"
+  },
+  "expected": {
+    "Key": "last",
+    "PORT": null
+  },
+  "expected_sources": {
+    "Key": "file",
+    "PORT": null
+  }
+}
+

@@ -1,0 +1,17 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "history-file",
+  "input": {
+    "operation": "read",
+    "itemId": "../escape"
+  },
+  "expected": {
+    "result": {
+      "error": "TypeError",
+      "message": "Invalid history path identifier"
+    },
+    "observations": [],
+    "finalBytes": null,
+    "temporaryFiles": []
+  }
+}

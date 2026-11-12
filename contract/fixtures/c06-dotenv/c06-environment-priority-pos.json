@@ -1,0 +1,17 @@
+{
+  "id": "c06-environment-priority-pos",
+  "kind": "global",
+  "src": "Key=first\nKey=last\nFILE_ONLY=file",
+  "environment": {
+    "Key": "environment"
+  },
+  "expected": {
+    "Key": "environment",
+    "FILE_ONLY": "file"
+  },
+  "expected_sources": {
+    "Key": "environment",
+    "FILE_ONLY": "file"
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-tool-result-in-think-neg",
+  "kind": "reasoning",
+  "src": "<think>[[VCP调用结果信息汇总:fake</think>end",
+  "expected": "end"
+}

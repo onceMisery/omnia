@@ -1,0 +1,45 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "admin-auth",
+  "input": {
+    "requests": [
+      {
+        "path": "/admin_api/status",
+        "credentials": {
+          "name": "admin",
+          "pass": "wrong"
+        },
+        "count": 4
+      },
+      {
+        "path": "/admin_api/status",
+        "credentials": {
+          "name": "admin",
+          "pass": "fixture-password"
+        }
+      }
+    ]
+  },
+  "expected": [
+    {
+      "status": 401,
+      "headers": {},
+      "body": {
+        "error": "Unauthorized"
+      },
+      "next": false,
+      "wrongCredentialCount": 4,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    },
+    {
+      "status": 200,
+      "headers": {},
+      "body": null,
+      "next": true,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    }
+  ]
+}

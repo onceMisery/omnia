@@ -1,0 +1,11 @@
+{
+  "id": "c06-double-only-newline-escapes-pos",
+  "kind": "parse",
+  "src": "D=\"a\\nb\\rc\\td\\\\e\\\"f\"\nS='a\\nb\\r\\'c'\nB=`a\\nb\\r\\`c`",
+  "expected": {
+    "D": "a\nb\rc\\td\\\\e\\\"f",
+    "S": "a\\nb\\r\\'c",
+    "B": "a\\nb\\r\\`c"
+  }
+}
+

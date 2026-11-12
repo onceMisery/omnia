@@ -1,0 +1,29 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "admin-auth",
+  "input": {
+    "requests": [
+      {
+        "path": "/admin_api/system-monitor",
+        "credentials": {
+          "name": "admin",
+          "pass": "wrong"
+        },
+        "count": 6
+      }
+    ]
+  },
+  "expected": [
+    {
+      "status": 401,
+      "headers": {},
+      "body": {
+        "error": "Unauthorized"
+      },
+      "next": false,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    }
+  ]
+}

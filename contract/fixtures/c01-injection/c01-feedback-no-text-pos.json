@@ -1,0 +1,32 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "format-result",
+  "input": {
+    "value": {
+      "content": [
+        {
+          "type": "image_url",
+          "image_url": {
+            "url": "data:image/png;base64,QUJD"
+          }
+        }
+      ],
+      "__vcpApprovalFeedback": "  同意并备注  "
+    }
+  },
+  "expected": {
+    "text": "【用户审核留言：已允许本次工具调用】\n同意并备注",
+    "content": [
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "data:image/png;base64,QUJD"
+        }
+      },
+      {
+        "type": "text",
+        "text": "【用户审核留言：已允许本次工具调用】\n同意并备注"
+      }
+    ]
+  }
+}

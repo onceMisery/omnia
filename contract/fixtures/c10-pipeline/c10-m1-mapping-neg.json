@@ -1,0 +1,157 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "m1-mapping",
+  "input": {
+    "candidate": [
+      {
+        "step": "1 重放缓存",
+        "mode": "空链占位",
+        "sourcePhrase": "空实现"
+      },
+      {
+        "step": "3 contextTokenLimit",
+        "mode": "空链占位",
+        "sourcePhrase": "空实现"
+      },
+      {
+        "step": "4 模型重定向",
+        "mode": "实现（语义路由延后）",
+        "sourcePhrase": "实现 ModelRedirect.json；语义路由延后 M3"
+      },
+      {
+        "step": "5 VCPToolUseForbidden/TransBase64",
+        "mode": "实现 + 空链占位",
+        "sourcePhrase": "TransBase64 还原 M1 空链"
+      },
+      {
+        "step": "6 VCPTavern",
+        "mode": "空链占位",
+        "sourcePhrase": "空实现"
+      },
+      {
+        "step": "8 预处理管线",
+        "mode": "实现",
+        "sourcePhrase": "实现管线框架"
+      },
+      {
+        "step": "10 Detector",
+        "mode": "空链占位",
+        "sourcePhrase": "空实现"
+      },
+      {
+        "step": "11 RoleDivider",
+        "mode": "实现",
+        "sourcePhrase": "实现标记包裹"
+      },
+      {
+        "step": "13/17 OneRing",
+        "mode": "空链占位",
+        "sourcePhrase": "空实现"
+      },
+      {
+        "step": "其余",
+        "mode": "实现",
+        "sourcePhrase": "完整实现"
+      }
+    ]
+  },
+  "expected": {
+    "authority": "docs/Omnia-M0M1-协议契约.md §10 M1 裁剪映射",
+    "rows": [
+      {
+        "step": "1 重放缓存",
+        "handling": "空实现（接口保留，M3+）"
+      },
+      {
+        "step": "3 contextTokenLimit",
+        "handling": "实现（前端会发该字段）"
+      },
+      {
+        "step": "4 模型重定向",
+        "handling": "实现 ModelRedirect.json；语义路由延后 M3"
+      },
+      {
+        "step": "5 VCPToolUseForbidden/TransBase64",
+        "handling": "占位符扫描实现；TransBase64 还原 M1 空链"
+      },
+      {
+        "step": "6 VCPTavern",
+        "handling": "空实现（M4）"
+      },
+      {
+        "step": "8 预处理管线",
+        "handling": "实现管线框架 + preprocessor_order.json 读取；M1 链上仅 $StaticPlaceholderInjection + 逐消息变量替换"
+      },
+      {
+        "step": "10 Detector",
+        "handling": "空实现（M3+）"
+      },
+      {
+        "step": "11 RoleDivider",
+        "handling": "实现标记包裹（§1.2 依赖）"
+      },
+      {
+        "step": "13/17 OneRing",
+        "handling": "空实现（M3 多 Agent）"
+      },
+      {
+        "step": "其余",
+        "handling": "完整实现"
+      }
+    ],
+    "complete": true,
+    "accepted": false,
+    "checks": [
+      {
+        "step": "1 重放缓存",
+        "mode": "空链占位",
+        "supported": true
+      },
+      {
+        "step": "3 contextTokenLimit",
+        "mode": "空链占位",
+        "supported": false
+      },
+      {
+        "step": "4 模型重定向",
+        "mode": "实现（语义路由延后）",
+        "supported": true
+      },
+      {
+        "step": "5 VCPToolUseForbidden/TransBase64",
+        "mode": "实现 + 空链占位",
+        "supported": true
+      },
+      {
+        "step": "6 VCPTavern",
+        "mode": "空链占位",
+        "supported": true
+      },
+      {
+        "step": "8 预处理管线",
+        "mode": "实现",
+        "supported": true
+      },
+      {
+        "step": "10 Detector",
+        "mode": "空链占位",
+        "supported": true
+      },
+      {
+        "step": "11 RoleDivider",
+        "mode": "实现",
+        "supported": true
+      },
+      {
+        "step": "13/17 OneRing",
+        "mode": "空链占位",
+        "supported": true
+      },
+      {
+        "step": "其余",
+        "mode": "实现",
+        "supported": true
+      }
+    ]
+  }
+}

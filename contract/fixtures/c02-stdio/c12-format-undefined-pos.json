@@ -1,0 +1,14 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "format-result",
+  "input": {},
+  "expected": {
+    "text": "(无返回内容)",
+    "content": [
+      {
+        "type": "text",
+        "text": "(无返回内容)"
+      }
+    ]
+  }
+}

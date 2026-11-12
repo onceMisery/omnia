@@ -1,0 +1,9 @@
+{
+  "id": "c06-invalid-key-and-missing-separator-neg",
+  "kind": "parse",
+  "src": "bad/key=x\n中文=x\nplain\n!BAD=x\nOK=valid",
+  "expected": {
+    "OK": "valid"
+  }
+}
+

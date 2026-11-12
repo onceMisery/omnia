@@ -1,0 +1,18 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "history-file",
+  "input": {
+    "history": {
+      "invalid": true
+    }
+  },
+  "expected": {
+    "result": {
+      "error": "TypeError",
+      "message": "History must be an array"
+    },
+    "observations": [],
+    "finalBytes": null,
+    "temporaryFiles": []
+  }
+}

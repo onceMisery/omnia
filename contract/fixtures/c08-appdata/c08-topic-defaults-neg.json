@@ -1,0 +1,24 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "topics",
+  "input": {
+    "config": {
+      "topics": [
+        {
+          "id": "explicit-null",
+          "locked": null,
+          "unread": null,
+          "creatorSource": ""
+        }
+      ]
+    }
+  },
+  "expected": [
+    {
+      "id": "explicit-null",
+      "locked": null,
+      "unread": null,
+      "creatorSource": "unknown"
+    }
+  ]
+}

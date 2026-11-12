@@ -1,0 +1,24 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "placeholders",
+  "input": {
+    "descriptions": [
+      [
+        "VCPB",
+        "B"
+      ],
+      [
+        "VCPA",
+        "A"
+      ]
+    ],
+    "messages": [
+      "{{VCPAllTools}} {{VCPAllTools}}",
+      "{{VCPAllTools}}"
+    ]
+  },
+  "expected": [
+    "B\n\n---\n\nA ",
+    ""
+  ]
+}

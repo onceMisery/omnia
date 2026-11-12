@@ -1,0 +1,6 @@
+{
+  "id": "c12-meta-inside-tool-pos",
+  "kind": "reasoning",
+  "src": "<<<[TOOL_REQUEST]>>>tool_name:「始」Echo「末」code:「始」\n[--- VCP元思考链 ---]\nremove\n[--- 元思考链结束 ---]\nkeep「末」<<<[END_TOOL_REQUEST]>>>",
+  "expected": "<<<[TOOL_REQUEST]>>>tool_name:「始」Echo「末」code:「始」\nkeep「末」<<<[END_TOOL_REQUEST]>>>"
+}

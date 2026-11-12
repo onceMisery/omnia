@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-tool-result-pos",
+  "kind": "reasoning",
+  "src": "[[VCP调用结果信息汇总:<think>keep</think>VCP调用结果结束]]<think>remove</think>",
+  "expected": "[[VCP调用结果信息汇总:<think>keep</think>VCP调用结果结束]]"
+}

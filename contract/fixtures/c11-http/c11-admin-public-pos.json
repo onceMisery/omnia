@@ -1,0 +1,82 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "admin-auth",
+  "input": {
+    "requests": [
+      {
+        "path": "/AdminPanel/login.html"
+      },
+      {
+        "path": "/AdminPanel/VCPLogo2.png"
+      },
+      {
+        "path": "/AdminPanel/favicon.ico"
+      },
+      {
+        "path": "/AdminPanel/style.css"
+      },
+      {
+        "path": "/AdminPanel/woff.css"
+      },
+      {
+        "path": "/AdminPanel/font.woff2"
+      }
+    ]
+  },
+  "expected": [
+    {
+      "status": 200,
+      "headers": {},
+      "body": null,
+      "next": true,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    },
+    {
+      "status": 200,
+      "headers": {},
+      "body": null,
+      "next": true,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    },
+    {
+      "status": 200,
+      "headers": {},
+      "body": null,
+      "next": true,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    },
+    {
+      "status": 200,
+      "headers": {},
+      "body": null,
+      "next": true,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    },
+    {
+      "status": 200,
+      "headers": {},
+      "body": null,
+      "next": true,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    },
+    {
+      "status": 200,
+      "headers": {},
+      "body": null,
+      "next": true,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    }
+  ]
+}

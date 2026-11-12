@@ -1,0 +1,11 @@
+{
+  "id": "c06-unclosed-quote-double-still-expands-neg",
+  "kind": "parse",
+  "src": "A=\"open\\ntext\nB='open\\ntext\nC=`open\\ntext",
+  "expected": {
+    "A": "\"open\ntext",
+    "B": "'open\\ntext",
+    "C": "`open\\ntext"
+  }
+}
+

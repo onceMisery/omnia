@@ -1,0 +1,35 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "interrupt",
+  "input": {
+    "missing": true
+  },
+  "expected": {
+    "response": {
+      "statusCode": 200,
+      "headers": {},
+      "chunks": [],
+      "writableEnded": false,
+      "destroyed": false,
+      "headersSent": false
+    },
+    "receipts": [
+      {
+        "statusCode": 404,
+        "headers": {},
+        "chunks": [],
+        "writableEnded": true,
+        "destroyed": false,
+        "headersSent": false,
+        "body": {
+          "status": "error",
+          "message": "Request assistant-id not found or already completed."
+        }
+      }
+    ],
+    "aborted": false,
+    "signalAborted": false,
+    "scheduled": [],
+    "remainingRequests": 0
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "c06-backtick-multiline-pos",
+  "kind": "parse",
+  "src": "B=`one\n two # three`\nN=next",
+  "expected": {
+    "B": "one\n two # three",
+    "N": "next"
+  }
+}
+

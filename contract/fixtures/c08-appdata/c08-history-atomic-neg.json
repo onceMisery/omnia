@@ -1,0 +1,31 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "history-file",
+  "input": {
+    "initial": [
+      {
+        "id": "old"
+      }
+    ],
+    "history": [
+      {
+        "id": "new",
+        "content": "新"
+      }
+    ],
+    "failRename": true
+  },
+  "expected": {
+    "result": {
+      "error": "Error",
+      "message": "Injected rename failure"
+    },
+    "observations": [
+      {
+        "oldBytesBeforeRename": "[\n  {\n    \"id\": \"old\"\n  }\n]\n"
+      }
+    ],
+    "finalBytes": "[\n  {\n    \"id\": \"old\"\n  }\n]\n",
+    "temporaryFiles": []
+  }
+}

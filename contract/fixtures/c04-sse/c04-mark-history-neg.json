@@ -1,0 +1,50 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "normal-round",
+  "input": {
+    "show": false,
+    "calls": [
+      {
+        "name": "FixtureTool",
+        "markHistory": false
+      }
+    ],
+    "results": [
+      {
+        "success": true,
+        "raw": {
+          "status": "success",
+          "result": "完成"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "完成"
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "visibleToolResults": [
+      "\n[本轮工具调用摘要:]\nFixtureTool 调用成功。\n[本轮工具调用摘要结束]\n"
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "content": "<!-- VCP_TOOL_PAYLOAD -->\n[{\"type\":\"text\",\"text\":\"完成\"}]"
+      }
+    ],
+    "response": {
+      "statusCode": 200,
+      "headers": {},
+      "chunks": [
+        "data: {\"id\":\"chatcmpl-vcp-batch-1730000000000\",\"object\":\"chat.completion.chunk\",\"created\":1730000000,\"model\":\"fixture-model\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n<<<[VCP_TOOL_BATCH_START:2024-10-27T11:33:20.000+08:00]>>>\\n\\n[本轮工具调用摘要:]\\nFixtureTool 调用成功。\\n[本轮工具调用摘要结束]\\n\\n<<<[VCP_TOOL_BATCH_END:2024-10-27T11:33:20.000+08:00]>>>\\n\"},\"finish_reason\":null}]}\n\n",
+        "data: {\"id\":\"chatcmpl-VCP-separator-1730000000000\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n\"},\"finish_reason\":null}]}\n\n"
+      ],
+      "writableEnded": false,
+      "destroyed": false,
+      "headersSent": false
+    }
+  }
+}

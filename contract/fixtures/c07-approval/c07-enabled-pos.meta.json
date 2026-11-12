@@ -1,0 +1,25 @@
+{
+  "schema": "omnia-source-fixture-meta-v1",
+  "origin": "frozen-source-execution",
+  "rules": [
+    "C07.disabled-pass"
+  ],
+  "sources": [
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/toolApprovalManager.js",
+      "startLine": 1,
+      "endLine": 585,
+      "sha256": "635d66a130c3a48ff062003301641efee7e41bae9667bfafe70d0a44a322130e"
+    }
+  ],
+  "normalization": [
+    "Synthetic inputs only.",
+    "Date.now is fixed to 1730000000000 when used.",
+    "Temporary history root is rendered as <APPDATA>; path separators are normalized in error text."
+  ],
+  "limitations": [
+    "Frozen original functions or statement ranges run in a Node VM. Declared IO seams are supplied by the runner; this is not a full server or Electron end-to-end run."
+  ]
+}

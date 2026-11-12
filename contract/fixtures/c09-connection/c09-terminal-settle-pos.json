@@ -1,0 +1,12 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "frontend-settle",
+  "input": {
+    "completed": true
+  },
+  "expected": {
+    "settled": true,
+    "timerMs": 3000,
+    "cleared": true
+  }
+}

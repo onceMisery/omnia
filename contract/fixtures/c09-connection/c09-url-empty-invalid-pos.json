@@ -1,0 +1,9 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "frontend-url",
+  "input": {
+    "url": "   ",
+    "enabled": false
+  },
+  "expected": ""
+}

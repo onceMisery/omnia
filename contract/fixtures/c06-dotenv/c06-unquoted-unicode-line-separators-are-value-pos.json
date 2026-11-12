@@ -1,0 +1,9 @@
+{
+  "id": "c06-unquoted-unicode-line-separators-are-value-pos",
+  "kind": "parse",
+  "src": "A=one B=two C=three",
+  "expected": {
+    "A": "one B=two C=three"
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-inline-soft-break-pos",
+  "kind": "reasoning",
+  "src": "`open\n<think>keep</think>`",
+  "expected": "`open\n<think>keep</think>`"
+}

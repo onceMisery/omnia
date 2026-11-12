@@ -1,0 +1,17 @@
+{
+  "id": "c12-fuzzy-field-noise-pos",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>tool_name:{始xx}Echo{末yy}<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": true,
+  "expected": [
+    {
+      "name": "Echo",
+      "args": {},
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

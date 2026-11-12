@@ -1,0 +1,16 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "bearer",
+  "input": {
+    "key": "synthetic",
+    "path": "/v1/interrupt"
+  },
+  "expected": {
+    "status": 401,
+    "headers": {},
+    "body": {
+      "error": "Unauthorized (Bearer token required)"
+    },
+    "next": false
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "c12-jev-virtual-pos",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>JeV:「始」  a + b  「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "JEV",
+      "args": {
+        "expression": "a + b"
+      },
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

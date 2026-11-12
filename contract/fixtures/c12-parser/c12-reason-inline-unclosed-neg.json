@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-inline-unclosed-neg",
+  "kind": "reasoning",
+  "src": "prefix `quoted\n<think>remove</think>",
+  "expected": "prefix `quoted\n"
+}

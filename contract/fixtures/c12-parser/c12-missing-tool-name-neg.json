@@ -1,0 +1,7 @@
+{
+  "id": "c12-missing-tool-name-neg",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>TOOL_NAME:「始」Echo「末」x:「始」y「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": []
+}

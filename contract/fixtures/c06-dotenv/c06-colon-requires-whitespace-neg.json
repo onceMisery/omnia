@@ -1,0 +1,9 @@
+{
+  "id": "c06-colon-requires-whitespace-neg",
+  "kind": "parse",
+  "src": "COLON: value\nTIGHT:value\nSPACED : value\n",
+  "expected": {
+    "COLON": "value"
+  }
+}
+

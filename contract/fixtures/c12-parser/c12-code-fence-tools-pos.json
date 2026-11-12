@@ -1,0 +1,17 @@
+{
+  "id": "c12-code-fence-tools-pos",
+  "kind": "parse",
+  "src": "```\n<<<[TOOL_REQUEST]>>>tool_name:「始」LiteralButParsed「末」<<<[END_TOOL_REQUEST]>>>\n```",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "LiteralButParsed",
+      "args": {},
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

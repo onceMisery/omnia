@@ -1,0 +1,33 @@
+{
+  "schema": "omnia-source-fixture-meta-v1",
+  "origin": "frozen-source-execution",
+  "rules": [
+    "C09.chatvcp-switch"
+  ],
+  "sources": [
+    {
+      "repository": "VCPChat",
+      "commit": "c3e4855efa2b24c0578d76e17fd6c5f21857a539",
+      "path": "modules/settingsManager.js",
+      "startLine": 13,
+      "endLine": 38,
+      "sha256": "8cfa5d095b61e262dc21c2e7016f578292d66a5128539078b5168ef700df357f"
+    },
+    {
+      "repository": "VCPChat",
+      "commit": "c3e4855efa2b24c0578d76e17fd6c5f21857a539",
+      "path": "modules/ipc/chatHandlers.js",
+      "startLine": 1234,
+      "endLine": 1241,
+      "sha256": "34e0d5cce17943315cb553c2ef4210d879547b64e275bf49773d270754a07ffa"
+    }
+  ],
+  "normalization": [
+    "Synthetic inputs only.",
+    "Date.now is fixed to 1730000000000 when used.",
+    "Temporary history root is rendered as <APPDATA>; path separators are normalized in error text."
+  ],
+  "limitations": [
+    "Frozen original functions or statement ranges run in a Node VM. Declared IO seams are supplied by the runner; this is not a full server or Electron end-to-end run."
+  ]
+}

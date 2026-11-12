@@ -1,0 +1,11 @@
+{
+  "id": "c06-crlf-and-bare-cr-pos",
+  "kind": "parse",
+  "src": "A=first\r\nB='line1\r\nline2\rline3'\rC=last\r",
+  "expected": {
+    "A": "first",
+    "B": "line1\nline2\nline3",
+    "C": "last"
+  }
+}
+

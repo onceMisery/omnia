@@ -1,0 +1,41 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "process-result",
+  "input": {
+    "name": "Tool",
+    "value": {
+      "status": "error",
+      "message": "outer layer did not throw"
+    }
+  },
+  "expected": {
+    "output": {
+      "success": true,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"error\",\n  \"message\": \"outer layer did not throw\"\n}"
+        }
+      ],
+      "approvalFeedbackContent": [],
+      "raw": {
+        "status": "error",
+        "message": "outer layer did not throw"
+      }
+    },
+    "broadcasts": [
+      [
+        {
+          "type": "vcp_log",
+          "data": {
+            "tool_name": "Tool",
+            "status": "success",
+            "content": "{\n  \"status\": \"error\",\n  \"message\": \"outer layer did not throw\"\n}"
+          }
+        },
+        "VCPLog"
+      ]
+    ],
+    "lifecycle": []
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "format-result",
+  "input": {
+    "value": "{\"value\":42}"
+  },
+  "expected": {
+    "text": "{\"value\":42}",
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"value\":42}"
+      }
+    ]
+  }
+}

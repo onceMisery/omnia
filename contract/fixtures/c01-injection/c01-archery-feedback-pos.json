@@ -1,0 +1,53 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "archery-round",
+  "input": {
+    "show": false,
+    "calls": [
+      {
+        "name": "FixtureTool"
+      }
+    ],
+    "results": [
+      {
+        "success": true,
+        "raw": {
+          "status": "success",
+          "result": "完成"
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "完成"
+          }
+        ],
+        "approvalFeedbackContent": [
+          {
+            "type": "text",
+            "text": "审核留言"
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "visibleToolResults": [],
+    "messages": [
+      {
+        "role": "user",
+        "content": "<!-- VCP_TOOL_PAYLOAD -->\n[{\"type\":\"text\",\"text\":\"审核留言\"}]"
+      }
+    ],
+    "response": {
+      "statusCode": 200,
+      "headers": {},
+      "chunks": [
+        "data: {\"id\":\"chatcmpl-VCP-separator-1730000000000\",\"object\":\"chat.completion.chunk\",\"created\":1730000000,\"model\":\"fixture-model\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n\"},\"finish_reason\":null}]}\n\n"
+      ],
+      "writableEnded": false,
+      "destroyed": false,
+      "headersSent": false
+    },
+    "completed": false
+  }
+}

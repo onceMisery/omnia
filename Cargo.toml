@@ -1,0 +1,36 @@
+[workspace]
+members = ["crates/*", "contract"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.99"
+license = "CC-BY-NC-SA-4.0"
+publish = false
+
+[workspace.dependencies]
+anyhow = "1.0.104"
+axum = "0.8.9"
+cron = "0.17.0"
+eventsource-stream = "0.2.3"
+futures = "0.3.34"
+gpui-kit = "=0.9.1"
+regex = "1.13.1"
+reqwest = { version = "0.13.5", default-features = false, features = ["rustls", "stream", "json"] }
+rusqlite = { version = "0.42.0", features = ["bundled"] }
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = { version = "1.0.154", features = ["preserve_order"] }
+tempfile = "3"
+thiserror = "2.0.21"
+tokio = { version = "1.54.1", features = ["full"] }
+omnia-config = { path = "crates/omnia-config" }
+omnia-protocol = { path = "crates/omnia-protocol" }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+dbg_macro = "deny"
+todo = "deny"
+

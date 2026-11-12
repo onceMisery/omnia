@@ -1,0 +1,16 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "environment",
+  "input": {
+    "env": {},
+    "pluginConfig": {},
+    "plugin": {
+      "requiresAdmin": true
+    },
+    "authCode": "synthetic-admin"
+  },
+  "expected": {
+    "DECRYPTED_AUTH_CODE": "synthetic-admin",
+    "PYTHONIOENCODING": "utf-8"
+  }
+}

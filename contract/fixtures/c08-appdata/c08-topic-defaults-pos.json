@@ -1,0 +1,37 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "topics",
+  "input": {
+    "config": {
+      "topics": [
+        {
+          "id": "old",
+          "name": "旧话题",
+          "createdAt": 1
+        },
+        {
+          "id": "explicit",
+          "locked": false,
+          "unread": true,
+          "creatorSource": "ui"
+        }
+      ]
+    }
+  },
+  "expected": [
+    {
+      "id": "old",
+      "name": "旧话题",
+      "createdAt": 1,
+      "locked": true,
+      "unread": false,
+      "creatorSource": "unknown"
+    },
+    {
+      "id": "explicit",
+      "locked": false,
+      "unread": true,
+      "creatorSource": "ui"
+    }
+  ]
+}

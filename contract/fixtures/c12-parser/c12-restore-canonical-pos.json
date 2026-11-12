@@ -1,0 +1,6 @@
+{
+  "id": "c12-restore-canonical-pos",
+  "kind": "unescape",
+  "src": "a<<<[TOOL_REQUEST_ESCAPE]>>>b<<<[END_TOOL_REQUEST_ESCAPE]>>>c「始ESCAPE」x「末ESCAPE」d",
+  "expected": "a<<<[TOOL_REQUEST]>>>b<<<[END_TOOL_REQUEST]>>>c「始」x「末」d"
+}

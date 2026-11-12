@@ -1,0 +1,25 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "frontend-sse",
+  "input": {
+    "lines": [
+      "data:{\"content\":\"no-space ignored\"}",
+      "data: {broken",
+      "data: "
+    ]
+  },
+  "expected": [
+    {
+      "type": "data",
+      "chunk": {
+        "raw": "{broken",
+        "error": "json_parse_error"
+      },
+      "messageId": "assistant-id",
+      "context": {
+        "agentId": "agent",
+        "topicId": "default"
+      }
+    }
+  ]
+}

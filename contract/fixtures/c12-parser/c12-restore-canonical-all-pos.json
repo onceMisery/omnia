@@ -1,0 +1,6 @@
+{
+  "id": "c12-restore-canonical-all-pos",
+  "kind": "unescape",
+  "src": "「始ESCAPE」「始ESCAPE」--「末ESCAPE」「末ESCAPE」",
+  "expected": "「始」「始」--「末」「末」"
+}

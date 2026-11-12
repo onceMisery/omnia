@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-incomplete-nested-pos",
+  "kind": "reasoning",
+  "src": "before<think>a<think>b</think>tail",
+  "expected": "before<think>atail"
+}

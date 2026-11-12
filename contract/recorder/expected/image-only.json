@@ -1,0 +1,68 @@
+{
+  "request": {
+    "model": "image-only",
+    "stream": false,
+    "requestId": "fixture-image-only",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Synthetic M0 contract recording."
+      }
+    ]
+  },
+  "status": 200,
+  "headers": {
+    "access-control-allow-origin": "*",
+    "connection": "keep-alive",
+    "content-length": "<BODY_BYTES>",
+    "content-type": "application/json",
+    "date": "<HTTP_DATE>",
+    "etag": "<BODY_ETAG>",
+    "keep-alive": "timeout=5",
+    "x-powered-by": "Express"
+  },
+  "wire": "{\"id\":\"synthetic-image-only\",\"object\":\"chat.completion\",\"created\":1,\"model\":\"image-only\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"<<<[TOOL_REQUEST]>>>\\ntool_name:「始」FixtureEcho「末」\\nmode:「始」image-only「末」\\n\\n<<<[END_TOOL_REQUEST]>>>\\n<<<[VCP_TOOL_BATCH_START:<BATCH_TIME>]>>>\\n\\n[本轮工具调用摘要:]\\nFixtureEcho 调用成功。\\n[本轮工具调用摘要结束]\\n\\n<<<[VCP_TOOL_BATCH_END:<BATCH_TIME>]>>>\\n\\nfixture-complete:image-only\"},\"finish_reason\":\"stop\"}]}",
+  "upstream": [
+    {
+      "model": "image-only",
+      "stream": false,
+      "requestId": "fixture-image-only",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Synthetic M0 contract recording."
+        }
+      ]
+    },
+    {
+      "model": "image-only",
+      "stream": false,
+      "requestId": "fixture-image-only",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Synthetic M0 contract recording."
+        },
+        {
+          "role": "assistant",
+          "content": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」FixtureEcho「末」\nmode:「始」image-only「末」\n\n<<<[END_TOOL_REQUEST]>>>"
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "<!-- VCP_TOOL_PAYLOAD -->\nResults:"
+            },
+            {
+              "type": "image_url",
+              "image_url": {
+                "url": "data:image/png;base64,iVBORw0KGgo="
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

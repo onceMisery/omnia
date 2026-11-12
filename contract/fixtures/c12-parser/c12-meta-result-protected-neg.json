@@ -1,0 +1,6 @@
+{
+  "id": "c12-meta-result-protected-neg",
+  "kind": "reasoning",
+  "src": "[[VCP调用结果信息汇总:\n[--- VCP元思考链 ---]\nkeep\n[--- 元思考链结束 ---]\nVCP调用结果结束]]",
+  "expected": "[[VCP调用结果信息汇总:\n[--- VCP元思考链 ---]\nkeep\n[--- 元思考链结束 ---]\nVCP调用结果结束]]"
+}

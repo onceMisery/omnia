@@ -1,0 +1,38 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "format-error",
+  "input": {
+    "name": "Tool",
+    "message": "执行错误: {\"plugin_error\":\"拒绝\",\"user_feedback\":\"别改\"}"
+  },
+  "expected": {
+    "output": {
+      "success": false,
+      "error": "执行错误: {\"plugin_error\":\"拒绝\",\"user_feedback\":\"别改\"}",
+      "content": [
+        {
+          "type": "text",
+          "text": "[错误] 拒绝\n用户反馈: 别改"
+        }
+      ],
+      "raw": {
+        "plugin_error": "拒绝",
+        "user_feedback": "别改"
+      }
+    },
+    "broadcasts": [
+      [
+        {
+          "type": "vcp_log",
+          "data": {
+            "tool_name": "Tool",
+            "status": "error",
+            "content": "执行错误: {\"plugin_error\":\"拒绝\",\"user_feedback\":\"别改\"}"
+          }
+        },
+        "VCPLog"
+      ]
+    ],
+    "lifecycle": []
+  }
+}

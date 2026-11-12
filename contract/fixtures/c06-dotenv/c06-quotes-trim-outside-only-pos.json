@@ -1,0 +1,11 @@
+{
+  "id": "c06-quotes-trim-outside-only-pos",
+  "kind": "parse",
+  "src": "A='  kept  '\nB=\"  kept  \"\nC=`  kept  `",
+  "expected": {
+    "A": "  kept  ",
+    "B": "  kept  ",
+    "C": "  kept  "
+  }
+}
+

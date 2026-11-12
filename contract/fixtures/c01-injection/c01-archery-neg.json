@@ -1,0 +1,52 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "archery-round",
+  "input": {
+    "show": true,
+    "calls": [
+      {
+        "name": "FixtureTool"
+      }
+    ],
+    "results": [
+      {
+        "success": false,
+        "raw": {
+          "status": "error",
+          "plugin_error": "出错"
+        },
+        "error": "出错",
+        "content": [
+          {
+            "type": "text",
+            "text": "[错误] 出错"
+          }
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "visibleToolResults": [
+      "\n[[VCP调用结果信息汇总:\n- 工具名称: FixtureTool\n- 执行状态: ❌ ERROR\n- 返回内容: {\"status\":\"error\",\"plugin_error\":\"出错\"}\nVCP调用结果结束]]\n",
+      "\n[本轮工具调用摘要:]\nFixtureTool 调用失败。\n[本轮工具调用摘要结束]\n"
+    ],
+    "messages": [
+      {
+        "role": "user",
+        "content": "<!-- VCP_TOOL_PAYLOAD -->\n[{\"type\":\"text\",\"text\":\"[异步工具 \\\"FixtureTool\\\" 返回了错误，请注意]:\\n[错误] 出错\"}]"
+      }
+    ],
+    "response": {
+      "statusCode": 200,
+      "headers": {},
+      "chunks": [
+        "data: {\"id\":\"chatcmpl-vcp-batch-1730000000000\",\"object\":\"chat.completion.chunk\",\"created\":1730000000,\"model\":\"fixture-model\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n<<<[VCP_TOOL_BATCH_START:2024-10-27T11:33:20.000+08:00]>>>\\n\\n[[VCP调用结果信息汇总:\\n- 工具名称: FixtureTool\\n- 执行状态: ❌ ERROR\\n- 返回内容: {\\\"status\\\":\\\"error\\\",\\\"plugin_error\\\":\\\"出错\\\"}\\nVCP调用结果结束]]\\n\\n[本轮工具调用摘要:]\\nFixtureTool 调用失败。\\n[本轮工具调用摘要结束]\\n\\n<<<[VCP_TOOL_BATCH_END:2024-10-27T11:33:20.000+08:00]>>>\\n\"},\"finish_reason\":null}]}\n\n",
+        "data: {\"id\":\"chatcmpl-VCP-separator-1730000000000\",\"object\":\"chat.completion.chunk\",\"created\":1730000000,\"model\":\"fixture-model\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n\"},\"finish_reason\":null}]}\n\n"
+      ],
+      "writableEnded": false,
+      "destroyed": false,
+      "headersSent": false
+    },
+    "completed": false
+  }
+}

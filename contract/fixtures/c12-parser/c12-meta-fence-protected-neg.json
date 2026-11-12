@@ -1,0 +1,6 @@
+{
+  "id": "c12-meta-fence-protected-neg",
+  "kind": "reasoning",
+  "src": "```\n[--- VCP元思考链 ---]\nkeep\n[--- 元思考链结束 ---]\n```",
+  "expected": "```\n[--- VCP元思考链 ---]\nkeep\n[--- 元思考链结束 ---]\n```"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "c12-jev-not-exact-neg",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>jevv:「始」a + b「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": []
+}

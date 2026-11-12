@@ -1,0 +1,17 @@
+{
+  "id": "c12-escape-start-after-end-neg",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>tool_name:「始」Echo「末」<<<[END_TOOL_REQUEST]>>>「始ESCAPE」unclosed",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "Echo",
+      "args": {},
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

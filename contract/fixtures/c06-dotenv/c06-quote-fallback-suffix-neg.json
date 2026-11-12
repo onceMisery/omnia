@@ -1,0 +1,11 @@
+{
+  "id": "c06-quote-fallback-suffix-neg",
+  "kind": "parse",
+  "src": "A=\"quoted\"suffix\nB='quoted'suffix\nC=`quoted`suffix",
+  "expected": {
+    "A": "\"quoted\"suffix",
+    "B": "'quoted'suffix",
+    "C": "`quoted`suffix"
+  }
+}
+

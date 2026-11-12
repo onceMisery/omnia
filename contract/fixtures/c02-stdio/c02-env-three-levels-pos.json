@@ -1,0 +1,31 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "environment",
+  "input": {
+    "env": {
+      "KEEP": "inherited",
+      "OVERRIDE": "parent",
+      "PYTHONIOENCODING": "ascii",
+      "VCP_REQUEST_IP": "old",
+      "PORT": "6005"
+    },
+    "pluginConfig": {
+      "OVERRIDE": 7,
+      "PYTHONIOENCODING": "utf-16",
+      "VCP_REQUEST_IP": "plugin",
+      "ENABLED": true
+    },
+    "requestIp": "192.0.2.3",
+    "projectBasePath": "/synthetic/project"
+  },
+  "expected": {
+    "KEEP": "inherited",
+    "OVERRIDE": "7",
+    "PYTHONIOENCODING": "utf-8",
+    "VCP_REQUEST_IP": "192.0.2.3",
+    "PORT": "6005",
+    "ENABLED": "true",
+    "PROJECT_BASE_PATH": "/synthetic/project",
+    "SERVER_PORT": "6005"
+  }
+}

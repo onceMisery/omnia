@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-inline-close-in-code-neg",
+  "kind": "reasoning",
+  "src": "write <think> literal `</think>` end",
+  "expected": "write <think> literal `</think>` end"
+}

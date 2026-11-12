@@ -1,0 +1,15 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "bearer",
+  "input": {
+    "key": "synthetic",
+    "authorization": "Bearer synthetic",
+    "path": "/plugin-callback/Tool/task"
+  },
+  "expected": {
+    "status": 200,
+    "headers": {},
+    "body": null,
+    "next": true
+  }
+}

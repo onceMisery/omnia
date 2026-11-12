@@ -1,0 +1,9 @@
+{
+  "id": "c06-nel-is-not-js-whitespace-neg",
+  "kind": "parse",
+  "src": "A=one\nB=two",
+  "expected": {
+    "B": "two"
+  }
+}
+

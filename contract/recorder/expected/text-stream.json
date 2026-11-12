@@ -1,0 +1,38 @@
+{
+  "request": {
+    "model": "text-stream",
+    "stream": true,
+    "requestId": "fixture-text-stream",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Synthetic M0 contract recording."
+      }
+    ]
+  },
+  "status": 200,
+  "headers": {
+    "access-control-allow-origin": "*",
+    "connection": "keep-alive",
+    "content-type": "text/event-stream",
+    "date": "<HTTP_DATE>",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked",
+    "x-powered-by": "Express",
+    "x-vcp-tool-loop-handoff": "1"
+  },
+  "wire": "data: {\"id\":\"synthetic-text-stream\",\"object\":\"chat.completion.chunk\",\"created\":1,\"model\":\"text-stream\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"fixture-complete:\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"synthetic-text-stream\",\"object\":\"chat.completion.chunk\",\"created\":1,\"model\":\"text-stream\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"text-stream\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"synthetic-text-stream\",\"object\":\"chat.completion.chunk\",\"created\":1,\"model\":\"text-stream\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\"}]}\n\n\ndata: {\"id\":\"chatcmpl-VCP-final-stop-<TIME>\",\"object\":\"chat.completion.chunk\",\"created\":\"<EPOCH_SECONDS>\",\"model\":\"text-stream\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\"}]}\n\ndata: [DONE]\n\n",
+  "upstream": [
+    {
+      "model": "text-stream",
+      "stream": true,
+      "requestId": "fixture-text-stream",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Synthetic M0 contract recording."
+        }
+      ]
+    }
+  ]
+}

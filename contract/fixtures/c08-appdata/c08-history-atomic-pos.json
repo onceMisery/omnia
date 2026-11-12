@@ -1,0 +1,29 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "history-file",
+  "input": {
+    "initial": [
+      {
+        "id": "old"
+      }
+    ],
+    "history": [
+      {
+        "id": "new",
+        "content": "新"
+      }
+    ]
+  },
+  "expected": {
+    "result": {
+      "success": true
+    },
+    "observations": [
+      {
+        "oldBytesBeforeRename": "[\n  {\n    \"id\": \"old\"\n  }\n]\n"
+      }
+    ],
+    "finalBytes": "[\n  {\n    \"id\": \"new\",\n    \"content\": \"新\"\n  }\n]\n",
+    "temporaryFiles": []
+  }
+}

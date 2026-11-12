@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-inline-equal-runs-pos",
+  "kind": "reasoning",
+  "src": "``<think>keep ` inner </think>`` end",
+  "expected": "``<think>keep ` inner </think>`` end"
+}

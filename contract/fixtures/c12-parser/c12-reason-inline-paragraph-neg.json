@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-inline-paragraph-neg",
+  "kind": "reasoning",
+  "src": "`open\n \t\n<think>remove</think>`end",
+  "expected": "`open\n \t\n`end"
+}

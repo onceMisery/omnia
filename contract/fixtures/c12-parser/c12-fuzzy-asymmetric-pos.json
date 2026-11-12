@@ -1,0 +1,17 @@
+{
+  "id": "c12-fuzzy-asymmetric-pos",
+  "kind": "parse",
+  "src": "<<<<[tool_request]>>tool_name:{始}Echo{末}<<[end_tool_request]>>>>",
+  "fuzzy_markers": true,
+  "expected": [
+    {
+      "name": "Echo",
+      "args": {},
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

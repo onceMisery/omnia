@@ -1,0 +1,21 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "format-result",
+  "input": {
+    "value": {
+      "data": {
+        "content": []
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "fallback is shadowed"
+        }
+      ]
+    }
+  },
+  "expected": {
+    "text": "[Rich Content]",
+    "content": []
+  }
+}

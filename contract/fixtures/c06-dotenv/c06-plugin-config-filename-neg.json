@@ -1,0 +1,16 @@
+{
+  "id": "c06-plugin-config-filename-neg",
+  "kind": "plugin",
+  "files": {
+    ".env": "Key=wrong"
+  },
+  "expected": {
+    "Key": null,
+    "PORT": null
+  },
+  "expected_sources": {
+    "Key": null,
+    "PORT": null
+  }
+}
+

@@ -1,0 +1,25 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "admin-auth",
+  "input": {
+    "requests": [
+      {
+        "path": "/admin_api/status",
+        "headers": {
+          "cookie": "admin_auth=Basic%20YWRtaW46Zml4dHVyZS1wYXNzd29yZA%3D%3D"
+        }
+      }
+    ]
+  },
+  "expected": [
+    {
+      "status": 200,
+      "headers": {},
+      "body": null,
+      "next": true,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    }
+  ]
+}

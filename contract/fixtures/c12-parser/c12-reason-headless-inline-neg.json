@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-headless-inline-neg",
+  "kind": "reasoning",
+  "src": "mention </think> inside a sentence",
+  "expected": "mention  inside a sentence"
+}

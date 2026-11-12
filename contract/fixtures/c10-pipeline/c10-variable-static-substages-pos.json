@@ -1,0 +1,55 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "static-order",
+  "input": {
+    "anchors": [
+      {
+        "id": "variables",
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 1044,
+        "endLine": 1088,
+        "text": "replaceAgentVariables"
+      },
+      {
+        "id": "ordered-loop",
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 1090,
+        "endLine": 1102,
+        "text": "for (const name of orderedPipeline)"
+      },
+      {
+        "id": "static-placeholder",
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 1103,
+        "endLine": 1113,
+        "text": "injectStaticPluginPlaceholdersInMessages"
+      }
+    ],
+    "order": [
+      "variables",
+      "ordered-loop",
+      "static-placeholder"
+    ]
+  },
+  "expected": {
+    "locations": [
+      {
+        "id": "variables",
+        "found": true,
+        "line": 1050
+      },
+      {
+        "id": "ordered-loop",
+        "found": true,
+        "line": 1100
+      },
+      {
+        "id": "static-placeholder",
+        "found": true,
+        "line": 1105
+      }
+    ],
+    "complete": true,
+    "ordered": true
+  }
+}

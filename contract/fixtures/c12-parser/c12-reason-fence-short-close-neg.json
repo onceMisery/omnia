@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-fence-short-close-neg",
+  "kind": "reasoning",
+  "src": "````\n``\n<think>keep</think>\n````\n<think>remove</think>",
+  "expected": "````\n``\n<think>keep</think>\n````\n"
+}

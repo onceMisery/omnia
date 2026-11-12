@@ -1,0 +1,14 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "approval-timeout",
+  "input": {
+    "minutes": 5
+  },
+  "expected": {
+    "rejected": {
+      "plugin_error": "Manual approval for \"FixtureTool\" timed out after 5 minutes."
+    },
+    "scheduled": 300000,
+    "pending": 0
+  }
+}

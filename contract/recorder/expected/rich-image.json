@@ -1,0 +1,72 @@
+{
+  "request": {
+    "model": "rich-image",
+    "stream": true,
+    "requestId": "fixture-rich-image",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Synthetic M0 contract recording."
+      }
+    ]
+  },
+  "status": 200,
+  "headers": {
+    "access-control-allow-origin": "*",
+    "connection": "keep-alive",
+    "content-type": "text/event-stream",
+    "date": "<HTTP_DATE>",
+    "keep-alive": "timeout=5",
+    "transfer-encoding": "chunked",
+    "x-powered-by": "Express",
+    "x-vcp-tool-loop-handoff": "1"
+  },
+  "wire": "data: {\"id\":\"synthetic-rich-image\",\"object\":\"chat.completion.chunk\",\"created\":1,\"model\":\"rich-image\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"<<<[TOOL_REQUEST]\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"synthetic-rich-image\",\"object\":\"chat.completion.chunk\",\"created\":1,\"model\":\"rich-image\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\">>>\\ntool_name:「始」FixtureEcho「末」\\nmode:「始」rich-image「末」\\n\\n<<<[END_TOOL_REQUEST]>>>\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"synthetic-rich-image\",\"object\":\"chat.completion.chunk\",\"created\":1,\"model\":\"rich-image\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\"}]}\n\n\ndata: {\"id\":\"chatcmpl-vcp-batch-<TIME>\",\"object\":\"chat.completion.chunk\",\"created\":\"<EPOCH_SECONDS>\",\"model\":\"rich-image\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n<<<[VCP_TOOL_BATCH_START:<BATCH_TIME>]>>>\\n\\n[本轮工具调用摘要:]\\nFixtureEcho 调用成功。\\n[本轮工具调用摘要结束]\\n\\n<<<[VCP_TOOL_BATCH_END:<BATCH_TIME>]>>>\\n\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"chatcmpl-VCP-separator-<TIME>\",\"object\":\"chat.completion.chunk\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"synthetic-rich-image\",\"object\":\"chat.completion.chunk\",\"created\":1,\"model\":\"rich-image\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"fixture-complete:\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"synthetic-rich-image\",\"object\":\"chat.completion.chunk\",\"created\":1,\"model\":\"rich-image\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"rich-image\"},\"finish_reason\":null}]}\n\ndata: {\"id\":\"synthetic-rich-image\",\"object\":\"chat.completion.chunk\",\"created\":1,\"model\":\"rich-image\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\"}]}\n\n\ndata: {\"id\":\"chatcmpl-VCP-final-stop-<TIME>\",\"object\":\"chat.completion.chunk\",\"created\":\"<EPOCH_SECONDS>\",\"model\":\"rich-image\",\"choices\":[{\"index\":0,\"delta\":{},\"finish_reason\":\"stop\"}]}\n\ndata: [DONE]\n\n",
+  "upstream": [
+    {
+      "model": "rich-image",
+      "stream": true,
+      "requestId": "fixture-rich-image",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Synthetic M0 contract recording."
+        }
+      ]
+    },
+    {
+      "model": "rich-image",
+      "stream": true,
+      "requestId": "fixture-rich-image",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Synthetic M0 contract recording."
+        },
+        {
+          "role": "assistant",
+          "content": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」FixtureEcho「末」\nmode:「始」rich-image「末」\n\n<<<[END_TOOL_REQUEST]>>>"
+        },
+        {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "<!-- VCP_TOOL_PAYLOAD -->\nResults:"
+            },
+            {
+              "type": "text",
+              "text": "caption"
+            },
+            {
+              "type": "image_url",
+              "image_url": {
+                "url": "data:image/png;base64,iVBORw0KGgo="
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

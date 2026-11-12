@@ -1,0 +1,22 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "handoff",
+  "input": {
+    "operations": [
+      {
+        "type": "wait"
+      }
+    ]
+  },
+  "expected": [
+    {
+      "scheduled": [],
+      "completed": true,
+      "ready": false,
+      "remainingTimers": 0
+    },
+    {
+      "ready": false
+    }
+  ]
+}

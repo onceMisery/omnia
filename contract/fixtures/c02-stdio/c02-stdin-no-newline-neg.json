@@ -1,0 +1,11 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "stdin",
+  "input": {
+    "value": null
+  },
+  "expected": {
+    "writes": [],
+    "ended": true
+  }
+}

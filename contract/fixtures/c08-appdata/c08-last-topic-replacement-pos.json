@@ -1,0 +1,26 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "replacement-topic",
+  "input": {
+    "config": {
+      "name": "agent",
+      "topics": [
+        {
+          "id": "default",
+          "name": "旧"
+        }
+      ]
+    },
+    "id": "default"
+  },
+  "expected": {
+    "name": "agent",
+    "topics": [
+      {
+        "id": "topic_1730000000000",
+        "name": "主要对话",
+        "createdAt": 1730000000000
+      }
+    ]
+  }
+}

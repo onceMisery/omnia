@@ -1,0 +1,20 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "static-occurrences",
+  "input": {
+    "text": "handoffGate",
+    "sources": [
+      {
+        "repository": "VCPToolBox",
+        "path": "modules/handlers/nonStreamHandler.js",
+        "startLine": 1
+      }
+    ]
+  },
+  "expected": [
+    {
+      "path": "modules/handlers/nonStreamHandler.js",
+      "occurrences": 0
+    }
+  ]
+}

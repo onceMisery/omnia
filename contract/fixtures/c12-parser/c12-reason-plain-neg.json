@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-plain-neg",
+  "kind": "reasoning",
+  "src": "text without tags\n🙂",
+  "expected": "text without tags\n🙂"
+}

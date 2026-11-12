@@ -1,0 +1,9 @@
+{
+  "id": "c06-last-duplicate-may-be-empty-pos",
+  "kind": "parse",
+  "src": "A=first\nA=",
+  "expected": {
+    "A": ""
+  }
+}
+

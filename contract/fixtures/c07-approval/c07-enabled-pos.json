@@ -1,0 +1,21 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "approval-decision",
+  "input": {
+    "config": {
+      "enabled": false,
+      "approvalList": [
+        "FileOperator"
+      ]
+    },
+    "name": "FileOperator"
+  },
+  "expected": {
+    "requiresApproval": false,
+    "notifyAiOnReject": true,
+    "matchedRule": null,
+    "matchedCommand": null,
+    "matchedValue": null,
+    "whitelistedBy": null
+  }
+}

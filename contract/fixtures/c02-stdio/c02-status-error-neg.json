@@ -1,0 +1,21 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "stdio-bridge",
+  "input": {
+    "args": {},
+    "pluginOutput": {
+      "result": null
+    }
+  },
+  "expected": {
+    "calls": [
+      [
+        "FixtureTool",
+        null,
+        "192.0.2.1",
+        {}
+      ]
+    ],
+    "error": "{\"plugin_error\":\"Plugin \\\"FixtureTool\\\" reported an unspecified error.\"}"
+  }
+}

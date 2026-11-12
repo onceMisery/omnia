@@ -1,0 +1,10 @@
+{
+  "id": "c06-double-quoted-multiline-pos",
+  "kind": "parse",
+  "src": "D=\"one\n two # three\"\nN=next",
+  "expected": {
+    "D": "one\n two # three",
+    "N": "next"
+  }
+}
+

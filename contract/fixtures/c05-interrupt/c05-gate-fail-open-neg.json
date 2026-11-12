@@ -1,0 +1,40 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "handoff",
+  "input": {
+    "operations": [
+      {
+        "type": "control",
+        "value": {
+          "action": "prepare_handoff",
+          "handoffId": "handoff-1",
+          "revision": 1
+        }
+      },
+      {
+        "type": "wait",
+        "abort": true
+      }
+    ]
+  },
+  "expected": [
+    {
+      "success": true,
+      "state": "armed",
+      "revision": 1
+    },
+    {
+      "ready": true
+    },
+    {
+      "scheduled": [],
+      "error": "AbortError",
+      "message": "Request stopped during handoff",
+      "ready": false,
+      "remainingTimers": 0
+    },
+    {
+      "ready": false
+    }
+  ]
+}

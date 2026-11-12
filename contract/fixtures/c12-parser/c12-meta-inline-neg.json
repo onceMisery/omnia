@@ -1,0 +1,6 @@
+{
+  "id": "c12-meta-inline-neg",
+  "kind": "reasoning",
+  "src": "prefix [--- VCP元思考链 ---]\nkeep\n[--- 元思考链结束 ---]",
+  "expected": "prefix [--- VCP元思考链 ---]\nkeep\n[--- 元思考链结束 ---]"
+}

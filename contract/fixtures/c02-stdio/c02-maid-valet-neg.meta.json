@@ -1,0 +1,33 @@
+{
+  "schema": "omnia-source-fixture-meta-v1",
+  "origin": "frozen-source-execution",
+  "rules": [
+    "C02.valet-maid-mirror"
+  ],
+  "sources": [
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/vcpLoop/toolMarkerFuzzyMatcher.js",
+      "startLine": 1,
+      "endLine": 154,
+      "sha256": "8244638b1c33ad57cc0272b615dc1ea3cdbe0b16f4ab3f32b644edcd80feacef"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/vcpLoop/toolCallParser.js",
+      "startLine": 1,
+      "endLine": 706,
+      "sha256": "cd2176bfbc4b36cd4a9f20d558b395c41e46ff8d1ab55cc200d8aaf853530a33"
+    }
+  ],
+  "normalization": [
+    "Synthetic inputs only.",
+    "Date.now is fixed to 1730000000000 when used.",
+    "Temporary history root is rendered as <APPDATA>; path separators are normalized in error text."
+  ],
+  "limitations": [
+    "Frozen original functions or statement ranges run in a Node VM. Declared IO seams are supplied by the runner; this is not a full server or Electron end-to-end run."
+  ]
+}

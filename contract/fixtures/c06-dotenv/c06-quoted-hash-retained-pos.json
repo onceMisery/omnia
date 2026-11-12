@@ -1,0 +1,11 @@
+{
+  "id": "c06-quoted-hash-retained-pos",
+  "kind": "parse",
+  "src": "A=\"one#two\" #comment\nB='#'\nC=`#`",
+  "expected": {
+    "A": "one#two",
+    "B": "#",
+    "C": "#"
+  }
+}
+

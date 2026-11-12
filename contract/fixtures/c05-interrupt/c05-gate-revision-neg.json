@@ -1,0 +1,56 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "handoff",
+  "input": {
+    "operations": [
+      {
+        "type": "control",
+        "value": {
+          "action": "prepare_handoff",
+          "handoffId": "handoff-1",
+          "revision": 2
+        }
+      },
+      {
+        "type": "control",
+        "value": {
+          "action": "prepare_handoff",
+          "handoffId": "handoff-1",
+          "revision": 1
+        }
+      },
+      {
+        "type": "control",
+        "value": {
+          "action": "prepare_handoff",
+          "handoffId": "other",
+          "revision": 2
+        }
+      }
+    ]
+  },
+  "expected": [
+    {
+      "success": true,
+      "state": "armed",
+      "revision": 2
+    },
+    {
+      "ready": true
+    },
+    {
+      "success": false,
+      "code": "STALE_REVISION"
+    },
+    {
+      "ready": true
+    },
+    {
+      "success": false,
+      "code": "REVISION_CONFLICT"
+    },
+    {
+      "ready": true
+    }
+  ]
+}

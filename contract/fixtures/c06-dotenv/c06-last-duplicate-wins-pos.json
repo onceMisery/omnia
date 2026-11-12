@@ -1,0 +1,9 @@
+{
+  "id": "c06-last-duplicate-wins-pos",
+  "kind": "parse",
+  "src": "A=first\nexport A: middle\nA='last'",
+  "expected": {
+    "A": "last"
+  }
+}
+

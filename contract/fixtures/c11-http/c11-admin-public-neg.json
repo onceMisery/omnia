@@ -1,0 +1,41 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "admin-auth",
+  "input": {
+    "requests": [
+      {
+        "path": "/AdminPanel/login.html/extra"
+      },
+      {
+        "path": "/AdminPanel/secret",
+        "headers": {
+          "accept": "application/json"
+        }
+      }
+    ]
+  },
+  "expected": [
+    {
+      "status": 302,
+      "headers": {
+        "Location": "/AdminPanel/login.html"
+      },
+      "body": null,
+      "next": false,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 1,
+      "blockedForMs": 0
+    },
+    {
+      "status": 401,
+      "headers": {},
+      "body": {
+        "error": "Unauthorized"
+      },
+      "next": false,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 2,
+      "blockedForMs": 0
+    }
+  ]
+}

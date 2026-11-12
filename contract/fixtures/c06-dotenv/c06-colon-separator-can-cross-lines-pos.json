@@ -1,0 +1,10 @@
+{
+  "id": "c06-colon-separator-can-cross-lines-pos",
+  "kind": "parse",
+  "src": "A:\n value\nB=two",
+  "expected": {
+    "A": "value",
+    "B": "two"
+  }
+}
+

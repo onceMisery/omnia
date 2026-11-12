@@ -1,0 +1,31 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "sse-forward",
+  "input": {
+    "lines": [
+      "data: {\"choices\":[{\"delta\":{\"content\":\"一\"}}]}",
+      "",
+      "data: [DONE]"
+    ]
+  },
+  "expected": {
+    "chunks": [
+      "data: {\"choices\":[{\"delta\":{\"content\":\"一\"}}]}\n",
+      "\n"
+    ],
+    "observed": [
+      {
+        "choices": [
+          {
+            "delta": {
+              "content": "一"
+            }
+          }
+        ]
+      }
+    ],
+    "sawDone": true,
+    "invalidPayload": false,
+    "streamAborted": false
+  }
+}

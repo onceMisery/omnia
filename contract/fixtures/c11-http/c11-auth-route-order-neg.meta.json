@@ -1,0 +1,49 @@
+{
+  "schema": "omnia-source-fixture-meta-v1",
+  "origin": "source-derived-static",
+  "rules": [
+    "C11.auth-before-routing"
+  ],
+  "sources": [
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "server.js",
+      "startLine": 841,
+      "endLine": 841,
+      "sha256": "c1e57dd6990bcc1aad4a5763cb61f8d7872c6d7892d0628aa18f34ce4b019a32"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "server.js",
+      "startLine": 846,
+      "endLine": 852,
+      "sha256": "8f204cfbea2fed59c396d3ffcb19ee373a1e2856389170e2a353aca606364624"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "server.js",
+      "startLine": 859,
+      "endLine": 883,
+      "sha256": "eaac723e8b837db84c58fbc0f9d9ab07f203eb15a23cf3187c65cd503b9f8745"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "server.js",
+      "startLine": 886,
+      "endLine": 886,
+      "sha256": "b53eeb56748e028a0377cd6ba864d0ed657229c54a7c152a32e863e462a00b92"
+    }
+  ],
+  "normalization": [
+    "Synthetic inputs only.",
+    "Date.now is fixed to 1730000000000 when used.",
+    "Temporary history root is rendered as <APPDATA>; path separators are normalized in error text."
+  ],
+  "limitations": [
+    "Source or approved design evidence only; not a runtime trace."
+  ]
+}

@@ -1,0 +1,63 @@
+name: M0 quality gates
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-24.04, macos-15]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.14.0'
+      - name: Linux native dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libasound2-dev libxkbcommon-x11-dev libwayland-dev libvulkan-dev libfontconfig1-dev libssl-dev libx11-xcb-dev libxcb-shape0-dev libxcb-xfixes0-dev libclang-dev clang cmake
+      - name: Install pinned Rust toolchain
+        run: rustup show
+      # All current members are self-authored; crates/* automatically includes additions.
+      # Add a governed package-selection boundary before introducing vendored members.
+      - name: Format
+        run: cargo fmt --all -- --check
+      - name: Build all targets
+        run: cargo check --workspace --all-targets --locked
+      - name: Clippy
+        run: cargo clippy --workspace --all-targets --locked --no-deps -- -D warnings
+      - name: Tests
+        run: cargo test --workspace --locked
+      # Source fixtures execute frozen upstream slices, so the verifier needs both baselines.
+      - name: Frozen VCPToolBox baseline
+        uses: actions/checkout@v4
+        with:
+          repository: lioensky/VCPToolBox
+          ref: a8560b0ae4e7b1a7803a88093a9ebee391e21a7c
+          path: .baselines/VCPToolBox
+      - name: Frozen VCPChat baseline
+        uses: actions/checkout@v4
+        with:
+          repository: lioensky/VCPChat
+          ref: c3e4855efa2b24c0578d76e17fd6c5f21857a539
+          path: .baselines/VCPChat
+      - name: Node contract harness
+        env:
+          OMNIA_VCPTOOLBOX_SOURCE: ${{ github.workspace }}/.baselines/VCPToolBox
+          OMNIA_VCPCHAT_SOURCE: ${{ github.workspace }}/.baselines/VCPChat
+        run: |
+          node --test contract/tests/source-fixtures.test.mjs contract/recorder/normalization.test.mjs contract/recorder/runtime.test.mjs
+          node contract/recorder/verify-source-fixtures.mjs
+      - name: Experimental gpui-fast backend build
+        run: cargo check -p omnia-app --features gpui-fast --locked
+      - name: Documentation
+        run: node scripts/check-docs.mjs
+

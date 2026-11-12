@@ -1,0 +1,44 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "interrupt",
+  "input": {
+    "stream": true
+  },
+  "expected": {
+    "response": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": "text/event-stream",
+        "Cache-Control": "no-cache",
+        "Connection": "keep-alive"
+      },
+      "chunks": [
+        "data: {\"id\":\"chatcmpl-interrupt-1730000000000\",\"object\":\"chat.completion.chunk\",\"created\":1730000000,\"model\":\"fixture-model\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"请求已被用户中止\"},\"finish_reason\":\"stop\"}]}\n\n",
+        "data: [DONE]\n\n"
+      ],
+      "writableEnded": true,
+      "destroyed": false,
+      "headersSent": false
+    },
+    "receipts": [
+      {
+        "statusCode": 200,
+        "headers": {},
+        "chunks": [],
+        "writableEnded": true,
+        "destroyed": false,
+        "headersSent": false,
+        "body": {
+          "status": "success",
+          "message": "Interrupt signal sent for request assistant-id."
+        }
+      }
+    ],
+    "aborted": true,
+    "signalAborted": true,
+    "scheduled": [
+      1000
+    ],
+    "remainingRequests": 0
+  }
+}

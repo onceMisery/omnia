@@ -1,0 +1,17 @@
+{
+  "id": "c12-fuzzy-earliest-end-pos",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>tool_name:{始}Echo{末 noise}trailing「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": true,
+  "expected": [
+    {
+      "name": "Echo",
+      "args": {},
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

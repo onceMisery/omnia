@@ -1,0 +1,15 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "bearer",
+  "input": {
+    "key": "synthetic",
+    "authorization": "Bearer synthetic",
+    "path": "/v1/chat/completions"
+  },
+  "expected": {
+    "status": 200,
+    "headers": {},
+    "body": null,
+    "next": true
+  }
+}

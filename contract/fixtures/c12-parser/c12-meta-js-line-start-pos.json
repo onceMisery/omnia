@@ -1,0 +1,6 @@
+{
+  "id": "c12-meta-js-line-start-pos",
+  "kind": "reasoning",
+  "src": "before [--- VCP元思考链 ---]\nhidden\n[--- 元思考链结束 ---]\nafter",
+  "expected": "before after"
+}

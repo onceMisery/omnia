@@ -1,0 +1,6 @@
+{
+  "id": "c12-meta-cr-line-end-pos",
+  "kind": "reasoning",
+  "src": "before\r[--- VCP元思考链 ---]\rhidden\r[--- 元思考链结束 ---]\rafter",
+  "expected": "before\r\rafter"
+}

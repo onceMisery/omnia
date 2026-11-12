@@ -1,0 +1,39 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "process-result",
+  "input": {
+    "name": "Tool",
+    "value": {
+      "status": "success"
+    }
+  },
+  "expected": {
+    "output": {
+      "success": true,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"success\"\n}"
+        }
+      ],
+      "approvalFeedbackContent": [],
+      "raw": {
+        "status": "success"
+      }
+    },
+    "broadcasts": [
+      [
+        {
+          "type": "vcp_log",
+          "data": {
+            "tool_name": "Tool",
+            "status": "success",
+            "content": "{\n  \"status\": \"success\"\n}"
+          }
+        },
+        "VCPLog"
+      ]
+    ],
+    "lifecycle": []
+  }
+}

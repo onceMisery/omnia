@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-unicode-word-boundary-pos",
+  "kind": "reasoning",
+  "src": "<thinké>visible</thinké>",
+  "expected": "<thinké>visible</thinké>"
+}

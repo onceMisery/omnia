@@ -1,0 +1,49 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "history-persistence",
+  "input": {
+    "projected": {
+      "messageId": "assistant-2",
+      "context": {
+        "agentId": "agent",
+        "topicId": "default"
+      },
+      "content": "终态",
+      "finishReason": "stop",
+      "history": [
+        {
+          "id": "user-1",
+          "role": "user",
+          "content": "用户",
+          "timestamp": 1
+        },
+        {
+          "id": "assistant-2",
+          "role": "assistant",
+          "content": "终态",
+          "timestamp": 2,
+          "isThinking": false
+        },
+        {
+          "id": "pending",
+          "role": "assistant",
+          "content": "pending",
+          "isPendingStream": true
+        },
+        {
+          "id": "thinking",
+          "role": "assistant",
+          "content": "thinking",
+          "isThinking": true
+        }
+      ]
+    },
+    "durableHistory": {
+      "invalid": true
+    }
+  },
+  "expected": {
+    "error": "Chat repository returned invalid history during stream commit",
+    "saves": []
+  }
+}

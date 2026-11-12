@@ -1,0 +1,11 @@
+{
+  "id": "c06-export-and-key-named-export-pos",
+  "kind": "parse",
+  "src": "export TOKEN = yes\nexport=literal\nexported=plain",
+  "expected": {
+    "TOKEN": "yes",
+    "export": "literal",
+    "exported": "plain"
+  }
+}
+

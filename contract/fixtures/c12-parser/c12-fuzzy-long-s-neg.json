@@ -1,0 +1,7 @@
+{
+  "id": "c12-fuzzy-long-s-neg",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEſT]>>>tool_name:「始」Echo「末」<<<[END_TOOL_REQUEſT]>>>",
+  "fuzzy_markers": true,
+  "expected": []
+}

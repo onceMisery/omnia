@@ -1,0 +1,28 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "sse-timers",
+  "input": {
+    "fire": "idle"
+  },
+  "expected": {
+    "scheduled": [
+      {
+        "type": "interval",
+        "delay": 5000
+      },
+      {
+        "type": "timeout",
+        "delay": 90000
+      }
+    ],
+    "chunks": [
+      "data: {\"id\":\"chatcmpl-VCP-stall-1730000000000\",\"object\":\"chat.completion.chunk\",\"created\":1730000000,\"model\":\"fixture-model\",\"choices\":[{\"index\":0,\"delta\":{\"content\":\"\\n[上游响应超时，流已中断]\"},\"finish_reason\":\"stop\"}]}\n\n",
+      "data: [DONE]\n\n"
+    ],
+    "destroyed": true,
+    "settled": true,
+    "cleared": [
+      "heartbeat"
+    ]
+  }
+}

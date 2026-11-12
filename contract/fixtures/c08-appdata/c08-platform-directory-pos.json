@@ -1,0 +1,9 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "agent-directory",
+  "input": {
+    "platform": "win32",
+    "id": "_Agent_Demo_123"
+  },
+  "expected": "_agent_demo_123"
+}

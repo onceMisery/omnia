@@ -1,0 +1,6 @@
+{
+  "id": "c12-restore-block-case-neg",
+  "kind": "unescape",
+  "src": "<<<[tool_request_ESCAPE]>>> <<<[TOOL_REQUEST_escape]>>>",
+  "expected": "<<<[tool_request_ESCAPE]>>> <<<[TOOL_REQUEST_escape]>>>"
+}

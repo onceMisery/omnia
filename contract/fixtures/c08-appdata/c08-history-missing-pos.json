@@ -1,0 +1,13 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "history-file",
+  "input": {
+    "operation": "read"
+  },
+  "expected": {
+    "result": [],
+    "observations": [],
+    "finalBytes": null,
+    "temporaryFiles": []
+  }
+}

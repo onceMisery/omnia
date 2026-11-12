@@ -1,0 +1,22 @@
+{
+  "request": {
+    "path": "/AdminPanel/",
+    "method": "GET",
+    "accept": "text/html",
+    "credential": "none"
+  },
+  "status": 302,
+  "headers": {
+    "access-control-allow-origin": "*",
+    "connection": "keep-alive",
+    "content-length": "<BODY_BYTES>",
+    "content-type": "text/html; charset=utf-8",
+    "date": "<HTTP_DATE>",
+    "keep-alive": "timeout=5",
+    "location": "/AdminPanel/login.html",
+    "vary": "Accept",
+    "x-powered-by": "Express"
+  },
+  "wire": "<p>Found. Redirecting to /AdminPanel/login.html</p>",
+  "upstream": []
+}

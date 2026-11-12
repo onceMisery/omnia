@@ -1,0 +1,17 @@
+{
+  "id": "c06-missing-key-defaults-neg",
+  "kind": "global",
+  "src": "PORT=\nApiRetries=0\nDEFAULT_TIMEZONE=",
+  "environment": {},
+  "expected": {
+    "PORT": "",
+    "ApiRetries": "0",
+    "DEFAULT_TIMEZONE": ""
+  },
+  "expected_sources": {
+    "PORT": "file",
+    "ApiRetries": "file",
+    "DEFAULT_TIMEZONE": "file"
+  }
+}
+

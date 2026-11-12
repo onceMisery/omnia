@@ -1,0 +1,38 @@
+{
+  "request": {
+    "model": "text-nonstream",
+    "stream": false,
+    "requestId": "fixture-text-nonstream",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Synthetic M0 contract recording."
+      }
+    ]
+  },
+  "status": 200,
+  "headers": {
+    "access-control-allow-origin": "*",
+    "connection": "keep-alive",
+    "content-length": "<BODY_BYTES>",
+    "content-type": "application/json",
+    "date": "<HTTP_DATE>",
+    "etag": "<BODY_ETAG>",
+    "keep-alive": "timeout=5",
+    "x-powered-by": "Express"
+  },
+  "wire": "{\"id\":\"synthetic-text-nonstream\",\"object\":\"chat.completion\",\"created\":1,\"model\":\"text-nonstream\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"fixture-complete:text-nonstream\"},\"finish_reason\":\"stop\"}]}",
+  "upstream": [
+    {
+      "model": "text-nonstream",
+      "stream": false,
+      "requestId": "fixture-text-nonstream",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Synthetic M0 contract recording."
+        }
+      ]
+    }
+  ]
+}

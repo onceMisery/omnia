@@ -1,0 +1,10 @@
+{
+  "id": "c06-bom-and-js-whitespace-pos",
+  "kind": "parse",
+  "src": "﻿A= one \n B=﻿two﻿",
+  "expected": {
+    "A": "one",
+    "B": "two"
+  }
+}
+

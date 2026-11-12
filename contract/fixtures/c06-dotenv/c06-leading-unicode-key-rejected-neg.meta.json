@@ -1,0 +1,21 @@
+{
+  "contract": "C-06",
+  "origin": "source-derived",
+  "repository": "VCPToolBox",
+  "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+  "source": [
+    {
+      "path": "modules/dotenvPatch.js",
+      "lines": "5-43"
+    }
+  ],
+  "verification": {
+    "kind": "executed-frozen-source",
+    "runtime": "Node.js 22.14.0",
+    "platform": "Windows",
+    "date": "2026-11-12"
+  },
+  "normalization": "Synthetic input; exact strings, no output normalization other than JSON object key order.",
+  "fixture": "c06-leading-unicode-key-rejected-neg.json"
+}
+

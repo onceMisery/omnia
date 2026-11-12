@@ -1,0 +1,237 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "static-order",
+  "input": {
+    "anchors": [
+      {
+        "id": 1,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 770,
+        "endLine": 773,
+        "text": "this.responseReplayCache.replay"
+      },
+      {
+        "id": 2,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 800,
+        "endLine": 808,
+        "text": "activeRequests.set"
+      },
+      {
+        "id": 3,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 857,
+        "endLine": 872,
+        "text": "contextTokenLimit"
+      },
+      {
+        "id": 4,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 881,
+        "endLine": 893,
+        "text": "redirectModelForBackend"
+      },
+      {
+        "id": 5,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 901,
+        "endLine": 916,
+        "text": "consumeVcpToolUseForbiddenPlaceholder"
+      },
+      {
+        "id": 6,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 946,
+        "endLine": 954,
+        "text": "executeMessagePreprocessor('VCPTavern'"
+      },
+      {
+        "id": 7,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 964,
+        "endLine": 990,
+        "text": "semanticModelRouter.resolveRoute"
+      },
+      {
+        "id": 8,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 1044,
+        "endLine": 1133,
+        "text": "replaceAgentVariables"
+      },
+      {
+        "id": 9,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 1134,
+        "endLine": 1166,
+        "text": "TransBase64+ Cleanup"
+      },
+      {
+        "id": 10,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 1169,
+        "endLine": 1178,
+        "text": "applyDetectorsToMessages"
+      },
+      {
+        "id": 11,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 1180,
+        "endLine": 1192,
+        "text": "enableRoleDivider"
+      },
+      {
+        "id": 12,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 1194,
+        "endLine": 1203,
+        "text": "delete message.name"
+      },
+      {
+        "id": 13,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 1205,
+        "endLine": 1218,
+        "text": "oneRingResponseMeta"
+      },
+      {
+        "id": 14,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 1230,
+        "endLine": 1230,
+        "text": "projectToolBatchForUpstream"
+      },
+      {
+        "id": 15,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 1242,
+        "endLine": 1262,
+        "text": "fetchWithRetry"
+      },
+      {
+        "id": 16,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 1383,
+        "endLine": 1388,
+        "text": "new StreamHandler"
+      },
+      {
+        "id": 17,
+        "path": "modules/chatCompletionHandler.js",
+        "startLine": 1491,
+        "endLine": 1523,
+        "text": "handoffGate.dispose"
+      }
+    ],
+    "order": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ]
+  },
+  "expected": {
+    "locations": [
+      {
+        "id": 1,
+        "found": true,
+        "line": 772
+      },
+      {
+        "id": 2,
+        "found": true,
+        "line": 800
+      },
+      {
+        "id": 3,
+        "found": true,
+        "line": 857
+      },
+      {
+        "id": 4,
+        "found": true,
+        "line": 886
+      },
+      {
+        "id": 5,
+        "found": true,
+        "line": 901
+      },
+      {
+        "id": 6,
+        "found": true,
+        "line": 952
+      },
+      {
+        "id": 7,
+        "found": true,
+        "line": 965
+      },
+      {
+        "id": 8,
+        "found": true,
+        "line": 1050
+      },
+      {
+        "id": 9,
+        "found": true,
+        "line": 1134
+      },
+      {
+        "id": 10,
+        "found": true,
+        "line": 1176
+      },
+      {
+        "id": 11,
+        "found": true,
+        "line": 1181
+      },
+      {
+        "id": 12,
+        "found": true,
+        "line": 1200
+      },
+      {
+        "id": 13,
+        "found": true,
+        "line": 1207
+      },
+      {
+        "id": 14,
+        "found": true,
+        "line": 1230
+      },
+      {
+        "id": 15,
+        "found": true,
+        "line": 1242
+      },
+      {
+        "id": 16,
+        "found": true,
+        "line": 1386
+      },
+      {
+        "id": 17,
+        "found": true,
+        "line": 1492
+      }
+    ],
+    "complete": true,
+    "ordered": false
+  }
+}

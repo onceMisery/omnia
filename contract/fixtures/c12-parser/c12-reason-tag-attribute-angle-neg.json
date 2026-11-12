@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-tag-attribute-angle-neg",
+  "kind": "reasoning",
+  "src": "<think x='<'>visible",
+  "expected": "<think x='<'>visible"
+}

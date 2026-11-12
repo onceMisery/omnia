@@ -1,0 +1,14 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "stdout",
+  "input": {
+    "code": 0,
+    "stdout": "{\"status\":\"error\",\"error\":\"failure\"}"
+  },
+  "expected": {
+    "resolved": {
+      "status": "error",
+      "error": "failure"
+    }
+  }
+}

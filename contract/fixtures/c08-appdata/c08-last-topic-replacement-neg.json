@@ -1,0 +1,24 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "replacement-topic",
+  "input": {
+    "config": {
+      "topics": [
+        {
+          "id": "default"
+        },
+        {
+          "id": "keep"
+        }
+      ]
+    },
+    "id": "default"
+  },
+  "expected": {
+    "topics": [
+      {
+        "id": "keep"
+      }
+    ]
+  }
+}

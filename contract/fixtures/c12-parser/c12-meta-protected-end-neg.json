@@ -1,0 +1,6 @@
+{
+  "id": "c12-meta-protected-end-neg",
+  "kind": "reasoning",
+  "src": "[--- VCP元思考链 ---]\n```\n[--- 元思考链结束 ---]\n```\ntail",
+  "expected": ""
+}

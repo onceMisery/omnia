@@ -1,0 +1,15 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "bearer",
+  "input": {
+    "path": "/pw=abc/other/a.png"
+  },
+  "expected": {
+    "status": 401,
+    "headers": {},
+    "body": {
+      "error": "Unauthorized (Bearer token required)"
+    },
+    "next": false
+  }
+}

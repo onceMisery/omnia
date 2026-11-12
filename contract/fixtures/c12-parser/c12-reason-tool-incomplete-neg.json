@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-tool-incomplete-neg",
+  "kind": "reasoning",
+  "src": "<<<[TOOL_REQUEST]>>>\n<think>remove</think>",
+  "expected": "<<<[TOOL_REQUEST]>>>\n"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "c12-jev-named-after-pos",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>jev:「始」  a + b  「末」tool_name:「始」Real「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "Real",
+      "args": {
+        "jev": "  a + b"
+      },
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

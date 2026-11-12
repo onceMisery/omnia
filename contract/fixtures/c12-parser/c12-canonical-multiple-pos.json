@@ -1,0 +1,28 @@
+{
+  "id": "c12-canonical-multiple-pos",
+  "kind": "parse",
+  "src": "before<<<[TOOL_REQUEST]>>>tool_name:「始」One「末」x:「始」1「末」<<<[END_TOOL_REQUEST]>>>middle<<<[TOOL_REQUEST]>>>tool_name:「始」Two「末」<<<[END_TOOL_REQUEST]>>>after",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "One",
+      "args": {
+        "x": "1"
+      },
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    },
+    {
+      "name": "Two",
+      "args": {},
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

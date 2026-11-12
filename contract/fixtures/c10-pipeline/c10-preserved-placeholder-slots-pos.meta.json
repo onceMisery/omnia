@@ -1,0 +1,154 @@
+{
+  "schema": "omnia-source-fixture-meta-v1",
+  "origin": "source-derived-static",
+  "rules": [
+    "C10.placeholder-slots"
+  ],
+  "sources": [
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 770,
+      "endLine": 773,
+      "sha256": "a5e00cf592201fe2ea04fc91d525d914cc81754608f71e3d9734d3435fe4f772"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 800,
+      "endLine": 808,
+      "sha256": "a8e14dcbea1f38c426378d525977e35570f48378d4c89851b83191a98970b97c"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 857,
+      "endLine": 872,
+      "sha256": "65c085802282ad9406ffb60eb7ae2ebe5c3d969a638103dc7b2b20524c8e2fa5"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 881,
+      "endLine": 893,
+      "sha256": "28eee2784f674d7e2b036b022c321b00510581fa6064bca20110fa8ffb05a233"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 901,
+      "endLine": 916,
+      "sha256": "ce98b842edaf32366285004d3a0f03821ea0052b9ed17fca18bafc5a2ebf9daa"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 946,
+      "endLine": 954,
+      "sha256": "94f593de3b2acbc0b4e525c905558813f638cc56f0bff9f8b141d4b14edc2311"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 964,
+      "endLine": 990,
+      "sha256": "af75d4b3ddbbe719a4b37f0c9413d5310ae9966dd599a0024c2fd0a3e1645f1f"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 1044,
+      "endLine": 1133,
+      "sha256": "38beb99fa51e75e698709a69f191da8c82404c5177c226637a23b7097f08bc45"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 1134,
+      "endLine": 1166,
+      "sha256": "59e7ce39074893923d0ea9bfaa9bd966ad96cd55f73c4b71528c845649b206b8"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 1169,
+      "endLine": 1178,
+      "sha256": "fcbb9603f946f4e1e5b3ddeb543ffa817bf8602f0b9dc16eb951319f2a7033f2"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 1180,
+      "endLine": 1192,
+      "sha256": "21ff0b32ad67a5086a1bc316d3d15ed4c3f977ed921727b1fdef1b6217869c43"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 1194,
+      "endLine": 1203,
+      "sha256": "122c6de9628097092708a6db27b4698857d7191b765b0587979b5136ab5b54ed"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 1205,
+      "endLine": 1218,
+      "sha256": "8344c7d66f1661fb7ad12cd798050ede5ca825a7f8b0916de66c97e42e9d8e2d"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 1230,
+      "endLine": 1230,
+      "sha256": "1ce7b0578839fd44f930c12e82748f62db7a41712e9843b846f7f9bcbaecb617"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 1242,
+      "endLine": 1262,
+      "sha256": "a09f2738453f8b46eda07b44d08bec628ee596adc6d7fd0d8903b221d4208d88"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 1383,
+      "endLine": 1388,
+      "sha256": "37ed2d8d1b2a6d23302dbe65c64381aa2579f7c7c5aff2bcd132ba2bb3eccb23"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 1491,
+      "endLine": 1523,
+      "sha256": "3b6f1ae842d88330ca454df7fb05b7951b45b2da400d6fdd83b0a9b0f379895d"
+    }
+  ],
+  "normalization": [
+    "Synthetic inputs only.",
+    "Date.now is fixed to 1730000000000 when used.",
+    "Temporary history root is rendered as <APPDATA>; path separators are normalized in error text."
+  ],
+  "limitations": [
+    "Source or approved design evidence only; not a runtime trace.",
+    "M1 no-op slot preservation is approved design. This negative candidate omits deferred upstream stages; no M1 runtime is implemented by this test."
+  ]
+}

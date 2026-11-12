@@ -1,0 +1,42 @@
+{
+  "schema": "omnia-source-fixture-meta-v1",
+  "origin": "frozen-source-execution",
+  "rules": [
+    "C09.message-whitelist",
+    "C09.single-text-fold"
+  ],
+  "sources": [
+    {
+      "repository": "VCPChat",
+      "commit": "c3e4855efa2b24c0578d76e17fd6c5f21857a539",
+      "path": "modules/ipc/chatHandlers.js",
+      "startLine": 44,
+      "endLine": 154,
+      "sha256": "ca387e116df37b338c0155365d7a61716f6bbc607f412bd058004b159146b1ae"
+    },
+    {
+      "repository": "VCPChat",
+      "commit": "c3e4855efa2b24c0578d76e17fd6c5f21857a539",
+      "path": "modules/ipc/chatHandlers.js",
+      "startLine": 1166,
+      "endLine": 1213,
+      "sha256": "7345579633439277ecf99ddc2d1167c6813fde0ee4032688a5aa46347f7bc556"
+    },
+    {
+      "repository": "VCPChat",
+      "commit": "c3e4855efa2b24c0578d76e17fd6c5f21857a539",
+      "path": "modules/ipc/chatHandlers.js",
+      "startLine": 1389,
+      "endLine": 1401,
+      "sha256": "ead7cce7f64688d85572bd00c9ea251201277fcebb18415a833dc77a8610b7a6"
+    }
+  ],
+  "normalization": [
+    "Synthetic inputs only.",
+    "Date.now is fixed to 1730000000000 when used.",
+    "Temporary history root is rendered as <APPDATA>; path separators are normalized in error text."
+  ],
+  "limitations": [
+    "Frozen original functions or statement ranges run in a Node VM. Declared IO seams are supplied by the runner; this is not a full server or Electron end-to-end run."
+  ]
+}

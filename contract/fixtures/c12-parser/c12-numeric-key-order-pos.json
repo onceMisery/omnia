@@ -1,0 +1,23 @@
+{
+  "id": "c12-numeric-key-order-pos",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>tool_name:「始」Echo「末」9:「始」nine「末」2:「始」two「末」02:「始」zero-two「末」4294967295:「始」max「末」1:「始」one「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "Echo",
+      "args": {
+        "1": "one",
+        "2": "two",
+        "9": "nine",
+        "02": "zero-two",
+        "4294967295": "max"
+      },
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

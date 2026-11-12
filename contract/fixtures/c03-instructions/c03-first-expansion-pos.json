@@ -1,0 +1,20 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "placeholders",
+  "input": {
+    "descriptions": [
+      [
+        "VCPA",
+        "内容"
+      ]
+    ],
+    "messages": [
+      "{{VCPA}} + {{VCPA}}",
+      "{{VCPA}}再出现"
+    ]
+  },
+  "expected": [
+    "内容 + ",
+    "再出现"
+  ]
+}

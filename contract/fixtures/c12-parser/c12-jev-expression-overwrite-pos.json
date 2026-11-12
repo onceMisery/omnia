@@ -1,0 +1,19 @@
+{
+  "id": "c12-jev-expression-overwrite-pos",
+  "kind": "parse",
+  "src": "<<<[TOOL_REQUEST]>>>expression:「始」old「末」jev:「始」new「末」<<<[END_TOOL_REQUEST]>>>",
+  "fuzzy_markers": false,
+  "expected": [
+    {
+      "name": "JEV",
+      "args": {
+        "expression": "new"
+      },
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ]
+}

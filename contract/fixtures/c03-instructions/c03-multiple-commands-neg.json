@@ -1,0 +1,21 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "instructions",
+  "input": {
+    "plugins": [
+      {
+        "name": "Example",
+        "displayName": "示例",
+        "capabilities": {
+          "invocationCommands": [
+            {
+              "command": "Empty",
+              "description": ""
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "expected": []
+}

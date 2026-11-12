@@ -1,0 +1,28 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "stdio-bridge",
+  "input": {
+    "args": {
+      "command": "列目录",
+      "filePath1": "D:/notes",
+      "maid": "Alice"
+    },
+    "pluginOutput": {
+      "status": "success",
+      "result": {}
+    }
+  },
+  "expected": {
+    "calls": [
+      [
+        "FixtureTool",
+        "{\"command\":\"列目录\",\"filePath1\":\"D:/notes\",\"maid\":\"Alice\"}",
+        "192.0.2.1",
+        {}
+      ]
+    ],
+    "result": {
+      "result": {}
+    }
+  }
+}

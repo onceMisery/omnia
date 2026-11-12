@@ -1,0 +1,26 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "frontend-assistant-origin",
+  "input": {
+    "userId": "other-user-id"
+  },
+  "expected": {
+    "thinkingMessage": {
+      "role": "assistant",
+      "name": "Fixture Agent",
+      "content": "思考中",
+      "timestamp": 1730000000000,
+      "id": "msg_1730000000000_assistant_4i",
+      "isThinking": true,
+      "replyToMessageId": "other-user-id",
+      "agentId": "agent",
+      "topicId": "default",
+      "context": {
+        "agentId": "agent",
+        "topicId": "default"
+      }
+    },
+    "dispatchedMessageId": "msg_1730000000000_assistant_4i",
+    "currentUserMessageId": "other-user-id"
+  }
+}

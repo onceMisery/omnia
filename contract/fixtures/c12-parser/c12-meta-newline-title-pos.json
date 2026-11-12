@@ -1,0 +1,6 @@
+{
+  "id": "c12-meta-newline-title-pos",
+  "kind": "reasoning",
+  "src": "[--- VCP元思考链: \"a\nb\" ---]\nx\n[--- 元思考链结束 ---]\nafter",
+  "expected": "after"
+}

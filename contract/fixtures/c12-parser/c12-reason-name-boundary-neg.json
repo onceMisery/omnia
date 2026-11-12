@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-name-boundary-neg",
+  "kind": "reasoning",
+  "src": "<thinker>visible</thinker><think_>also</think_>",
+  "expected": "<thinker>visible</thinker><think_>also</think_>"
+}

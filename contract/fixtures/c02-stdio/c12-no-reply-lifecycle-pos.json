@@ -1,0 +1,50 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "process-result",
+  "input": {
+    "name": "Tool",
+    "value": {
+      "status": "success",
+      "__vcpArcheryNoReplySilent": true
+    }
+  },
+  "expected": {
+    "output": {
+      "success": true,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": \"success\",\n  \"__vcpArcheryNoReplySilent\": true\n}"
+        }
+      ],
+      "approvalFeedbackContent": [],
+      "raw": {
+        "status": "success",
+        "__vcpArcheryNoReplySilent": true
+      }
+    },
+    "broadcasts": [
+      [
+        {
+          "type": "vcp_log",
+          "data": {
+            "tool_name": "Tool",
+            "status": "success",
+            "content": "{\n  \"status\": \"success\",\n  \"__vcpArcheryNoReplySilent\": true\n}"
+          }
+        },
+        "VCPLog"
+      ]
+    ],
+    "lifecycle": [
+      {
+        "type": "TOOL_NO_REPLY_ACCEPTED",
+        "toolName": "Tool",
+        "status": "success",
+        "noReply": true,
+        "message": "Async no-reply tool \"Tool\" accepted silently.",
+        "timestamp": "2024-10-27T03:33:20.000Z"
+      }
+    ]
+  }
+}

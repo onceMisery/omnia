@@ -1,0 +1,42 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "frontend-chunk",
+  "input": {
+    "chunks": [
+      {
+        "choices": [
+          {
+            "delta": {
+              "content": "choices"
+            }
+          }
+        ],
+        "delta": {
+          "content": "delta"
+        },
+        "content": "content",
+        "raw": "raw"
+      },
+      {
+        "delta": {
+          "content": "delta"
+        },
+        "content": "content"
+      },
+      {
+        "content": "content"
+      },
+      "string",
+      {
+        "raw": "raw"
+      }
+    ]
+  },
+  "expected": [
+    "choices",
+    "delta",
+    "content",
+    "string",
+    "raw"
+  ]
+}

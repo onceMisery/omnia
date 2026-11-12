@@ -1,0 +1,73 @@
+{
+  "schema": "omnia-source-fixture-meta-v1",
+  "origin": "frozen-source-execution",
+  "rules": [
+    "C04.mark-history"
+  ],
+  "sources": [
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "vcpInfoHandler.js",
+      "startLine": 1,
+      "endLine": 157,
+      "sha256": "ba0cc73bb6c4b8821e372da52646bf65a9a407ac3023e8869d83aa6f8e3c0466"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/chatCompletionHandler.js",
+      "startLine": 289,
+      "endLine": 349,
+      "sha256": "252d1ef59494ebcdf669da14643501b1d248245ba295b09b39e5950c7fe08d06"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/toolResultBatch.js",
+      "startLine": 1,
+      "endLine": 131,
+      "sha256": "d545578804d09364c27d9ebbd429c636af27532d5a163ec0e00f40f098893eab"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/handlers/streamHandler.js",
+      "startLine": 536,
+      "endLine": 547,
+      "sha256": "97853a721bad505529a634bcfaed993ea2f42e017c4f37c414f27d868eebc7c4"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/handlers/streamHandler.js",
+      "startLine": 674,
+      "endLine": 708,
+      "sha256": "6b4fd6139c72fd46118cac0d95e73b67957217493037fcd02182da3b8f08bc20"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/handlers/streamHandler.js",
+      "startLine": 711,
+      "endLine": 713,
+      "sha256": "c4e8ce896a4a0ca3e73d9e132134a65f7ab6d347df6d1aa707bec05ec93569cb"
+    },
+    {
+      "repository": "VCPToolBox",
+      "commit": "a8560b0ae4e7b1a7803a88093a9ebee391e21a7c",
+      "path": "modules/handlers/streamHandler.js",
+      "startLine": 722,
+      "endLine": 743,
+      "sha256": "e7649771f5f2055dc0c43eca723d03910a95aa8a8985c7169efa610fa4dcd713"
+    }
+  ],
+  "normalization": [
+    "Synthetic inputs only.",
+    "Date.now is fixed to 1730000000000 when used.",
+    "Temporary history root is rendered as <APPDATA>; path separators are normalized in error text."
+  ],
+  "limitations": [
+    "Frozen original functions or statement ranges run in a Node VM. Declared IO seams are supplied by the runner; this is not a full server or Electron end-to-end run."
+  ]
+}

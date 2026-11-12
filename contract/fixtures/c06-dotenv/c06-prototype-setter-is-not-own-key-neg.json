@@ -1,0 +1,10 @@
+{
+  "id": "c06-prototype-setter-is-not-own-key-neg",
+  "kind": "parse",
+  "src": "__proto__=text\nconstructor=kept\ntoString=kept-too",
+  "expected": {
+    "constructor": "kept",
+    "toString": "kept-too"
+  }
+}
+

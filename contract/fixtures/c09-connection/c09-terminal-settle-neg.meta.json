@@ -1,0 +1,26 @@
+{
+  "schema": "omnia-source-fixture-meta-v1",
+  "origin": "frozen-source-execution",
+  "rules": [
+    "C09.settle-3000ms"
+  ],
+  "sources": [
+    {
+      "repository": "VCPChat",
+      "commit": "c3e4855efa2b24c0578d76e17fd6c5f21857a539",
+      "path": "modules/chatManager.js",
+      "startLine": 12,
+      "endLine": 16,
+      "sha256": "42d4dff50a1218ccafc4e7dfbc2371dadfc06096cf630d2844062d3291002f1f"
+    }
+  ],
+  "normalization": [
+    "Synthetic inputs only.",
+    "Date.now is fixed to 1730000000000 when used.",
+    "Temporary history root is rendered as <APPDATA>; path separators are normalized in error text."
+  ],
+  "limitations": [
+    "Frozen original functions or statement ranges run in a Node VM. Declared IO seams are supplied by the runner; this is not a full server or Electron end-to-end run.",
+    "This is the post-acknowledgement terminal wait, not a total 3-second user-stop guarantee."
+  ]
+}

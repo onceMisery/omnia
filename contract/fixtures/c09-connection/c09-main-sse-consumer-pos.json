@@ -1,0 +1,33 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "frontend-sse",
+  "input": {
+    "lines": [
+      ": keepalive",
+      "data: {\"content\":\"正常\"}",
+      "data: [DONE]",
+      "data: {\"content\":\"ignored\"}"
+    ]
+  },
+  "expected": [
+    {
+      "type": "data",
+      "chunk": {
+        "content": "正常"
+      },
+      "messageId": "assistant-id",
+      "context": {
+        "agentId": "agent",
+        "topicId": "default"
+      }
+    },
+    {
+      "type": "end",
+      "messageId": "assistant-id",
+      "context": {
+        "agentId": "agent",
+        "topicId": "default"
+      }
+    }
+  ]
+}

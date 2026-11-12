@@ -1,0 +1,14 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "visible",
+  "input": {
+    "calls": [
+      {
+        "name": "目录",
+        "status": "error",
+        "result": null
+      }
+    ]
+  },
+  "expected": "\n[[VCP调用结果信息汇总:\n- 工具名称: 目录\n- 执行状态: ❌ ERROR\n- 返回内容: 插件执行完毕，但没有返回明确内容。\nVCP调用结果结束]]\n"
+}

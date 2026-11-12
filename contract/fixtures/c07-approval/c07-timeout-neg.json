@@ -1,0 +1,13 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "approval-timeout",
+  "input": {
+    "minutes": 5,
+    "approve": true
+  },
+  "expected": {
+    "resolved": null,
+    "scheduled": 300000,
+    "pending": 0
+  }
+}

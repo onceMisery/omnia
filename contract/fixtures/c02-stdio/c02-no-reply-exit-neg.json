@@ -1,0 +1,12 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "stdout",
+  "input": {
+    "code": 3,
+    "stdout": "",
+    "noReply": true
+  },
+  "expected": {
+    "rejected": "Plugin \"FixtureTool\" exited with code 3."
+  }
+}

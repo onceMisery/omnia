@@ -1,0 +1,9 @@
+{
+  "id": "c06-extended-key-characters-pos",
+  "kind": "parse",
+  "src": "a.Z@#%&^+-_=ok\n",
+  "expected": {
+    "a.Z@#%&^+-_": "ok"
+  }
+}
+

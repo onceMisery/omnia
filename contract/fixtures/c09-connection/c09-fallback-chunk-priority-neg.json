@@ -1,0 +1,27 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "frontend-chunk",
+  "input": {
+    "fallback": true,
+    "chunks": [
+      {
+        "choices": [
+          {
+            "delta": {
+              "content": ""
+            }
+          }
+        ],
+        "content": "fallback"
+      },
+      {
+        "raw": "broken",
+        "error": "json_parse_error"
+      }
+    ]
+  },
+  "expected": [
+    "fallback",
+    ""
+  ]
+}

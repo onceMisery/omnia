@@ -1,0 +1,6 @@
+{
+  "id": "c12-meta-incomplete-pos",
+  "kind": "reasoning",
+  "src": "before\n[--- VCP元思考链 ---]\nhidden",
+  "expected": "before\n"
+}

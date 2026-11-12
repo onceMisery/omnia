@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-headless-after-closed-neg",
+  "kind": "reasoning",
+  "src": "<think>a</think>visible\n</think>end",
+  "expected": "visible\nend"
+}

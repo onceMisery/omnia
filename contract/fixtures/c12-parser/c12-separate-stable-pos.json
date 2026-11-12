@@ -1,0 +1,84 @@
+{
+  "id": "c12-separate-stable-pos",
+  "kind": "separate",
+  "calls": [
+    {
+      "name": "First",
+      "args": {},
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    },
+    {
+      "name": "Second",
+      "args": {},
+      "archery": true,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    },
+    {
+      "name": "Third",
+      "args": {},
+      "archery": false,
+      "archeryNoReply": false,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    },
+    {
+      "name": "Fourth",
+      "args": {},
+      "archery": true,
+      "archeryNoReply": true,
+      "markHistory": false,
+      "river": null,
+      "vref": null
+    }
+  ],
+  "expected": {
+    "normal": [
+      {
+        "name": "First",
+        "args": {},
+        "archery": false,
+        "archeryNoReply": false,
+        "markHistory": false,
+        "river": null,
+        "vref": null
+      },
+      {
+        "name": "Third",
+        "args": {},
+        "archery": false,
+        "archeryNoReply": false,
+        "markHistory": false,
+        "river": null,
+        "vref": null
+      }
+    ],
+    "archery": [
+      {
+        "name": "Second",
+        "args": {},
+        "archery": true,
+        "archeryNoReply": false,
+        "markHistory": false,
+        "river": null,
+        "vref": null
+      },
+      {
+        "name": "Fourth",
+        "args": {},
+        "archery": true,
+        "archeryNoReply": true,
+        "markHistory": false,
+        "river": null,
+        "vref": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "interrupt",
+  "input": {
+    "stream": true,
+    "response": {
+      "headersSent": true,
+      "headers": {
+        "Content-Type": "text/event-stream"
+      }
+    }
+  },
+  "expected": {
+    "response": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": "text/event-stream"
+      },
+      "chunks": [
+        "data: [DONE]\n\n"
+      ],
+      "writableEnded": true,
+      "destroyed": false,
+      "headersSent": true
+    },
+    "receipts": [
+      {
+        "statusCode": 200,
+        "headers": {},
+        "chunks": [],
+        "writableEnded": true,
+        "destroyed": false,
+        "headersSent": false,
+        "body": {
+          "status": "success",
+          "message": "Interrupt signal sent for request assistant-id."
+        }
+      }
+    ],
+    "aborted": true,
+    "signalAborted": true,
+    "scheduled": [
+      1000
+    ],
+    "remainingRequests": 0
+  }
+}

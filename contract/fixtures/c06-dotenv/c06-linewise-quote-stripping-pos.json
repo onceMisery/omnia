@@ -1,0 +1,10 @@
+{
+  "id": "c06-linewise-quote-stripping-pos",
+  "kind": "parse",
+  "src": "A=\"one\" tail\nB=prefix \"two\"",
+  "expected": {
+    "A": "one",
+    "B": "prefix two"
+  }
+}
+

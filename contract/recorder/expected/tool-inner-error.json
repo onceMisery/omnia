@@ -1,0 +1,57 @@
+{
+  "request": {
+    "model": "tool-inner-error",
+    "stream": false,
+    "requestId": "fixture-tool-inner-error",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Synthetic M0 contract recording."
+      }
+    ]
+  },
+  "status": 200,
+  "headers": {
+    "access-control-allow-origin": "*",
+    "connection": "keep-alive",
+    "content-length": "<BODY_BYTES>",
+    "content-type": "application/json",
+    "date": "<HTTP_DATE>",
+    "etag": "<BODY_ETAG>",
+    "keep-alive": "timeout=5",
+    "x-powered-by": "Express"
+  },
+  "wire": "{\"id\":\"synthetic-tool-inner-error\",\"object\":\"chat.completion\",\"created\":1,\"model\":\"tool-inner-error\",\"choices\":[{\"index\":0,\"message\":{\"role\":\"assistant\",\"content\":\"<<<[TOOL_REQUEST]>>>\\ntool_name:「始」FixtureEcho「末」\\nmode:「始」inner-error「末」\\n\\n<<<[END_TOOL_REQUEST]>>>\\n<<<[VCP_TOOL_BATCH_START:<BATCH_TIME>]>>>\\n\\n[本轮工具调用摘要:]\\nFixtureEcho 调用失败。\\n[本轮工具调用摘要结束]\\n\\n<<<[VCP_TOOL_BATCH_END:<BATCH_TIME>]>>>\\n\\nfixture-complete:tool-inner-error\"},\"finish_reason\":\"stop\"}]}",
+  "upstream": [
+    {
+      "model": "tool-inner-error",
+      "stream": false,
+      "requestId": "fixture-tool-inner-error",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Synthetic M0 contract recording."
+        }
+      ]
+    },
+    {
+      "model": "tool-inner-error",
+      "stream": false,
+      "requestId": "fixture-tool-inner-error",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Synthetic M0 contract recording."
+        },
+        {
+          "role": "assistant",
+          "content": "<<<[TOOL_REQUEST]>>>\ntool_name:「始」FixtureEcho「末」\nmode:「始」inner-error「末」\n\n<<<[END_TOOL_REQUEST]>>>"
+        },
+        {
+          "role": "user",
+          "content": "<!-- VCP_TOOL_PAYLOAD -->\n[{\"type\":\"text\",\"text\":\"{\\n  \\\"success\\\": false,\\n  \\\"error\\\": \\\"synthetic-inner-error\\\",\\n  \\\"timestamp\\\": \\\"<PLUGIN_TIME>\\\"\\n}\"}]"
+        }
+      ]
+    }
+  ]
+}

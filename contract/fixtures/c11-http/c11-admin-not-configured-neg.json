@@ -1,0 +1,23 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "admin-auth",
+  "input": {
+    "configured": false,
+    "requests": [
+      {
+        "path": "/AdminPanel/index.html"
+      }
+    ]
+  },
+  "expected": [
+    {
+      "status": 503,
+      "headers": {},
+      "body": "<h1>503 Service Unavailable</h1><p>Admin credentials (AdminUsername, AdminPassword) are not configured in config.env. Please configure them to enable the admin panel.</p>",
+      "next": false,
+      "wrongCredentialCount": 0,
+      "missingCredentialCount": 0,
+      "blockedForMs": 0
+    }
+  ]
+}

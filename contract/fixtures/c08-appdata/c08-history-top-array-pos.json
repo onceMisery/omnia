@@ -1,0 +1,24 @@
+{
+  "schema": "omnia-source-fixture-v1",
+  "runner": "history-file",
+  "input": {
+    "operation": "read",
+    "initial": [
+      {
+        "role": "user",
+        "content": "合成"
+      }
+    ]
+  },
+  "expected": {
+    "result": [
+      {
+        "role": "user",
+        "content": "合成"
+      }
+    ],
+    "observations": [],
+    "finalBytes": "[\n  {\n    \"role\": \"user\",\n    \"content\": \"合成\"\n  }\n]\n",
+    "temporaryFiles": []
+  }
+}

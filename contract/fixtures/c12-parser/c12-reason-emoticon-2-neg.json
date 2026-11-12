@@ -1,0 +1,6 @@
+{
+  "id": "c12-reason-emoticon-2-neg",
+  "kind": "reasoning",
+  "src": "(・`ω´・)\n<think>remove</think>`tail",
+  "expected": "(・`ω´・)\n`tail"
+}
