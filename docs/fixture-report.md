@@ -1,8 +1,8 @@
-# Omnia · M0 fixture 与基线对拍报告 v1.1
+# Omnia · M0 fixture 与基线对拍报告 v1.2
 
-- 版本 / 日期：v1.1 / 2026-11-12
+- 版本 / 日期：v1.2 / 2026-11-12
 - 状态：生效；M0（US-006）证据记录。责任 US：US-006；契约权威见 [M0M1 协议契约](Omnia-M0M1-协议契约.md)，基线见 [基线记录](基线记录.md)。
-- 平台：Windows x64（本机实测）；Rust 1.99.1、Node 22.14.0。Linux/macOS 与远程 CI 未运行，见 §6。
+- 平台：Windows x64（本机实测）；Rust 1.99.1、Node 22.14.0。远程 CI 三平台全绿（源码 fixture harness + 门禁，run 43219179413）；Linux/macOS 本机原版录制未运行，见 §6。
 
 本报告区分三类证据：**冻结源码构造**（固定输入在冻结源码 VM/静态切片上执行）、**真实 HTTP 录制**（隔离原版服务器 + 合成模型/插件）、**未覆盖项**。源码构造通过不等于运行链路通过；录制通过不等于原版 VCPChat 界面端到端通过。
 
@@ -66,12 +66,13 @@ node contract/recorder/record-original.mjs target/baseline/vcptoolbox contract/r
 ## 6. 未覆盖与未验证（不得据此签署全产品兼容）
 
 - 四象限 e2e（US-021/022）、原版真实插件目录挂载、真实 AppData 往返：M1 责任，未运行。
-- Linux/macOS 上的录制与差分：未运行；prepare 脚本支持三平台 x64 内核导出，但仅 Windows 实测。
-- 远程 CI：配置存在，未执行；不宣称全绿。
+- Linux/macOS 上的原版录制（§3）与 Rust/冻结 Node 差分（§2 `verify-baseline`）：未运行，仅 Windows 本机实测；prepare 脚本支持三平台 x64 内核导出。CI 在三平台运行的是源码 fixture harness（`verify-source-fixtures`，§1），不含 §2 差分与 §3 录制。
+- 远程 CI：已执行并三平台全绿（run 43219179413 / commit 61c8bc8，windows/ubuntu/macos 三 job success、无失败步骤）。CI 运行源码 fixture harness（source-fixtures/normalization/runtime + 清单校验）与全部门禁，**不含原版 HTTP 录制**（compare-original/record-original 依赖本机隔离基线与录制产物）。
 - 逐规则运行级覆盖：125 条规则的正反例为源码构造/静态证据，运行级录制仅覆盖 §3 场景集。
 - 原版 VCPChat 前端行为：未验证。
 
 ## 7. 修订记录
 
+- v1.2（2026-11-12）：远程 CI 三平台全绿确认（run 43219179413 / commit 61c8bc8）；§6「远程 CI 未执行」改为已执行全绿，并区分 CI 运行的源码 fixture harness 与仅 Windows 本机的 §2 差分/§3 原版录制。fixture/录制/差分证据本身不变。
 - v1.1（2026-11-12）：同步 `cargo test --workspace` 终态计数 37→38（补齐 CJK 输入无头测试后复跑）；fixture/录制证据本身不变。
 - v1.0（2026-11-12）：M0 接续会话复跑差分/清单/对拍后建立；汇总 392 fixture、35 组录制与契约 v1.2 勘误闭环。

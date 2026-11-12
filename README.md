@@ -1,6 +1,6 @@
-# Omnia · 文档入口 v1.3
+# Omnia · 文档入口 v1.6
 
-> 版本 / 日期：v1.3 / 2026-11-12 · 状态：生效 · 技术选型是既定前提，本次修订不重新评价或替换。
+> 版本 / 日期：v1.6 / 2026-11-12 · 状态：生效 · 技术选型是既定前提，本次修订不重新评价或替换。
 
 ## 1. 项目目标
 
@@ -17,11 +17,11 @@ Omnia 以冻结版本的 VCPToolBox（后端）和 VCPChat（前端）为对象�
 
 | 项目 | 当前事实 |
 | --- | --- |
-| 产品工程 | M0 实施中：Cargo workspace、锁文件、配置/协议库、GPUI 开发预览与 CI 配置已建立；M1 后端服务和聊天尚未实现 |
+| 产品工程 | M0 完成：Cargo workspace、锁文件、配置/协议库、GPUI 开发预览已建立，远程 CI 三平台全绿（run 43219179413）；M1 后端服务和聊天尚未实现 |
 | 代码位置 | `crates/omnia-config`、`crates/omnia-protocol`、`crates/omnia-app`；独立实验包 `crates/omnia-gpui-probes`；契约库与录制工具 `contract/` |
 | 契约证据 | 配置/协议固定用例与冻结源码差分通过；原版合成模型/插件的 26 组对话及 9 组 HTTP 边界录制通过，详见 [fixture 报告](docs/fixture-report.md) |
 | 产品兼容性 | M0 配置/文本解析范围已验证；四象限 e2e、真实插件/AppData 兼容和全产品能力尚未验证 |
-| 阶段出口 | Windows 本机证据见 [M0 构建与验证](docs/m0-build-and-validation.md) 与 [GPUI 实测报告](docs/m0-gpui-validation.md)（F1～F8 逐项记录，F1 的 Linux/macOS 待验证）；三平台构建与远程 CI 全绿前，不签署整个 M0 完成 |
+| 阶段出口 | M0 DoD 达成：契约 fixture 库对拍通过（US-006）+ 骨架 CI 三平台全绿 + GPUI 空窗口三平台构建（run 43219179413，windows/ubuntu/macos 三 job 均 success）。证据见 [M0 构建与验证](docs/m0-build-and-validation.md) 与 [GPUI 实测报告](docs/m0-gpui-validation.md)（F1～F8 逐项记录）。CI 验证三平台构建 + 无头窗口测试；Linux/macOS 原生 GPU 呈现、release profile 与长测属 M1+，仍未验证 |
 
 未在本节及验证报告中列为已实现的签名、服务、部署和迁移流程仍为目标规格。开发预览的设置仅本次运行生效，不读写原版 AppData。
 
@@ -175,9 +175,14 @@ Omnia 以冻结版本的 VCPToolBox（后端）和 VCPChat（前端）为对象�
 | [M0 实施意图](docs/aegis/work/2026-11-12-m0/10-intent.md) | 当前授权范围与完成边界 |
 | [M0 实施检查点](docs/aegis/work/2026-11-12-m0/20-checkpoint.md) | 长任务接续与未完成事项 |
 | [M0 实施计划](brainstorming/plans/2026-11-12-m0-implementation.md) | US-001～007 的任务分解 |
+| [架构运行时设计决策记录](brainstorming/plans/2026-11-12-architecture-runtime-decisions.md) | 架构 v2.6 十项定案的背景、授权与影响 |
+| [设计文档评审](docs/Omnia-设计文档评审-2026-11-12.md) | 对照冻结基线的文档评审结论、问题清单与修复顺序 |
 
 ## 9. 修订记录
 
+- v1.6（2026-11-12）：§2 当前状态签署 M0 完成——远程 CI 三平台全绿（run 43219179413 / commit 61c8bc8，windows/ubuntu/macos 三 job success），M0 DoD（fixture 对拍 + 骨架 CI 全绿 + GPUI 空窗口三平台构建）达成；阶段出口写明 CI 验证构建+无头窗口、原生 GPU 呈现/release/长测属 M1+。同步三份验证报告与检查点版本。
+- v1.5（2026-11-12）：文档索引加入设计文档评审记录；其余内容不变。
+- v1.4（2026-11-12）：文档索引加入架构运行时设计决策记录；其余内容不变。
 - v1.3（2026-11-12）：同步 M0 工程和基线录制的实际进度，转正许可/构建/验证文档；三平台与阶段出口保持待验证。
 - v1.2（2026-11-12）：新增代码质量规范与 AGENTS 入口，明确通用质量门禁及设计审查责任。
 - v1.1（2026-11-12）：修正范围与成熟度口径；区分阶段交付和最终兼容；收敛索引副本，纳入维护说明与文档检查。技术选型与冻结 commit 不变。

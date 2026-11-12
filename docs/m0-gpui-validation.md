@@ -1,6 +1,6 @@
-# Omnia · M0 GPUI 实测报告 v1.1
+# Omnia · M0 GPUI 实测报告 v1.2
 
-- 版本 / 日期：v1.1 / 2026-11-12
+- 版本 / 日期：v1.2 / 2026-11-12
 - 状态：生效；M0M1 PRD **US-007** 交付的 F1～F8 实测记录，条目定义见[前端框架选型](Omnia-前端框架选型.md) §6。质量规则见[代码风格与质量约束](Omnia-代码风格与质量约束.md)；工程门禁见 [M0 构建与验证](m0-build-and-validation.md)。
 - 实测平台：Windows 11 x64（10.0.26200）单机；Rust 1.99.1（rust-toolchain.toml 锁定）；dev profile；无头测试为主，F1 含一次真实原生窗口启动。
 - 锁定版本：gpui-kit =0.9.1（gpui-component/gpui-base 同版）；默认后端 gpui-pre =0.3.12；实验后端 gpui-fast 0.1.14（opt-in feature）；gpui-shell =0.9.1（default-features=false + quickjs，显式关闭上游默认 WebView）；quickjs-jit =0.14.1。
@@ -9,7 +9,7 @@
 
 | 项 | 结论 | 状态 |
 | --- | --- | --- |
-| F1 三平台构建/窗口 | Windows 构建+原生启动+中文渲染+正常退出实测通过；Linux/macOS 待验证 | 部分通过 |
+| F1 三平台构建/窗口 | Windows 构建+原生启动+中文渲染+正常退出实测通过；三平台构建+无头窗口 CI 全绿（run 43219179413）；Linux/macOS 原生 GPU 呈现待实机 | 构建通过 |
 | F2 千条消息虚拟化 | 1000 条仅构建可见行，滚动/跳转/缩放通过（无头 CPU） | 通过 |
 | F3 增量 Markdown+竞态 | 跨片段粗体/代码围栏渲染正确；session/generation/message 三元组与停止/重试竞态全部拒绝 | 通过 |
 | F4 gpui-shell 运行时 | fs 二进制/WS 二进制/zlib 原 bug 三场景 + 授权/崩溃隔离/热重载全部通过 | 通过 |
@@ -34,7 +34,7 @@ cargo run -p omnia-app --locked                   # F1 原生窗口（聊天预�
 
 - Windows：`cargo check --workspace --all-targets --locked` 与 `cargo run -p omnia-app --locked` 实测通过；原生窗口渲染中文界面（聊天预览+设置页），`CloseMainWindow()`（WM_CLOSE）后进程退出码 0（2026-11-12 实测；截图存本机 target/m0-continue/f1-window.png，不入库）。
 - 设置页仅本次运行生效，不读写原版 AppData、不连接服务器。
-- Linux/macOS：CI 矩阵（ubuntu-24.04/macos-15，含系统依赖安装步骤）已配置，**远程 CI 尚未执行，两平台保持待验证**；hello-chat 级窗口跑通证据由 CI 或实机补齐。
+- Linux/macOS：CI 矩阵（ubuntu-24.04/macos-15，含系统依赖安装步骤）**远程 CI 已执行并三平台全绿**（run 43219179413 / commit 61c8bc8，三 job 均 success、无失败步骤）；两平台 `cargo check --workspace --all-targets`、`cargo test`（含 omnia-app/探针无头窗口测试，无平台门控）与 gpui-fast 构建均通过。hello-chat 级**无头窗口**跑通已由 CI 闭合；**原生 GPU 窗口呈现**仍待实机（CI 为无头，不含 GPU 呈现）。
 
 ## 4. F2 千条消息虚拟化
 
@@ -85,7 +85,7 @@ cargo run -p omnia-app --locked                   # F1 原生窗口（聊天预�
 | gpui-pre 0.3.12（默认） | 18.066ms | 30.722ms | 42.199ms |
 | gpui-fast 0.1.14（实验） | 13.189ms | 19.098ms | 22.339ms |
 
-- 决策：**保留 gpui-pre 为默认后端，不切换**。gpui-fast 保持 opt-in 实验 feature，CI 单独构建验证。理由：M0 仅有单机无头 CPU 证据，无 GPU 呈现、长稳与三平台数据；切换收益不足以抵消未验证风险。M4 US-330 引用本结果，M5 US-414 推广前须按选型 §6 重新验证。
+- 决策：**保留 gpui-pre 为默认后端，不切换**。gpui-fast 保持 opt-in 实验 feature，CI 单独构建验证（三平台构建全绿）。理由：M0 仅有单机无头 CPU 证据，无 GPU 呈现、长稳与三平台性能数据；切换收益不足以抵消未验证风险。M4 US-330 引用本结果，M5 US-414 推广前须按选型 §6 重新验证。
 
 ## 9. F7 无头 UI 测试
 
@@ -102,7 +102,7 @@ cargo run -p omnia-app --locked                   # F1 原生窗口（聊天预�
 
 ## 11. 未验证清单
 
-- Linux/macOS 本机构建与运行；远程 CI 全绿（F1 三平台闭合的前提）。
+- Linux/macOS 本机原生 GPU 窗口呈现（远程 CI 已验证三平台构建 + 无头窗口测试全绿，F1 构建出口已闭合；原生呈现仅 Windows 实测）。
 - GPU 呈现帧率与长稳（F2「流畅」与 F6 切换决策的补充证据）。
 - release profile 构建（M0 仅 dev profile）。
 - 真实远端 WebSocket、进程级崩溃隔离（F4 局限）。
@@ -110,5 +110,6 @@ cargo run -p omnia-app --locked                   # F1 原生窗口（聊天预�
 
 ## 12. 修订记录
 
+- v1.2（2026-11-12）：远程 CI 三平台全绿确认（run 43219179413 / commit 61c8bc8，windows/ubuntu/macos 三 job success、无失败步骤）；F1 由「部分通过」改为「构建通过」——三平台构建 + 无头窗口测试 CI 闭合，Linux/macOS 原生 GPU 呈现仍待实机；§3/§11 同步，F6 决策理由精确为「三平台性能数据」（CI 给构建/无头正确性，非性能）。F2～F8 实测证据不变。
 - v1.1（2026-11-12）：补齐 CJK 输入无头测试（`cjk_input_reaches_the_display_name_and_chat_greeting`），F7 计数 omnia-app 4→5、合计 11→12；问候语 div 加 `.aria_label`+`.test_support()` 以支持无头回读。
 - v1.0（2026-11-12）：M0 接续会话建立；F1～F8 逐项实测记录，F4/F5 探针补齐（shell_runtime.rs、host_bridge.rs），F6 决策保留 gpui-pre，F8 缺口确认并登记承接。

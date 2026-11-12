@@ -1,10 +1,10 @@
-# Omnia · M0+M1 执行 PRD v2.3
+# Omnia · M0+M1 执行 PRD v2.4
 
 ## 0. 文档信息
 
 | 项 | 值 |
 | --- | --- |
-| 版本 / 日期 / 状态 | v2.3 / 2026-11-12（配置默认值源码勘误）/ **条目可执行；录制验证待 US-006** |
+| 版本 / 日期 / 状态 | v2.4 / 2026-11-12（同步架构 v2.6：记录库归属与取消范围）/ **条目可执行；录制验证待 US-006** |
 | 适用阶段 | M0–M1；待冻结项 0；元数据口径见 `README.md` §5.3、§7 |
 | 项目 | Omnia（VCP 生态 Rust 全栈原生复刻） |
 | 复刻对象 | lioensky/VCPToolBox（后端）+ lioensky/VCPChat（前端） |
@@ -282,7 +282,8 @@ omnia/
 │   │   ├── static_runner.rs      # cron 刷新+占位符值缓存
 │   │   ├── stdio_exec.rs         # C-02 执行协议+进程树管理
 │   │   ├── instructions.rs       # C-03 指令模板生成
-│   │   └── approval_min.rs       # C-07 审核最小子集
+│   │   ├── approval_min.rs       # C-07 审核最小子集
+│   │   └── records.rs            # tool_call_records 读写（归属依据见架构 §8.1）
 │   ├── omnia-model/src/
 │   │   ├── adapter.rs            # OpenAI 兼容上游（流式/非流式）
 │   │   ├── redirect.rs           # ModelRedirect.json
@@ -293,10 +294,9 @@ omnia/
 │   │   ├── loop_stream.rs        # 流式工具循环+SSE（C-04 事件序列）
 │   │   ├── injection.rs          # C-01 双通道构造（可见域/AI payload/批次/摘要）
 │   │   ├── handoff.rs            # C-05 门控状态机
-│   │   ├── prompt.rs             # 占位符替换+工具指令注入
-│   │   └── records.rs            # tool_call_records 读写
+│   │   └── prompt.rs             # 占位符替换+工具指令注入
 │   └── omnia-server/src/
-│       ├── main.rs               # 启动/端口/生命周期
+│       ├── main.rs               # 启动/端口/生命周期；装配规则见架构 §5.2（构造参数传入、就绪后才监听、失败非零退出）
 │       ├── middleware.rs         # 3.1 中间件链
 │       ├── auth.rs               # Bearer/Basic/限流/黑名单
 │       ├── routes_chat.rs        # chat/chatvcp completions
@@ -350,6 +350,7 @@ pub struct RetryPolicy { pub retries: u32, pub delay_ms: u64 }  // 缺省 3 / 10
 // omnia-plugin
 pub struct ExecContext { pub request_ip: String, pub caller: CallerInfo,
     pub cancel: CancellationToken, pub project_base: PathBuf }
+// cancel 只由停机回收（DV-3）与分布式节点取消（DV-6）触发；用户中断与客户端断联不终止在途工具（架构 §7 取消传播）
 pub struct ToolOutcome { pub content: Vec<ContentBlock>, pub success: bool,
     pub record_id: String, pub approval_feedback: Option<String>,
     pub no_reply_silent: bool, pub plugin_stderr: Option<String> }
@@ -603,7 +604,7 @@ crates/omnia-app/src/
 
 - 密钥只存 config.env / 插件 config.env，禁止硬编码与日志明文；日志对 Key/Token 脱敏
 - 工具执行审核：M1 最小子集按 C-07（开关+工具名匹配+拒绝路径）；完整审核 UI/规则 M3
-- 异常路径定义：上游超时→重试后错误 chunk；90s 无上游 chunk→超时文本 stop+[DONE]；插件超时→杀树+错误结果回灌；SSE 客户端断开→取消上游请求与工具循环（同一中止链，C-05）；循环上限→finish_reason:length 终止；磁盘满/DB 锁→503+日志
+- 异常路径定义：上游超时→重试后错误 chunk；90s 无上游 chunk→超时文本 stop+[DONE]；插件超时→杀树+错误结果回灌；SSE 客户端断开→取消上游请求，工具循环在轮次边界退出（同一中止链，C-05）；在途工具不被终止，运行到结束或自身超时，调用记录照常落库，结果不再回灌（架构 §7 取消传播）；循环上限→finish_reason:length 终止；磁盘满/DB 锁→503+日志
 - 请求体 300mb 上限 1:1（多模态需要），但需配置化以便收紧
 - 回调端点路径安全校验 1:1（UNSAFE_PATH→400）
 
@@ -630,6 +631,7 @@ crates/omnia-app/src/
 
 ## 14. 修订记录
 
+- v2.4（2026-11-12）：同步架构 v2.6：§6.1 `records.rs` 由 omnia-agent 移到 omnia-plugin，启动入口引用装配规则；§6.2 写明 `ExecContext.cancel` 的触发范围；§10 更正客户端断开时的描述（在途工具不被终止）。协议契约、US 范围与验收不变。
 - v2.3（2026-11-12）：US-002 独立审查复核冻结 server.js:1227，区分 ApiRetryDelay 缺省 1000ms 和示例 200ms；显式配置行为不变。
 
 - v2.2（2026-11-12）：通用检查与审查引用代码质量规范，US-001 承接 CI 落地；协议、技术选型和阶段范围不变。

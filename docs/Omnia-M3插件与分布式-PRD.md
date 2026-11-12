@@ -1,4 +1,4 @@
-# Omnia · M3 插件引擎全量与分布式 PRD v1.4
+# Omnia · M3 插件引擎全量与分布式 PRD v1.6
 
 > 本文件定义 M3 阶段目标，产品尚未实现。M1 最小审核与 HTTP 认证以 C-07/C-11 为准；M3 增量契约由 US-201 从冻结源码提取。技术选型保持既定方案。
 
@@ -6,12 +6,12 @@
 
 | 项 | 值 |
 | --- | --- |
-| 版本 / 日期 / 状态 | v1.4 / 2026-11-12（接入代码质量约束）/ **部分冻结** |
+| 版本 / 日期 / 状态 | v1.6 / 2026-11-12（同步架构 v2.6 定案）/ **部分冻结** |
 | 适用阶段 | M3；剩余【待冻结】由 US-201 滚动冻结，未冻结禁止实现（见 `README.md` §5.2） |
 | 范围对应 | 后端模块见 `docs/Omnia-复刻范围与对应矩阵.md` §3.2、§3.4；偏差登记见其 §6.2 |
 | 1:1 基线 | VCPToolBox commit `a8560b0ae4e7b1a7803a88093a9ebee391e21a7c`（与 M0M1/M2 同基线；事实须逐项核验，不从文件 diff 未变推断既有描述正确） |
 | 前置依赖 | M0M1 PRD（协议循环/stdio 插件/认证）+ M2 PRD（direct 宿主/记忆双通道）完成 |
-| 源码位置 | `D:\code\github\VCPToolBox`（Plugin.js、WebSocketServer.js、FileFetcherServer.js、modules/toolApprovalManager.js、asyncResultStore.js、dynamicToolRegistry.js、routes/taskScheduler.js、docs/DISTRIBUTED_ARCHITECTURE.md、PLUGIN_ECOSYSTEM.md、TOOL_APPROVAL_REASON_PROTOCOL.md）+ `D:\code\github\VCPChat\VCPDistributedServer`（VCPDistributedServer.js 736 行、Plugin.js、plugins.json、config.env.example；行号以冻结 commit 为准） |
+| 源码位置 | `D:\code\github\VCPToolBox`（Plugin.js、WebSocketServer.js、FileFetcherServer.js、modules/toolApprovalManager.js、asyncResultStore.js、dynamicToolRegistry.js、routes/taskScheduler.js、docs/DISTRIBUTED_ARCHITECTURE.md、PLUGIN_ECOSYSTEM.md、TOOL_APPROVAL_REASON_PROTOCOL.md）+ `D:\code\github\VCPChat\VCPDistributedServer`（VCPDistributedServer.js 955 行、Plugin.js、plugins.json、config.env.example；行号以冻结 commit 为准） |
 | 事实标注 | 【已验证】= 基线源码/文档确认；【待冻结】= US-201 补齐，未冻结禁止实现 |
 
 ---
@@ -140,7 +140,7 @@ connection_ack、heartbeat、heartbeat_ack、register_tools、report_ip、update
 4. **取消**：节点 register_tools.data.capabilities.cancelTool===true 才声明支持；服务端超时仅在 socket OPEN 且已声明能力时 best-effort 发一次 cancel_tool{requestId}；不向已关闭 socket 发帧；节点本地 deadline 独立生效
 5. **断线**：目标节点断开→立即清理并 reject 其全部 pending
 6. **节点侧**（VCPDistributedServer 仓库）：express body 上限 2mb；/plugin/callback 端点；internal_request_file 内置工具；原版节点不声明或处理 cancel_tool。Omnia 节点新增取消能力及本地中止生命周期属于 DV-6，不作为原版节点能力
-7. **混部要求**：omnia-server 主服务器必须能接原版 Node 分布式节点；omnia-server 节点实现必须能接原版主服务器（双向验证，§10）
+7. **混部要求**：omnia-server 主服务器必须能接原版 Node 分布式节点；Omnia 节点端实现必须能接原版主服务器（双向验证，§10）。节点端不依赖 omnia-server/omnia-agent，桌面端内嵌与独立节点进程都能装配（架构 §5.1，SC-17）
 
 ---
 
@@ -191,7 +191,8 @@ changePreview：稳定文件变更预览协议（前端无需了解插件参数�
 ## 9. admin_api 补全与论坛
 
 - 插件管理补全：instruction 更新、manifest 读取（M1 已有列表/开关/config）；预处理器顺序 GET/POST
-- server-log：增量读取（offset/needFullReload 语义；**精确格式【待冻结：US-201 从基线源码提取】**。原「M0M1 PRD §3 已列格式」为失效引用，2026-11-12 更正）
+- server-log：增量读取（offset/needFullReload 语义；**精确格式【待冻结：US-201 从基线源码提取】**。原「M0M1 PRD §3 已列格式」为失效引用，2026-11-12 更正）。日志文件位置与轮转按基线对齐（`DebugLog/ServerLog.txt`，见架构 §7 日志与诊断）；每行文本格式是否属于契约由 US-201 提取本端点时决定
+- 管理端口：omnia-server 同时监听 PORT 与 PORT+1（架构 §5.1）。两个端口对同一路径的行为在基线中并不完全相同，逐端点差异由 US-201 提取；提取前不实现 PORT+1 上的端点
 - dailynotes/knowledge-base 管理 API（M2 引擎的管理面）：folders/files/search/move/delete-batch、browse/file/tags，按 M0M1 PRD 引用的 API_ROUTES.md 清单 1:1
 - 论坛 API（P1）：posts/post/reply/like；FORUM_CONFIG 限额 1:1（内容 50000 字符、文件 2MB、maid 50 字、标题 100 字、500 楼、UID `^[a-zA-Z0-9_-]+$`、文件锁 10s、并发写 5）
 
@@ -202,7 +203,7 @@ changePreview：稳定文件变更预览协议（前端无需了解插件参数�
 1. **WS 协议契约**：6 类客户端握手/ack/广播/断线 fixture 对拍（录制原版 WS 流量）
 2. **双向混部**（M3 核心验收）：
    - 原版 VCPDistributedServer（Node）→ omnia-server 主服务器：注册/执行/超时/断线；验证未声明 cancelTool 时不发取消帧，不要求原版节点取消执行
-   - omnia-server 节点 → 原版主服务器：注册/执行/超时/断线，并验证声明 cancelTool 后的 cancel_tool 处理；DV-6 单独记录
+   - Omnia 节点端 → 原版主服务器：注册/执行/超时/断线，并验证声明 cancelTool 后的 cancel_tool 处理；DV-6 单独记录
 3. **审核 e2e**：原版 VCPChat 前端 ↔ omnia-server：批准/拒绝/带 reason/静默规则/多模态留言追加/archery 特例，逐条对拍回执文本
 4. **异步链路**：提交→初始响应→后台完成→回调→WS 推送→前端展示，原版插件（如视频生成类）直接挂载验证
 5. **文件访问**：跨节点 file:// 透明读取 + 缓存命中 + 循环检测 + 失败缓存用例
@@ -222,12 +223,11 @@ omnia/crates/
 ├── omnia-dist/src/
 │   ├── registry.rs        # register_tools/report_ip/占位符更新
 │   ├── executor.rs        # execute_tool + pending + serverId 绑定 + cancel
-│   └── node.rs            # omnia-server 作为分布式节点的实现（混部反向）
+│   └── node.rs            # 分布式节点端协议实现（混部反向）；不依赖 omnia-server/omnia-agent，供 omnia-app 内嵌与独立节点进程装配；所在 crate 由 US-201 核定（架构 §5.1）
 ├── omnia-filefetch/src/lib.rs  # §6 缓存/循环检测/IP 查找
 ├── omnia-approval/src/
 │   ├── rules.rs           # 审核规则（冻结后实现）
-│   ├── flow.rs            # 请求/TTL/响应/reason 语义
-│   └── receipt.rs         # 留言追加（复用 M1 _formatResult 规则）
+│   └── flow.rs            # 请求/TTL/响应/reason 语义；只产出留言文本，追加排版由 omnia-agent 的结果格式化完成（C-01 §1.5，架构 §2.2）
 ├── omnia-scheduler/src/lib.rs  # §8 任务持久化 + 触发 + 执行
 └── omnia-plugin/src/
     ├── async_exec.rs      # §2.1 初始响应/回调/静默宽限
@@ -238,13 +238,15 @@ omnia/crates/
 
 新增依赖：tokio-tungstenite（WS）、tokio-cron-scheduler 或自研定时轮（调度）、sha2（缓存键，已有）。
 
+crate 依赖方向（架构 §2.2，2026-11-12 定案）：omnia-ws 只依赖 omnia-protocol / omnia-config；omnia-dist、omnia-approval、omnia-scheduler 依赖 omnia-plugin 与 omnia-ws；omnia-filefetch 依赖 omnia-dist；omnia-agent 自 M3 起依赖 omnia-ws（侧通道广播）。不保留基线的双向持有，装配只在 omnia-server 的启动入口完成。
+
 ---
 
 ## 12. 用户故事（按依赖排序）
 
 **US-201 M3 契约冻结**：提取 Plugin.js 生命周期/预热/审核规则/changePreview/依赖门控、preprocessor_order.json、任务文件格式、错误隔离策略和管理 API；产出〔待产出〕docs/m3-spec.md，使用 M3-C-xx 命名空间，交付规则见使用与维护 §4。API_ROUTES.md 只作检索线索，精确格式以冻结源码为准。
 
-验收：按上列待冻结项登记提取证据与测试输入；SC-01/SC-02/SC-03/SC-13/SC-14 的后台能力逐项指定模块、契约、实施 US 及验收，不把缺少详规写成范围豁免。未完成的 SC 规格和实现由 US-427 跟踪，相关能力未冻结前不得开工。
+验收：按上列待冻结项登记提取证据与测试输入；SC-01/SC-02/SC-03/SC-13/SC-14 的后台能力逐项指定模块、契约、实施 US 及验收，不把缺少详规写成范围豁免。同时提取架构 v2.6 留给本 US 的事项：PORT 与 PORT+1 两个端口的逐端点差异、节点端协议实现所在的 crate（架构 §5.1，SC-17）、单个插件加载失败时的启动策略（架构 §5.2）、server-log 每行文本格式是否属于契约（架构 §7 日志与诊断）、定时任务文件的写入入口（架构 §8.1）。M3 各 crate 的依赖方向、审核留言追加的归属与工具调用记录库的归属已于 2026-11-12 定案（架构 §2.2、§8.1），按定案实现，不在本 US 重新核定；提取中发现与定案冲突的源码证据时，先勘误架构再实现。未完成的 SC 规格和实现由 US-427 跟踪，相关能力未冻结前不得开工。
 
 **US-202 Manifest 全 Schema + 配置级联**：验收：§3.1-3.3 逐项用例（类型转换、级联优先级、env 注入全表）。
 
@@ -319,6 +321,8 @@ omnia/crates/
 
 ## 16. 修订记录
 
+- v1.6（2026-11-12）：同步架构 v2.6 定案：§9 写明 PORT+1 承接与日志文件位置；§11 去掉 omnia-approval 的 `receipt.rs`（留言追加留在 omnia-agent）、`node.rs` 改为不依赖 omnia-server 的节点端实现、补 crate 依赖方向；§5/§10 的“omnia-server 节点”改称“Omnia 节点端”；US-201 区分已定案事项与仍需提取的事项。阶段范围与已冻结条目不变。
+- v1.5（2026-11-12）：US-201 验收承接架构 v2.5 指向本 US 的待定项（依赖方向、两端口差异、节点端宿主、启动容错、记录库调用路径）；更正 VCPDistributedServer.js 行数为 955。阶段范围与已冻结条目不变。
 - v1.4（2026-11-12）：通用检查与审查引用代码质量规范，保留混部与阶段专属验证。
 - v1.3（2026-11-12）：纠正回调认证、config.env、isDynamic 和取消能力；明确管理端点优先级、论坛前置与最终插件覆盖；统一 IN-4 路由与契约冻结责任。
 

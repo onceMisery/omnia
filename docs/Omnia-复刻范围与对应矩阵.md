@@ -1,16 +1,16 @@
-# Omnia · 复刻范围与对应矩阵 v1.2
+# Omnia · 复刻范围与对应矩阵 v1.4
 
 ## 0. 文档信息
 
 | 项 | 值 |
 | --- | --- |
-| 版本 / 日期 / 状态 | v1.2 / 2026-11-12 / **生效** |
+| 版本 / 日期 / 状态 | v1.4 / 2026-11-12 / **生效** |
 | 性质 | **范围问题的唯一权威**（见 `README.md` §4 按主题归属规则） |
 | 基线 | VCPToolBox `a8560b0ae4e7b1a7803a88093a9ebee391e21a7c` + VCPChat `c3e4855efa2b24c0578d76e17fd6c5f21857a539`（`docs/基线记录.md`） |
 | 适用阶段 | M0–M5 全阶段；每阶段启动时复核一次 |
 | 事实标注 | 同 `README.md` §5.2；【已验证】= 冻结基线源码/原版文档确认，【设计】= Omnia 决策 |
 | 依据文档 | `README.md`、`docs/Omnia-架构设计.md` §1/§2/§12、各阶段 PRD §1、`docs/Omnia-插件系统设计.md` §5 |
-| 范围成熟度 | 最终范围规则已明确；SC-01～SC-16 为待细化或未交付的补齐责任，不代表实现完成 |
+| 范围成熟度 | 最终范围规则已明确；SC-01～SC-17 为待细化或未交付的补齐责任，不代表实现完成 |
 
 > 本表保留既定技术选型。冻结基线内的用户功能、协议与数据能力均属于最终复刻目标；没有详规的能力进入 §5 补齐队列，不能自动排除。排除必须区分实现资产不照搬与用户能力不提供；后者须有明确批准及兼容性声明。
 
@@ -69,7 +69,7 @@
 | `vcpInfoHandler.js`、`modules/toolResultBatch.js`、`modules/vcpLoop/toolExecutor.js` | 工具结果可见域、批次包裹、双通道分发 | `omnia-agent` / `omnia-protocol` | `1:1` | C-01、契约 §1 |
 | `modules/messageProcessor.js`、`modules/tvsManager.js`、`TVStxt/` | 占位符替换、变量系统、静态占位符 | `omnia-agent` / `omnia-plugin` | `1:1` | C-03、契约 §3 |
 | `modules/dotenvPatch.js` + `config.env.example` | 配置加载与特殊字符补丁 | `omnia-config` | `1:1` | C-06、契约 §6 |
-| `modules/toolCallRecordStore.js` | 工具调用记录 SQLite（WAL） | `omnia-agent` | `1:1` | M0M1 PRD §5.2 |
+| `modules/toolCallRecordStore.js` | 工具调用记录 SQLite（WAL） | `omnia-plugin`（工具循环经句柄使用） | `1:1` | M0M1 PRD §5.2；架构 §8.1 |
 | `modules/toolApprovalManager.js`、`modules/toolResultPrivacyGuard.js` | 审核规则、隐私过滤 | `omnia-approval`（M1 最小子集在 `omnia-plugin`） | `1:1` | C-07、M3 PRD §7 |
 | `modules/contextManager.js`、`foldProtocol.js`、`roleDivider.js`、`reasoningContentAdapter.js` | 上下文修剪、折叠协议、角色切分、思考适配 | `omnia-agent` | `1:1` | C-10 步骤 3/9/11、M2 P1 |
 | `modules/finalContextStore.js`、`modules/vcpLogReplayManager.js` | 重放缓存与日志回放 | omnia-agent / omnia-ws | `范围内待细化 SC-13` | C-10；M3 US-201 |
@@ -80,7 +80,7 @@
 
 | 原模块 / 资产 | 功能 | Omnia 去向 | 处置 | 出处 |
 | --- | --- | --- | --- | --- |
-| `Plugin.js`（2764 行）、`modules/pluginBridgeRegistry.js` | 六类插件宿主、执行桥与依赖桥 | `omnia-plugin` | `1:1` | C-02、插件系统设计 §1.1 |
+| `Plugin.js`（2763 行）、`modules/pluginBridgeRegistry.js` | 六类插件宿主、执行桥与依赖桥 | `omnia-plugin` | `1:1` | C-02、插件系统设计 §1.1 |
 | `Plugin/` 96 个目录（77 启用插件类型数为 39/19/8/5/3/3；另 19 禁用） | 冻结插件生态 | sidecar 挂载 + 高频者原生化 | `1:1` / `基线` | M3 逐插件登记；Top-20 为阶段样本，不代表 96 项终验 |
 | `modules/dynamicToolRegistry.js`、`asyncResultStore.js` | 动态工具注册、异步回调结果 | `omnia-plugin` / `omnia-dist` | `1:1` | M3 PRD §2.1、§5 |
 | `modules/toolLifecycleVcpInfo.js`、`toolCallRecordInternalFilter.js`、`safeFilePath.js`、`safeZipExtractor.js` | 生命周期与输入防护 | `omnia-plugin` | `1:1` | 插件系统设计 §1 |
@@ -105,7 +105,7 @@
 | --- | --- | --- | --- | --- |
 | `WebSocketServer.js` | 六类客户端、VCP_Key 认证、广播、心跳 | `omnia-ws` | `1:1` | M3 PRD §4 |
 | `FileFetcherServer.js` | 跨节点透明文件访问 | `omnia-filefetch` | `1:1` | M3 PRD §6 |
-| `VCPChat/VCPDistributedServer/`（736 行） | 分布式节点服务端 | `omnia-dist`，远端可继续跑原版 | `1:1` | 架构 §10、M3 PRD §5 |
+| `VCPChat/VCPDistributedServer/`（`VCPDistributedServer.js` 955 行） | 分布式节点服务端（协议） | `omnia-dist`，远端可继续跑原版 | `1:1`；节点侧插件与内嵌宿主见 SC-17 | 架构 §10、M3 PRD §5 |
 | `routes/taskScheduler.js` | 定时任务与结果持久化 | `omnia-scheduler` | `1:1` | M3 PRD §8 |
 | `modules/browserRuntimeManager.js` + ChromeBridge 类插件 | 浏览器观察/控制通道 | `omnia-dist` | `1:1`（M3 P1） | M3 §1 P1 |
 | `WorkerPool.js` | 原版 JS 工作线程池 | 由 tokio 运行时承担 | `实现替换`（任务调度行为仍对拍） | 架构 §7 并发模型 |
@@ -165,7 +165,7 @@
 | `rust_assistant_engine/` | 麦克风捕获 / 助手引擎 | M5 P1 麦克风 | `基线` | M5 §9 |
 | `rust_projectforge_indexer/` | 已存在的 AST 索引器 Rust 源码 | M4 P0 索引器重实现 | `基线` | 保留决策，纠正源码不存在的依据；M4 §5.2 |
 | `rust_chat_data_service/`、`rust_voice_input_engine/`、`sovits5cppmanager/` | 数据服务 / 语音输入 / SoVITS 管理 | 对应数据/语音模块 | `范围内待细化 SC-09` | C-08 允许 M1 直接读文件；其余用户能力独立验收 |
-| `VCPDistributedServer/` | 分布式节点 | `omnia-dist`（M3） | `1:1` | M3 §5 |
+| `VCPDistributedServer/` | 分布式节点协议；桌面端内嵌节点与 38 个节点侧插件目录 | 协议归 `omnia-dist`（M3）；内嵌宿主与节点侧插件待定 | `1:1`（协议）/ `范围内待细化 SC-17` | M3 §5；架构 §5.1 |
 | `VCPHumanToolBox/`、`VchatManager/`、`SovitsTest/`、`NativeSpalash/` | 人类工具箱 / 数据维护 / TTS / Rust 启动器 | M4 P0 / M4 P1 / M5 §9 / M5 §12 | `1:1` | 对应 PRD |
 | `audio_engine/`（exe 分发产物） | 音频二进制资产 | vendoring 源码构建产物 | `实现替换` | M5 US-405 |
 | `RMMusic/` | Rainmeter 皮肤及外部集成 | 冻结基线接入能力 | `范围内待细化 SC-15` | 不以未声明作为排除依据 |
@@ -193,9 +193,10 @@
 | SC-11 | 四个游戏、视听工坊高级、动态壁纸视频化 | M5 US-401；US-427 | 各功能独立规格与用例；已批准降级逐项记录 |
 | SC-12 | JEV、四轨实验室、TDB 冷知识库、音乐日记跨设备同步 | M2 US-101；M5 US-401；US-427 | 逐能力行为/数据对拍；接口占位或关闭功能不算完成 |
 | SC-13 | finalContextStore/vcpLogReplayManager、Detector、OneRing | M3 US-201；US-427 | 缓存重放、断线补发、预处理/后处理与多 Agent 钩子用例 |
-| SC-14 | 语义模型路由、VCPMobile 互通、备份/容灾 | M3 US-201；M5 US-404；US-427 | 路由、移动端接入、故障恢复演练；插件原生化另属内部优化 |
+| SC-14 | 语义模型路由、VCPMobile 互通、备份/容灾、停机生命周期（四态、放行清单、拒绝响应、阶段与超时；骨架见架构 §5.3） | M3 US-201；M5 US-404；US-427 | 路由、移动端接入、故障恢复演练；停机期间各响应与阶段次序录制对拍；插件原生化另属内部优化 |
 | SC-15 | RMMusic、迁移/启动/分发脚本、其它资产和未展开模块 | M4 US-301 清点；M5 US-401/US-404；US-427 | 冻结树到能力清单无遗漏；每项说明复用/替换/批准排除及依据 |
 | SC-16 | 各阶段延期 P1 与未闭合的插件覆盖 | 各阶段集成 US 移交；US-427 | 来源 US、负责模块、补齐用例与结果；96 插件逐项状态 |
+| SC-17 | 桌面端内嵌分布式节点及节点侧插件（`VCPDistributedServer/Plugin/` 38 个目录） | M3 US-201 冻结节点协议并核定节点端实现所在 crate（不依赖 omnia-server/omnia-agent，架构 §5.1）；M4 US-301 清点节点侧插件；US-427 | 38 个目录逐项状态（启用与 .block 分开）及其承接方式（原生实现 / 兼容宿主 / 批准排除）；内嵌开关、节点名、连接参数与后端 IP 特判对拍；架构 §5.1 |
 
 SC 是补齐责任而非实现状态。细分条目须有稳定子编号、原路径/符号、能力、目标模块、US、契约、测试与状态；一个能力不能同时标排除和待补齐。缩减最终范围须另记批准，不以未排期替代决定。
 
@@ -289,6 +290,8 @@ M4 转出的音乐/Loom/桌面由 M5 P0 承接；白板/语音/骰子/塔罗/桌
 
 ## 9. 修订记录
 
+- v1.4（2026-11-12）：同步架构 v2.6：§3.1 工具调用记录库去向改为 `omnia-plugin`；SC-14 纳入停机生命周期；SC-17 写明节点端实现的依赖约束。没有新增 BP/DV，范围规则不变。
+- v1.3（2026-11-12）：新增 SC-17（桌面端内嵌分布式节点及 38 个节点侧插件目录），§3.4、§4.2 对应行同步；按冻结树更正清点数字：`modules/` 46 项、`Plugin.js` 2763 行、`VCPDistributedServer.js` 955 行。范围规则与其余条目不变。
 - v1.2（2026-11-12）：BP-07 登记 M0 F8 实测结论（锁定 GPUI 栈无原生视频/音频能力），视频降级或外部引擎决策明确由 M5 承接；范围条目不变。
 - v1.1（2026-11-12）：明确最终范围和 SC 责任；拆开 Canvas/文坊白板，修正 BP 引用；区分默认差异和内部优化、核心交付和最终验收。技术选型不变。
 

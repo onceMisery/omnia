@@ -1,10 +1,10 @@
-# Omnia · 插件系统设计 v1.2
+# Omnia · 插件系统设计 v1.4
 
 ## 0. 文档信息
 
 | 项 | 值 |
 | --- | --- |
-| 版本 / 日期 | v1.2 / 2026-11-12（职责与兼容边界修订） |
+| 版本 / 日期 | v1.4 / 2026-11-12（记录库归属定案，节点端措辞同步架构 v2.6） |
 | 状态 | **已批准**（方案 A 统一插件架构 + 前端内置清单化/Loom 沙箱承接第三方，用户确认） |
 | 适用阶段 | M1–M5；本方案已批准，具体接口和运行行为仍由各阶段契约冻结及实现验证；元数据口径见 `README.md` §5 |
 | 基线 | VCPToolBox `a8560b0ae4e7b1a7803a88093a9ebee391e21a7c` + VCPChat `c3e4855efa2b24c0578d76e17fd6c5f21857a539`（docs/基线记录.md） |
@@ -60,6 +60,8 @@ PluginManager 是单例 EventEmitter（Plugin.js:2761-2763），持有状态与�
 
 Plugin/ 共 96 目录（77 启用 + 19 禁用）：synchronous 39 / hybridservice 19 / static 8 / messagePreprocessor 5 / asynchronous 3 / service 3。"300+"含插件商店云端源。依赖主流模式 = 共享根 node_modules（60+ 插件零声明）；仅 5/77 声明 manifest.dependencies。
 
+节点侧另有一套插件：VCPChat `VCPDistributedServer/Plugin/` 共 38 个目录（33 启用 + 5 禁用，`git ls-tree` 清点），由桌面端主进程内嵌的分布式节点加载（VCPChat main.js:538–551），不计入上面的 96。它们是后端工具到达用户本机音乐、桌面、Loom、文件与终端等能力的通道；承接见范围矩阵 SC-17 与架构 §5.1。
+
 ---
 
 ## 2. 统一插件模型（前后端同构哲学）【设计】
@@ -107,6 +109,8 @@ Plugin/ 共 96 目录（77 启用 + 19 禁用）：synchronous 39 / hybridservic
 │ HotReloader │ ApprovalGate（C-07）│ RecordStore          │
 └─────────────────────────────────────────────────────────┘
 ```
+
+**RecordStore 归 omnia-plugin**（2026-11-12 定案，依据见架构 §8.1）：工具循环先开记录、把句柄传入并自行收尾；没有传句柄的调用（如调度器）由插件引擎开启并收尾，两条路径写同一个库。
 
 ### 3.2 核心接口（签名级）【设计】
 
@@ -352,7 +356,7 @@ manifest.permissions 声明 → CapabilityLinker 按声明链接 host function
 - **Omnia 节点补全 cancel**：声明 capabilities.cancelTool=true + 处理 cancel_tool（原版节点缺失、主端有消费端；这是默认可观测差异 DV-6）
 - **泄漏面治理**：register_tools 携带 pluginSpecificEnvConfig 保留协议（1:1），但日志脱敏 + 部署文档警告；Omnia 节点可选配置剔除敏感键（声明偏差）
 - internal_request_file：保留无大小限制（1:1）+ Omnia 可选配额（opt-in 偏差）
-- 双向混部验收：原版 Node 节点 ↔ omnia-server；omnia-server 节点 ↔ 原版主服务器
+- 双向混部验收：原版 Node 节点 ↔ omnia-server；Omnia 节点端 ↔ 原版主服务器。节点端协议实现不依赖 omnia-server/omnia-agent，桌面端内嵌与独立节点进程都能装配（架构 §5.1，SC-17）
 
 ### 3.8 前端插件化设计
 
@@ -524,6 +528,8 @@ IN-4 默认使用文本协议；只有模型能力可用且等价性门禁通过
 
 ## 8. 修订记录
 
+- v1.4（2026-11-12）：同步架构 v2.6：§3.1 RecordStore 定案归 omnia-plugin；§3.7 节点端实现改称“Omnia 节点端”并写明依赖约束。其余设计不变。
+- v1.3（2026-11-12）：§1.5 补节点侧 38 个插件目录的事实（SC-17）；§3.1 登记 RecordStore 归属待定（架构 §8.1）；更正 Plugin.js 行数为 2763。设计内容不变。
 - v1.2（2026-11-12）：统一侧车与原生能力职责，修正同名冲突与回调认证；前端宿主改称 FrontendHost，补齐 US-329/US-330 承接；移除重复 DV 表，保留既定技术路线。
 
 内容由 AI 生成

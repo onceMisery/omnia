@@ -1,6 +1,6 @@
-# Omnia · M0 构建与验证 v1.1
+# Omnia · M0 构建与验证 v1.2
 
-- 版本 / 日期：v1.1 / 2026-11-12
+- 版本 / 日期：v1.2 / 2026-11-12
 - 状态：生效；US-001 工程门禁与本机验证记录。质量规则见 [代码风格与质量约束](Omnia-代码风格与质量约束.md) §7–§9；fixture 证据见 [fixture 报告](fixture-report.md)，GPUI 实测见 [GPUI 实测报告](m0-gpui-validation.md)。
 - 本机平台：Windows 11 x64（10.0.26200）；Rust 1.99.1（rust-toolchain.toml 锁定，含 clippy/rustfmt）；Node 22.14.0。
 
@@ -50,7 +50,7 @@ cargo run -p omnia-app --locked  # 原生窗口：聊天预览页 + 设置页
 
 `.github/workflows/ci.yml`：windows-latest / ubuntu-24.04 / macos-15 矩阵，fail-fast=false；步骤为 fmt → check → clippy(-D warnings) → test → 冻结基线检出（VCPToolBox/VCPChat 固定 commit，供 Node 契约 harness 经 `OMNIA_*_SOURCE` 读取）→ Node contract harness（source-fixtures/normalization/runtime 测试 + 清单校验）→ gpui-fast 实验构建 → 文档检查。任一失败阻断，无 continue-on-error。
 
-**远程 CI 尚未执行**（仓库无提交/远端）；配置存在不代表全绿。三平台构建与运行证据由 CI 或实机补齐前保持未验证。原版录制对拍（compare-original/record-original）依赖本机隔离基线与录制产物，不在 CI 运行，属本地证据。
+**远程 CI 已执行并三平台全绿**：GitHub Actions run `43219179413`（workflow「M0 quality gates」，commit `61c8bc8`，2026-11-12T12:34:44Z），`quality (windows-latest)`、`quality (ubuntu-24.04)`、`quality (macos-15)` 三个 job 均 `completed | success`、无失败步骤（经 7890 代理读取 GitHub 公共 API 核对；出口 IP 限流，逐平台测试计数日志未取）。每个 job 跑完上述全部步骤，故三平台 `cargo check --workspace --all-targets` 构建与 `cargo test`（含 omnia-app/探针无头窗口测试，无平台门控）均通过。CI 验证的是构建 + 无头窗口 + 源码 fixture harness，非原生 GPU 窗口呈现。原版录制对拍（compare-original/record-original）依赖本机隔离基线与录制产物，不在 CI 运行，属本地证据（仅 Windows 本机）。
 
 ## 5. 文档与许可状态
 
@@ -58,12 +58,13 @@ LICENSE（冻结 VCPToolBox 原文）与 THIRD_PARTY_NOTICES.md 基础版本已�
 
 ## 6. 未验证清单
 
-- Linux/macOS 本机构建与运行；远程 CI 全绿。
+- Linux/macOS 本机原生构建与 GPU 窗口呈现（远程 CI 已验证三平台构建 + 无头窗口测试全绿；本机原生启动仅 Windows 实测）。
 - release profile 构建与打包（M0 仅 dev profile 实测）。
 - M1 服务/聊天、四象限 e2e、真实插件与 AppData 兼容（后续阶段）。
 - gpui-fast 的 GPU 呈现性能与稳定性长测（M0 仅无头 CPU 对比，见 GPUI 报告 F6）。
 
 ## 7. 修订记录
 
+- v1.2（2026-11-12）：远程 CI 三平台全绿确认（run 43219179413 / commit 61c8bc8，windows/ubuntu/macos 三 job success、无失败步骤）；§4 由「尚未执行」改为已执行全绿并写明证据边界（构建+无头窗口，非原生 GPU 呈现），§6 未验证清单相应收敛。本机门禁与录制证据不变。
 - v1.1（2026-11-12）：补齐 CJK 输入无头测试后复跑门禁，`cargo test --workspace` 计数 37→38（26 个 ok 块，0 失败）；fmt/clippy/gpui-fast check 复跑全绿。
 - v1.0（2026-11-12）：M0 接续会话建立；门禁复跑全绿（Rust+Node），CI 增补 Node harness 与 gpui-fast 构建步骤，归属清单补实验依赖。
